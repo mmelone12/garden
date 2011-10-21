@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
-  end
+  end   
 
   def update
     @project = Project.find(params[:id])

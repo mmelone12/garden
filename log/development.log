@@ -600,3 +600,1184 @@ Rendered layouts/_header.html.erb (104.7ms)
 Rendered layouts/_footer.html.erb (0.9ms)
 Rendered projects/show.html.erb within layouts/application (145.0ms)
 Completed 200 OK in 198ms (Views: 149.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-10-21 15:28:05 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (56.1ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered projects/show.html.erb within layouts/application (118.3ms)
+Completed 200 OK in 144ms (Views: 124.9ms | ActiveRecord: 0.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.7ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111021125458')
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100821203213')[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822012431')
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822204528')[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822233125')
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829021049')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829210229')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100831012055')[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "hzones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111021134225')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("hzones")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_microposts_on_user_id_and_created_at')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("projects")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.2ms)[0m  CREATE TABLE "hzones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111021134225')
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100821203213')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822012431')
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822204528')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822233125')
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829021049')[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829210229')
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100831012055')[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111021125458')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
+
+
+Started GET "/projects/3/edit" for 127.0.0.1 at 2011-10-21 16:11:14 +0200
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed 500 Internal Server Error in 178ms
+
+NoMethodError (undefined method `state' for #<Class:0x2adf938>):
+  app/models/project.rb:7:in `<class:Project>'
+  app/models/project.rb:1:in `<top (required)>'
+  app/controllers/projects_controller.rb:24:in `edit'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (23.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.9ms)
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE TABLE "hzones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("microposts")
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id_and_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (2.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111021134225')[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100821203213')
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822012431')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822204528')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822233125')[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829021049')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829210229')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100831012055')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111021125458')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example@railstutorial.org')) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Example User', 'example@railstutorial.org', '2011-10-21 14:52:40.666865', '2011-10-21 14:52:40.666865', '57f9334db772bd99cca10bf04344c23fb28e7dde0a5701be9180278a3481301d', '93371b55bd8498f0bd4973571628ff24475ab1e2eb17023a83778d0e860c336c', 'f')
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "admin" = 't', "updated_at" = '2011-10-21 14:52:40.681322' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-1@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Davon Lowe', 'example-1@railstutorial.org', '2011-10-21 14:52:40.687696', '2011-10-21 14:52:40.687696', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-2@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Freda Koss PhD', 'example-2@railstutorial.org', '2011-10-21 14:52:40.693935', '2011-10-21 14:52:40.693935', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-3@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mrs. Harmony Dach', 'example-3@railstutorial.org', '2011-10-21 14:52:40.699210', '2011-10-21 14:52:40.699210', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-4@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mertie Jast', 'example-4@railstutorial.org', '2011-10-21 14:52:40.704031', '2011-10-21 14:52:40.704031', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-5@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Alessandro Beer', 'example-5@railstutorial.org', '2011-10-21 14:52:40.709140', '2011-10-21 14:52:40.709140', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-6@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Dario Tremblay', 'example-6@railstutorial.org', '2011-10-21 14:52:40.714449', '2011-10-21 14:52:40.714449', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-7@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Helmer Hansen I', 'example-7@railstutorial.org', '2011-10-21 14:52:40.720214', '2011-10-21 14:52:40.720214', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-8@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Olga Padberg DDS', 'example-8@railstutorial.org', '2011-10-21 14:52:40.725134', '2011-10-21 14:52:40.725134', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-9@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Urban Mante III', 'example-9@railstutorial.org', '2011-10-21 14:52:40.731026', '2011-10-21 14:52:40.731026', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-10@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Liliana Stanton', 'example-10@railstutorial.org', '2011-10-21 14:52:40.735975', '2011-10-21 14:52:40.735975', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-11@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Juanita Yost Jr.', 'example-11@railstutorial.org', '2011-10-21 14:52:40.741611', '2011-10-21 14:52:40.741611', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-12@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Thad Reilly', 'example-12@railstutorial.org', '2011-10-21 14:52:40.746515', '2011-10-21 14:52:40.746515', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-13@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Carmel Beatty IV', 'example-13@railstutorial.org', '2011-10-21 14:52:40.752777', '2011-10-21 14:52:40.752777', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-14@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Era Moore', 'example-14@railstutorial.org', '2011-10-21 14:52:40.758538', '2011-10-21 14:52:40.758538', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-15@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Elsa Krajcik', 'example-15@railstutorial.org', '2011-10-21 14:52:40.764335', '2011-10-21 14:52:40.764335', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-16@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Gaylord Reichert', 'example-16@railstutorial.org', '2011-10-21 14:52:40.769265', '2011-10-21 14:52:40.769265', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-17@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ardith Lind', 'example-17@railstutorial.org', '2011-10-21 14:52:40.774799', '2011-10-21 14:52:40.774799', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-18@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mr. Gennaro Jast', 'example-18@railstutorial.org', '2011-10-21 14:52:40.780079', '2011-10-21 14:52:40.780079', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-19@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Dr. Payton Runolfsdottir', 'example-19@railstutorial.org', '2011-10-21 14:52:40.785659', '2011-10-21 14:52:40.785659', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-20@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Destinee Waelchi', 'example-20@railstutorial.org', '2011-10-21 14:52:40.791023', '2011-10-21 14:52:40.791023', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-21@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Berry Reichel', 'example-21@railstutorial.org', '2011-10-21 14:52:40.796260', '2011-10-21 14:52:40.796260', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-22@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Brando Hettinger', 'example-22@railstutorial.org', '2011-10-21 14:52:40.801945', '2011-10-21 14:52:40.801945', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-23@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Lexie Runolfsson', 'example-23@railstutorial.org', '2011-10-21 14:52:40.807636', '2011-10-21 14:52:40.807636', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-24@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Leo Feil', 'example-24@railstutorial.org', '2011-10-21 14:52:40.813620', '2011-10-21 14:52:40.813620', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-25@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ms. Sandrine Macejkovic', 'example-25@railstutorial.org', '2011-10-21 14:52:40.846585', '2011-10-21 14:52:40.846585', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-26@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Colten Davis', 'example-26@railstutorial.org', '2011-10-21 14:52:40.852562', '2011-10-21 14:52:40.852562', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-27@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Aric Greenholt', 'example-27@railstutorial.org', '2011-10-21 14:52:40.858425', '2011-10-21 14:52:40.858425', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-28@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Oral Davis II', 'example-28@railstutorial.org', '2011-10-21 14:52:40.863791', '2011-10-21 14:52:40.863791', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-29@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Roxanne Maggio', 'example-29@railstutorial.org', '2011-10-21 14:52:40.869090', '2011-10-21 14:52:40.869090', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-30@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Joesph Jerde', 'example-30@railstutorial.org', '2011-10-21 14:52:40.875117', '2011-10-21 14:52:40.875117', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-31@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Lilyan Schaefer', 'example-31@railstutorial.org', '2011-10-21 14:52:40.880508', '2011-10-21 14:52:40.880508', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-32@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Hillard Boyer', 'example-32@railstutorial.org', '2011-10-21 14:52:40.885399', '2011-10-21 14:52:40.885399', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-33@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Alvah Ritchie', 'example-33@railstutorial.org', '2011-10-21 14:52:40.891836', '2011-10-21 14:52:40.891836', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-34@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Kaycee Aufderhar', 'example-34@railstutorial.org', '2011-10-21 14:52:40.896820', '2011-10-21 14:52:40.896820', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-35@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Erik McClure', 'example-35@railstutorial.org', '2011-10-21 14:52:40.902938', '2011-10-21 14:52:40.902938', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-36@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Tyrique Stoltenberg Jr.', 'example-36@railstutorial.org', '2011-10-21 14:52:40.908185', '2011-10-21 14:52:40.908185', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-37@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Brenda Denesik IV', 'example-37@railstutorial.org', '2011-10-21 14:52:40.914420', '2011-10-21 14:52:40.914420', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-38@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ms. Lavon Kerluke', 'example-38@railstutorial.org', '2011-10-21 14:52:40.919690', '2011-10-21 14:52:40.919690', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-39@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Dawson Zboncak', 'example-39@railstutorial.org', '2011-10-21 14:52:40.924734', '2011-10-21 14:52:40.924734', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-40@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mia Halvorson', 'example-40@railstutorial.org', '2011-10-21 14:52:40.930526', '2011-10-21 14:52:40.930526', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-41@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Myah Armstrong', 'example-41@railstutorial.org', '2011-10-21 14:52:40.936553', '2011-10-21 14:52:40.936553', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-42@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Lennie Hamill PhD', 'example-42@railstutorial.org', '2011-10-21 14:52:40.942775', '2011-10-21 14:52:40.942775', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-43@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mrs. Shyanne Keebler', 'example-43@railstutorial.org', '2011-10-21 14:52:40.948438', '2011-10-21 14:52:40.948438', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-44@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Raleigh Ullrich', 'example-44@railstutorial.org', '2011-10-21 14:52:40.953928', '2011-10-21 14:52:40.953928', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-45@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Rubye Koepp IV', 'example-45@railstutorial.org', '2011-10-21 14:52:40.959002', '2011-10-21 14:52:40.959002', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-46@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jace Padberg', 'example-46@railstutorial.org', '2011-10-21 14:52:40.964982', '2011-10-21 14:52:40.964982', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-47@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mr. Triston Ryan', 'example-47@railstutorial.org', '2011-10-21 14:52:40.970896', '2011-10-21 14:52:40.970896', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-48@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Tiffany Haley', 'example-48@railstutorial.org', '2011-10-21 14:52:40.976559', '2011-10-21 14:52:40.976559', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-49@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Felicia Gislason', 'example-49@railstutorial.org', '2011-10-21 14:52:40.982344', '2011-10-21 14:52:40.982344', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-50@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Erwin Schulist', 'example-50@railstutorial.org', '2011-10-21 14:52:40.987743', '2011-10-21 14:52:40.987743', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-51@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Tamia Prosacco', 'example-51@railstutorial.org', '2011-10-21 14:52:40.992688', '2011-10-21 14:52:40.992688', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-52@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Carolyne Hammes', 'example-52@railstutorial.org', '2011-10-21 14:52:40.998514', '2011-10-21 14:52:40.998514', '5d92b15d8902679b65cf8ce9b9345408851f93dbd756d231058518775ac89d36', '2438ced8eba214eac45781126c1d5d1aa05c7f182bfab36b954db5af9efb2ad4', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-53@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Terence Schaefer', 'example-53@railstutorial.org', '2011-10-21 14:52:41.003929', '2011-10-21 14:52:41.003929', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-54@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jocelyn Ankunding', 'example-54@railstutorial.org', '2011-10-21 14:52:41.009375', '2011-10-21 14:52:41.009375', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-55@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Marianne Hills', 'example-55@railstutorial.org', '2011-10-21 14:52:41.015087', '2011-10-21 14:52:41.015087', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-56@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Mollie Berge', 'example-56@railstutorial.org', '2011-10-21 14:52:41.045287', '2011-10-21 14:52:41.045287', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-57@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Liam Haley', 'example-57@railstutorial.org', '2011-10-21 14:52:41.052032', '2011-10-21 14:52:41.052032', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-58@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ms. Ilene Dare', 'example-58@railstutorial.org', '2011-10-21 14:52:41.058929', '2011-10-21 14:52:41.058929', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-59@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Virginia Hagenes', 'example-59@railstutorial.org', '2011-10-21 14:52:41.064797', '2011-10-21 14:52:41.064797', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-60@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ms. Cordia Cole', 'example-60@railstutorial.org', '2011-10-21 14:52:41.070052', '2011-10-21 14:52:41.070052', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-61@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Joy Miller', 'example-61@railstutorial.org', '2011-10-21 14:52:41.075163', '2011-10-21 14:52:41.075163', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-62@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Skylar Hane', 'example-62@railstutorial.org', '2011-10-21 14:52:41.080644', '2011-10-21 14:52:41.080644', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-63@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Cheyanne Nolan', 'example-63@railstutorial.org', '2011-10-21 14:52:41.086748', '2011-10-21 14:52:41.086748', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-64@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Annalise Conn', 'example-64@railstutorial.org', '2011-10-21 14:52:41.091800', '2011-10-21 14:52:41.091800', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-65@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Norma Stokes', 'example-65@railstutorial.org', '2011-10-21 14:52:41.097842', '2011-10-21 14:52:41.097842', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-66@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jean Gaylord', 'example-66@railstutorial.org', '2011-10-21 14:52:41.103304', '2011-10-21 14:52:41.103304', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-67@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Josiane Collier', 'example-67@railstutorial.org', '2011-10-21 14:52:41.108536', '2011-10-21 14:52:41.108536', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-68@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Angie Russel', 'example-68@railstutorial.org', '2011-10-21 14:52:41.114454', '2011-10-21 14:52:41.114454', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-69@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Maryjane Ward', 'example-69@railstutorial.org', '2011-10-21 14:52:41.119750', '2011-10-21 14:52:41.119750', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-70@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Obie Muller', 'example-70@railstutorial.org', '2011-10-21 14:52:41.124813', '2011-10-21 14:52:41.124813', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-71@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Rollin Goodwin III', 'example-71@railstutorial.org', '2011-10-21 14:52:41.130378', '2011-10-21 14:52:41.130378', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-72@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Donavon Johnson', 'example-72@railstutorial.org', '2011-10-21 14:52:41.136565', '2011-10-21 14:52:41.136565', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-73@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Bonita Brakus', 'example-73@railstutorial.org', '2011-10-21 14:52:41.141989', '2011-10-21 14:52:41.141989', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-74@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Salvador Tillman', 'example-74@railstutorial.org', '2011-10-21 14:52:41.148124', '2011-10-21 14:52:41.148124', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-75@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Miss Carey Mraz', 'example-75@railstutorial.org', '2011-10-21 14:52:41.153288', '2011-10-21 14:52:41.153288', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-76@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Boyd Wintheiser IV', 'example-76@railstutorial.org', '2011-10-21 14:52:41.158541', '2011-10-21 14:52:41.158541', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-77@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Boyd Jakubowski', 'example-77@railstutorial.org', '2011-10-21 14:52:41.163655', '2011-10-21 14:52:41.163655', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-78@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Cordia Kulas', 'example-78@railstutorial.org', '2011-10-21 14:52:41.169589', '2011-10-21 14:52:41.169589', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-79@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Dessie Bergnaum', 'example-79@railstutorial.org', '2011-10-21 14:52:41.174801', '2011-10-21 14:52:41.174801', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-80@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Flo Huels', 'example-80@railstutorial.org', '2011-10-21 14:52:41.180564', '2011-10-21 14:52:41.180564', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-81@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Orlando Parker', 'example-81@railstutorial.org', '2011-10-21 14:52:41.185950', '2011-10-21 14:52:41.185950', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-82@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Arianna Wehner', 'example-82@railstutorial.org', '2011-10-21 14:52:41.191598', '2011-10-21 14:52:41.191598', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-83@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Magdalena Roob', 'example-83@railstutorial.org', '2011-10-21 14:52:41.197243', '2011-10-21 14:52:41.197243', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-84@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Khalil Baumbach', 'example-84@railstutorial.org', '2011-10-21 14:52:41.203554', '2011-10-21 14:52:41.203554', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-85@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Agnes Leffler', 'example-85@railstutorial.org', '2011-10-21 14:52:41.209318', '2011-10-21 14:52:41.209318', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-86@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ms. Isaias Hoppe', 'example-86@railstutorial.org', '2011-10-21 14:52:41.215181', '2011-10-21 14:52:41.215181', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-87@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jeremie Bogan', 'example-87@railstutorial.org', '2011-10-21 14:52:41.245213', '2011-10-21 14:52:41.245213', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-88@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Josh Walter', 'example-88@railstutorial.org', '2011-10-21 14:52:41.251500', '2011-10-21 14:52:41.251500', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-89@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Petra Rosenbaum', 'example-89@railstutorial.org', '2011-10-21 14:52:41.257210', '2011-10-21 14:52:41.257210', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-90@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Alverta Brakus', 'example-90@railstutorial.org', '2011-10-21 14:52:41.262854', '2011-10-21 14:52:41.262854', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-91@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Sebastian Friesen', 'example-91@railstutorial.org', '2011-10-21 14:52:41.268366', '2011-10-21 14:52:41.268366', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-92@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Ozella Wintheiser', 'example-92@railstutorial.org', '2011-10-21 14:52:41.273758', '2011-10-21 14:52:41.273758', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-93@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Stanley D''Amore', 'example-93@railstutorial.org', '2011-10-21 14:52:41.279544', '2011-10-21 14:52:41.279544', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-94@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Dillon Jacobi V', 'example-94@railstutorial.org', '2011-10-21 14:52:41.286024', '2011-10-21 14:52:41.286024', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-95@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Michel Wintheiser', 'example-95@railstutorial.org', '2011-10-21 14:52:41.292704', '2011-10-21 14:52:41.292704', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-96@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Don Aufderhar', 'example-96@railstutorial.org', '2011-10-21 14:52:41.298593', '2011-10-21 14:52:41.298593', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-97@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jazmin O''Hara', 'example-97@railstutorial.org', '2011-10-21 14:52:41.304558', '2011-10-21 14:52:41.304558', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-98@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Lysanne McClure', 'example-98@railstutorial.org', '2011-10-21 14:52:41.309748', '2011-10-21 14:52:41.309748', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('example-99@railstutorial.org')) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jeffry Goodwin', 'example-99@railstutorial.org', '2011-10-21 14:52:41.314641', '2011-10-21 14:52:41.314641', '93b555121d3947e46b95bd78dada71c62bea5281d28c306c87921c5bf1ec5870', 'eb67d5f20f6ad0afe0076e9de6bedc56ea11f620f7dc23c8db4b9e01d5a3fbc5', 'f')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Neque occaecati reprehenderit autem unde.', 1, '2011-10-21 14:52:41.343879', '2011-10-21 14:52:41.343879')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum laboriosam dolor nihil suscipit.', 2, '2011-10-21 14:52:41.354252', '2011-10-21 14:52:41.354252')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consectetur sit cum atque non suscipit consequatur.', 3, '2011-10-21 14:52:41.358853', '2011-10-21 14:52:41.358853')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quasi quia et sequi officiis nulla enim.', 4, '2011-10-21 14:52:41.362676', '2011-10-21 14:52:41.362676')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sunt assumenda esse eius qui hic.', 5, '2011-10-21 14:52:41.365971', '2011-10-21 14:52:41.365971')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum aut cumque dolores nulla dolorem sit.', 6, '2011-10-21 14:52:41.369247', '2011-10-21 14:52:41.369247')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum dolorem dolore eligendi nulla ut quia.', 1, '2011-10-21 14:52:41.373631', '2011-10-21 14:52:41.373631')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Tempora qui neque labore ea adipisci voluptatem.', 2, '2011-10-21 14:52:41.377156', '2011-10-21 14:52:41.377156')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sed sit non dolorem facilis possimus.', 3, '2011-10-21 14:52:41.380436', '2011-10-21 14:52:41.380436')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui tenetur optio sint eius.', 4, '2011-10-21 14:52:41.384327', '2011-10-21 14:52:41.384327')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Laborum enim quidem optio delectus assumenda ipsum veritatis.', 5, '2011-10-21 14:52:41.388553', '2011-10-21 14:52:41.388553')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Optio rerum est non alias aut.', 6, '2011-10-21 14:52:41.392479', '2011-10-21 14:52:41.392479')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Reiciendis rerum praesentium velit possimus omnis.', 1, '2011-10-21 14:52:41.398028', '2011-10-21 14:52:41.398028')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum quos quia dignissimos aut in.', 2, '2011-10-21 14:52:41.401722', '2011-10-21 14:52:41.401722')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut consequuntur quis quae ducimus nesciunt non.', 3, '2011-10-21 14:52:41.405844', '2011-10-21 14:52:41.405844')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptates aut distinctio cupiditate nulla facilis perspiciatis.', 4, '2011-10-21 14:52:41.410312', '2011-10-21 14:52:41.410312')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nostrum illo aut et veritatis odit.', 5, '2011-10-21 14:52:41.414832', '2011-10-21 14:52:41.414832')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Similique sed sit qui eos voluptatum.', 6, '2011-10-21 14:52:41.418342', '2011-10-21 14:52:41.418342')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Provident et voluptatum aut eius ipsum modi sed omnis.', 1, '2011-10-21 14:52:41.423190', '2011-10-21 14:52:41.423190')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Adipisci consequatur est in velit quo saepe.', 2, '2011-10-21 14:52:41.427654', '2011-10-21 14:52:41.427654')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aperiam id et culpa odio ut ipsam quasi error debitis.', 3, '2011-10-21 14:52:41.431819', '2011-10-21 14:52:41.431819')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Iste similique eligendi est nobis.', 4, '2011-10-21 14:52:41.436414', '2011-10-21 14:52:41.436414')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Molestiae dignissimos modi suscipit ad qui molestias corporis.', 5, '2011-10-21 14:52:41.440983', '2011-10-21 14:52:41.440983')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Temporibus ipsam eius sequi nobis vitae voluptatem nulla dolorem fugit.', 6, '2011-10-21 14:52:41.444949', '2011-10-21 14:52:41.444949')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Molestiae fuga modi rerum voluptatem possimus labore et beatae.', 1, '2011-10-21 14:52:41.449994', '2011-10-21 14:52:41.449994')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nemo blanditiis tenetur suscipit quia velit in.', 2, '2011-10-21 14:52:41.454283', '2011-10-21 14:52:41.454283')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Libero quasi omnis aliquid omnis dicta aut vitae.', 3, '2011-10-21 14:52:41.458113', '2011-10-21 14:52:41.458113')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nulla est et aliquam placeat.', 4, '2011-10-21 14:52:41.462175', '2011-10-21 14:52:41.462175')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aliquam aut maxime a exercitationem in ad ab laudantium eveniet.', 5, '2011-10-21 14:52:41.466702', '2011-10-21 14:52:41.466702')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Asperiores recusandae reprehenderit quos voluptatum qui labore omnis itaque facilis.', 6, '2011-10-21 14:52:41.470770', '2011-10-21 14:52:41.470770')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Est non consequuntur in optio assumenda vel voluptates.', 1, '2011-10-21 14:52:41.475811', '2011-10-21 14:52:41.475811')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consequatur fugit quia aut ea ratione necessitatibus consequatur aut eos.', 2, '2011-10-21 14:52:41.480282', '2011-10-21 14:52:41.480282')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Officiis alias repellendus dolores incidunt ea voluptatem omnis.', 3, '2011-10-21 14:52:41.484448', '2011-10-21 14:52:41.484448')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui vel vitae possimus voluptatem rerum aut iste.', 4, '2011-10-21 14:52:41.488456', '2011-10-21 14:52:41.488456')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Non voluptatibus aut velit officia itaque aperiam ad.', 5, '2011-10-21 14:52:41.492667', '2011-10-21 14:52:41.492667')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eligendi nihil velit sit omnis quibusdam.', 6, '2011-10-21 14:52:41.497034', '2011-10-21 14:52:41.497034')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Cupiditate eum eum aliquam enim et voluptatem beatae.', 1, '2011-10-21 14:52:41.502659', '2011-10-21 14:52:41.502659')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Adipisci qui vel tempora corporis est atque quod.', 2, '2011-10-21 14:52:41.507161', '2011-10-21 14:52:41.507161')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vel voluptatum reiciendis libero repellat doloribus officiis ut tempore alias.', 3, '2011-10-21 14:52:41.510890', '2011-10-21 14:52:41.510890')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Tenetur officia omnis qui rerum illo quisquam officiis ut quia.', 4, '2011-10-21 14:52:41.514995', '2011-10-21 14:52:41.514995')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dolorem doloribus asperiores explicabo ipsum quae.', 5, '2011-10-21 14:52:41.519310', '2011-10-21 14:52:41.519310')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sequi neque cum quidem necessitatibus minima laudantium autem doloremque.', 6, '2011-10-21 14:52:41.524213', '2011-10-21 14:52:41.524213')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Soluta porro sunt adipisci perferendis et vel id.', 1, '2011-10-21 14:52:41.529190', '2011-10-21 14:52:41.529190')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rerum molestiae tempore nulla cumque.', 2, '2011-10-21 14:52:41.533445', '2011-10-21 14:52:41.533445')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Repellat ipsa quaerat voluptatum laborum fuga.', 3, '2011-10-21 14:52:41.537882', '2011-10-21 14:52:41.537882')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Accusamus quaerat quo vel eaque sint.', 4, '2011-10-21 14:52:41.542111', '2011-10-21 14:52:41.542111')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Inventore maiores excepturi porro nam itaque.', 5, '2011-10-21 14:52:41.546303', '2011-10-21 14:52:41.546303')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Accusantium fugiat tempore ipsum est in rerum.', 6, '2011-10-21 14:52:41.550787', '2011-10-21 14:52:41.550787')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Accusantium velit quia magni consequatur nesciunt corrupti.', 1, '2011-10-21 14:52:41.556027', '2011-10-21 14:52:41.556027')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consequatur non mollitia vitae ullam corrupti culpa maiores.', 2, '2011-10-21 14:52:41.589322', '2011-10-21 14:52:41.589322')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Libero quo quia sed provident molestiae voluptatum.', 3, '2011-10-21 14:52:41.594691', '2011-10-21 14:52:41.594691')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Possimus ullam deserunt qui nulla fuga asperiores et.', 4, '2011-10-21 14:52:41.598700', '2011-10-21 14:52:41.598700')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Itaque nihil quia velit ab et.', 5, '2011-10-21 14:52:41.602608', '2011-10-21 14:52:41.602608')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Debitis ad est sequi consequatur nesciunt est.', 6, '2011-10-21 14:52:41.607103', '2011-10-21 14:52:41.607103')
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Itaque dignissimos nemo voluptatem eum.', 1, '2011-10-21 14:52:41.612876', '2011-10-21 14:52:41.612876')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sequi fuga consequuntur et ab enim.', 2, '2011-10-21 14:52:41.617204', '2011-10-21 14:52:41.617204')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum ut quisquam aut expedita.', 3, '2011-10-21 14:52:41.621642', '2011-10-21 14:52:41.621642')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptas occaecati ad nesciunt at aliquam non ab.', 4, '2011-10-21 14:52:41.626020', '2011-10-21 14:52:41.626020')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Debitis harum libero dolorem consequatur nemo quia quo itaque molestiae.', 5, '2011-10-21 14:52:41.630492', '2011-10-21 14:52:41.630492')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sunt sit suscipit totam eius explicabo veniam impedit expedita.', 6, '2011-10-21 14:52:41.635466', '2011-10-21 14:52:41.635466')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ducimus libero enim id qui fugit vero ad.', 1, '2011-10-21 14:52:41.640384', '2011-10-21 14:52:41.640384')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quis cum omnis odio aut saepe amet ut temporibus tempora.', 2, '2011-10-21 14:52:41.644326', '2011-10-21 14:52:41.644326')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dolorem dicta consequatur facere consequatur.', 3, '2011-10-21 14:52:41.648315', '2011-10-21 14:52:41.648315')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut hic id incidunt nesciunt vero ipsa perferendis.', 4, '2011-10-21 14:52:41.652726', '2011-10-21 14:52:41.652726')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et necessitatibus est nesciunt ducimus qui incidunt.', 5, '2011-10-21 14:52:41.658065', '2011-10-21 14:52:41.658065')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Non sint at et et.', 6, '2011-10-21 14:52:41.661855', '2011-10-21 14:52:41.661855')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ut et consequuntur sapiente enim asperiores modi autem.', 1, '2011-10-21 14:52:41.666811', '2011-10-21 14:52:41.666811')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Esse numquam pariatur vel sit quia.', 2, '2011-10-21 14:52:41.670549', '2011-10-21 14:52:41.670549')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Harum nemo odit et rem reiciendis ratione placeat nulla quaerat.', 3, '2011-10-21 14:52:41.674903', '2011-10-21 14:52:41.674903')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quisquam ut porro iste commodi et tenetur sunt beatae.', 4, '2011-10-21 14:52:41.680002', '2011-10-21 14:52:41.680002')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Adipisci ab facilis deleniti dolorum aperiam reiciendis odio.', 5, '2011-10-21 14:52:41.684132', '2011-10-21 14:52:41.684132')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Soluta ex quisquam distinctio pariatur eveniet illo porro ut asperiores.', 6, '2011-10-21 14:52:41.688254', '2011-10-21 14:52:41.688254')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quia reprehenderit ipsa rem aut dolorem unde aut.', 1, '2011-10-21 14:52:41.693293', '2011-10-21 14:52:41.693293')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dignissimos explicabo omnis est impedit tempora voluptates quam est itaque.', 2, '2011-10-21 14:52:41.696857', '2011-10-21 14:52:41.696857')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vero temporibus eum eveniet libero fugit.', 3, '2011-10-21 14:52:41.701340', '2011-10-21 14:52:41.701340')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Deleniti sunt id est maiores nihil vero autem quia aliquam.', 4, '2011-10-21 14:52:41.705680', '2011-10-21 14:52:41.705680')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aperiam quisquam ex sint eum occaecati non.', 5, '2011-10-21 14:52:41.710369', '2011-10-21 14:52:41.710369')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ut cupiditate sequi impedit labore.', 6, '2011-10-21 14:52:41.714690', '2011-10-21 14:52:41.714690')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Possimus et natus non veritatis mollitia cupiditate.', 1, '2011-10-21 14:52:41.719734', '2011-10-21 14:52:41.719734')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consequatur quis odio exercitationem nihil nulla iure inventore ut fuga.', 2, '2011-10-21 14:52:41.724586', '2011-10-21 14:52:41.724586')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Enim possimus tempora soluta qui dicta minima rerum sequi excepturi.', 3, '2011-10-21 14:52:41.728771', '2011-10-21 14:52:41.728771')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rem et vel at placeat blanditiis vero.', 4, '2011-10-21 14:52:41.733142', '2011-10-21 14:52:41.733142')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consequatur consequuntur ab dicta in sed magnam facilis labore ipsum.', 5, '2011-10-21 14:52:41.737055', '2011-10-21 14:52:41.737055')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui aut et cupiditate tempora.', 6, '2011-10-21 14:52:41.740975', '2011-10-21 14:52:41.740975')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vitae velit corrupti culpa aliquam.', 1, '2011-10-21 14:52:41.746718', '2011-10-21 14:52:41.746718')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatem nam est ipsum veniam sapiente qui.', 2, '2011-10-21 14:52:41.751101', '2011-10-21 14:52:41.751101')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut perspiciatis reprehenderit quaerat totam minima qui.', 3, '2011-10-21 14:52:41.754934', '2011-10-21 14:52:41.754934')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et debitis quaerat nisi autem minima commodi.', 4, '2011-10-21 14:52:41.758872', '2011-10-21 14:52:41.758872')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Laboriosam corrupti temporibus cumque ipsum.', 5, '2011-10-21 14:52:41.762918', '2011-10-21 14:52:41.762918')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Molestias ipsum officiis consequatur doloremque non.', 6, '2011-10-21 14:52:41.766831', '2011-10-21 14:52:41.766831')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quod et perferendis mollitia omnis est.', 1, '2011-10-21 14:52:41.771919', '2011-10-21 14:52:41.771919')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('In est et qui facere nobis necessitatibus aliquid.', 2, '2011-10-21 14:52:41.776586', '2011-10-21 14:52:41.776586')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Mollitia rem rerum illum sunt vitae.', 3, '2011-10-21 14:52:41.781136', '2011-10-21 14:52:41.781136')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Omnis consequatur occaecati excepturi nam non quia cum sit.', 4, '2011-10-21 14:52:41.785393', '2011-10-21 14:52:41.785393')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Adipisci accusantium et vitae aut quod rem sint.', 5, '2011-10-21 14:52:41.789208', '2011-10-21 14:52:41.789208')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Deleniti numquam deserunt aut sit assumenda accusantium facilis possimus sunt.', 6, '2011-10-21 14:52:41.793549', '2011-10-21 14:52:41.793549')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ducimus et adipisci laboriosam earum ut accusantium reiciendis consequatur.', 1, '2011-10-21 14:52:41.799513', '2011-10-21 14:52:41.799513')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptas nobis et quisquam deserunt.', 2, '2011-10-21 14:52:41.803813', '2011-10-21 14:52:41.803813')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Deserunt quas et quis et omnis excepturi quia voluptate ut.', 3, '2011-10-21 14:52:41.808062', '2011-10-21 14:52:41.808062')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Suscipit id et voluptas molestiae adipisci iste.', 4, '2011-10-21 14:52:41.812165', '2011-10-21 14:52:41.812165')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Iusto incidunt magni aperiam necessitatibus temporibus nisi.', 5, '2011-10-21 14:52:41.816545', '2011-10-21 14:52:41.816545')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Officiis quo asperiores dolores minus et doloremque.', 6, '2011-10-21 14:52:41.820694', '2011-10-21 14:52:41.820694')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consequuntur id explicabo autem exercitationem eos molestias.', 1, '2011-10-21 14:52:41.825198', '2011-10-21 14:52:41.825198')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eveniet hic perspiciatis magni dolores.', 2, '2011-10-21 14:52:41.829209', '2011-10-21 14:52:41.829209')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Asperiores officiis in delectus ea et officia.', 3, '2011-10-21 14:52:41.833909', '2011-10-21 14:52:41.833909')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rerum voluptas sed possimus dolor vel.', 4, '2011-10-21 14:52:41.838693', '2011-10-21 14:52:41.838693')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Beatae ipsa quam soluta rem dolorem.', 5, '2011-10-21 14:52:41.843341', '2011-10-21 14:52:41.843341')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Suscipit sint nesciunt dolor nemo est autem id odit repellat.', 6, '2011-10-21 14:52:41.848250', '2011-10-21 14:52:41.848250')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Illo officiis eum rerum doloremque ut ratione libero illum tempora.', 1, '2011-10-21 14:52:41.853079', '2011-10-21 14:52:41.853079')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dolor qui id et voluptate quibusdam consequatur earum magnam.', 2, '2011-10-21 14:52:41.857462', '2011-10-21 14:52:41.857462')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut consequatur veniam ut necessitatibus suscipit quia vitae inventore.', 3, '2011-10-21 14:52:41.861983', '2011-10-21 14:52:41.861983')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui cupiditate dicta sed sit at.', 4, '2011-10-21 14:52:41.866413', '2011-10-21 14:52:41.866413')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Saepe eveniet harum asperiores eum a ipsa.', 5, '2011-10-21 14:52:41.870212', '2011-10-21 14:52:41.870212')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ducimus voluptatem voluptatem voluptas nihil.', 6, '2011-10-21 14:52:41.874318', '2011-10-21 14:52:41.874318')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Laborum possimus voluptatem voluptas quae.', 1, '2011-10-21 14:52:41.879944', '2011-10-21 14:52:41.879944')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Maxime blanditiis debitis incidunt et.', 2, '2011-10-21 14:52:41.884579', '2011-10-21 14:52:41.884579')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et dignissimos repudiandae sit dolore architecto quisquam perferendis laborum.', 3, '2011-10-21 14:52:41.889163', '2011-10-21 14:52:41.889163')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nisi quibusdam laudantium cumque ab quia.', 4, '2011-10-21 14:52:41.893215', '2011-10-21 14:52:41.893215')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sunt error harum facilis tenetur vel atque.', 5, '2011-10-21 14:52:41.898199', '2011-10-21 14:52:41.898199')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatum et facilis esse deleniti.', 6, '2011-10-21 14:52:41.902883', '2011-10-21 14:52:41.902883')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Corporis voluptatem dolor sit similique.', 1, '2011-10-21 14:52:41.908657', '2011-10-21 14:52:41.908657')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut ea unde asperiores sit ducimus laborum recusandae doloremque.', 2, '2011-10-21 14:52:41.913346', '2011-10-21 14:52:41.913346')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Assumenda at dolores dolorem maxime voluptatem reiciendis.', 3, '2011-10-21 14:52:41.917824', '2011-10-21 14:52:41.917824')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('A sit sed voluptatem qui suscipit accusantium iure dolores et.', 4, '2011-10-21 14:52:41.922047', '2011-10-21 14:52:41.922047')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quas assumenda impedit ab iure aut aut.', 5, '2011-10-21 14:52:41.926246', '2011-10-21 14:52:41.926246')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Iure et sapiente porro ut dolor hic alias est reiciendis.', 6, '2011-10-21 14:52:41.930327', '2011-10-21 14:52:41.930327')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rerum officia repellat fugit praesentium quo error.', 1, '2011-10-21 14:52:41.936115', '2011-10-21 14:52:41.936115')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut ut saepe vel nam possimus molestiae voluptates reprehenderit.', 2, '2011-10-21 14:52:41.940368', '2011-10-21 14:52:41.940368')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Enim ex et architecto rerum ea quaerat.', 3, '2011-10-21 14:52:41.944641', '2011-10-21 14:52:41.944641')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Excepturi et vero distinctio enim laudantium et qui nemo magnam.', 4, '2011-10-21 14:52:41.949189', '2011-10-21 14:52:41.949189')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ut quam consequatur minima velit.', 5, '2011-10-21 14:52:41.953944', '2011-10-21 14:52:41.953944')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ducimus quos placeat laborum cupiditate aliquid quaerat numquam nihil.', 6, '2011-10-21 14:52:41.958376', '2011-10-21 14:52:41.958376')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Est provident dolor exercitationem iure temporibus illo quia cupiditate in.', 1, '2011-10-21 14:52:41.963100', '2011-10-21 14:52:41.963100')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dolorem consequatur atque doloremque neque laborum dolore.', 2, '2011-10-21 14:52:41.967172', '2011-10-21 14:52:41.967172')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vel similique pariatur qui enim assumenda explicabo doloremque.', 3, '2011-10-21 14:52:41.971708', '2011-10-21 14:52:41.971708')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eveniet eius est esse error aperiam laborum minima ea.', 4, '2011-10-21 14:52:41.975719', '2011-10-21 14:52:41.975719')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quos excepturi aut qui enim.', 5, '2011-10-21 14:52:41.981010', '2011-10-21 14:52:41.981010')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatibus et est dolorem recusandae ipsam optio ut hic mollitia.', 6, '2011-10-21 14:52:41.985766', '2011-10-21 14:52:41.985766')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Cum ut et laborum voluptatem animi commodi.', 1, '2011-10-21 14:52:41.991298', '2011-10-21 14:52:41.991298')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Assumenda voluptate unde molestias itaque fugit.', 2, '2011-10-21 14:52:41.996244', '2011-10-21 14:52:41.996244')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vero voluptas aliquid accusantium quam.', 3, '2011-10-21 14:52:42.000583', '2011-10-21 14:52:42.000583')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sint deleniti error architecto dolore beatae nisi a sed.', 4, '2011-10-21 14:52:42.005162', '2011-10-21 14:52:42.005162')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et quae est ipsa velit quo quo et qui.', 5, '2011-10-21 14:52:42.009341', '2011-10-21 14:52:42.009341')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Itaque ad est repellendus debitis.', 6, '2011-10-21 14:52:42.014233', '2011-10-21 14:52:42.014233')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Corporis qui et quia dolorem.', 1, '2011-10-21 14:52:42.019526', '2011-10-21 14:52:42.019526')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quae iusto et velit quibusdam quisquam et natus facere.', 2, '2011-10-21 14:52:42.024614', '2011-10-21 14:52:42.024614')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Id rerum non in excepturi consectetur.', 3, '2011-10-21 14:52:42.029381', '2011-10-21 14:52:42.029381')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Tenetur explicabo sit officiis deserunt recusandae.', 4, '2011-10-21 14:52:42.033457', '2011-10-21 14:52:42.033457')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nihil iste tempora at doloremque vel sint.', 5, '2011-10-21 14:52:42.069071', '2011-10-21 14:52:42.069071')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nihil sint praesentium reprehenderit sequi sint natus consequatur.', 6, '2011-10-21 14:52:42.073819', '2011-10-21 14:52:42.073819')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Iste tempora aut officia cum at quisquam.', 1, '2011-10-21 14:52:42.078771', '2011-10-21 14:52:42.078771')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ducimus sint et voluptate esse ipsam.', 2, '2011-10-21 14:52:42.082800', '2011-10-21 14:52:42.082800')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sint voluptas nemo laudantium qui quo voluptas quas id.', 3, '2011-10-21 14:52:42.087314', '2011-10-21 14:52:42.087314')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rerum qui aliquid quod optio beatae nulla molestiae sint.', 4, '2011-10-21 14:52:42.092247', '2011-10-21 14:52:42.092247')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Delectus dolor debitis id rem aut magni.', 5, '2011-10-21 14:52:42.096914', '2011-10-21 14:52:42.096914')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Porro dicta aut maxime earum est unde.', 6, '2011-10-21 14:52:42.101147', '2011-10-21 14:52:42.101147')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Doloremque itaque odit est non neque ut asperiores sint.', 1, '2011-10-21 14:52:42.106042', '2011-10-21 14:52:42.106042')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nihil reiciendis et nostrum asperiores.', 2, '2011-10-21 14:52:42.110467', '2011-10-21 14:52:42.110467')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Labore quod consequatur sit perspiciatis accusantium ad sint dignissimos.', 3, '2011-10-21 14:52:42.114856', '2011-10-21 14:52:42.114856')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sit non dolor autem dolor ut ut et.', 4, '2011-10-21 14:52:42.119368', '2011-10-21 14:52:42.119368')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dolorum modi error quo quibusdam maiores eius rem facere.', 5, '2011-10-21 14:52:42.125113', '2011-10-21 14:52:42.125113')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Velit dolores ut in velit.', 6, '2011-10-21 14:52:42.129370', '2011-10-21 14:52:42.129370')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et nam perferendis iste delectus fugit debitis.', 1, '2011-10-21 14:52:42.135176', '2011-10-21 14:52:42.135176')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut quis quam enim est aliquam dicta ex et.', 2, '2011-10-21 14:52:42.140545', '2011-10-21 14:52:42.140545')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sed quis consequuntur sed dolorem voluptatem vitae explicabo.', 3, '2011-10-21 14:52:42.145117', '2011-10-21 14:52:42.145117')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sed totam officiis illum iure sed aut commodi.', 4, '2011-10-21 14:52:42.148921', '2011-10-21 14:52:42.148921')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Temporibus rerum in similique repellendus minima dolor libero.', 5, '2011-10-21 14:52:42.153516', '2011-10-21 14:52:42.153516')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Distinctio similique qui nisi animi recusandae saepe.', 6, '2011-10-21 14:52:42.158622', '2011-10-21 14:52:42.158622')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nihil ipsa voluptatibus repudiandae debitis quia consequatur.', 1, '2011-10-21 14:52:42.163618', '2011-10-21 14:52:42.163618')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ullam atque aperiam et reprehenderit corporis eos nulla ut consequuntur.', 2, '2011-10-21 14:52:42.168121', '2011-10-21 14:52:42.168121')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Saepe voluptatem eveniet voluptates vero distinctio sed.', 3, '2011-10-21 14:52:42.172482', '2011-10-21 14:52:42.172482')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rerum quisquam quibusdam dolor et nostrum commodi perferendis.', 4, '2011-10-21 14:52:42.176698', '2011-10-21 14:52:42.176698')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Assumenda commodi sit vel esse quia quam.', 5, '2011-10-21 14:52:42.181310', '2011-10-21 14:52:42.181310')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Saepe aut nisi voluptatibus incidunt odit rem non.', 6, '2011-10-21 14:52:42.185064', '2011-10-21 14:52:42.185064')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ut aut velit occaecati quis sit eveniet quod.', 1, '2011-10-21 14:52:42.190728', '2011-10-21 14:52:42.190728')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Magnam ipsum asperiores tenetur dolorum deleniti aliquid a assumenda.', 2, '2011-10-21 14:52:42.194742', '2011-10-21 14:52:42.194742')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum ut voluptatibus explicabo dolorem et omnis totam.', 3, '2011-10-21 14:52:42.199041', '2011-10-21 14:52:42.199041')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Magnam cumque sequi eos reprehenderit quis deserunt quia quam neque.', 4, '2011-10-21 14:52:42.203402', '2011-10-21 14:52:42.203402')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Architecto ullam nulla voluptate consequuntur ut.', 5, '2011-10-21 14:52:42.207590', '2011-10-21 14:52:42.207590')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dolorem omnis laboriosam maiores debitis iure.', 6, '2011-10-21 14:52:42.212052', '2011-10-21 14:52:42.212052')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Neque modi ad placeat commodi quisquam.', 1, '2011-10-21 14:52:42.217274', '2011-10-21 14:52:42.217274')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Atque et laboriosam natus temporibus.', 2, '2011-10-21 14:52:42.221720', '2011-10-21 14:52:42.221720')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Omnis quidem impedit inventore soluta ratione similique in nemo.', 3, '2011-10-21 14:52:42.226210', '2011-10-21 14:52:42.226210')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Saepe unde repellendus qui ut fugiat sunt et voluptas.', 4, '2011-10-21 14:52:42.230731', '2011-10-21 14:52:42.230731')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et ratione velit tempora aut in facilis.', 5, '2011-10-21 14:52:42.235372', '2011-10-21 14:52:42.235372')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Laboriosam ipsum sunt magni sapiente tenetur voluptate provident consequuntur.', 6, '2011-10-21 14:52:42.239606', '2011-10-21 14:52:42.239606')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Repudiandae odit nesciunt eos consequuntur amet qui nam voluptatum.', 1, '2011-10-21 14:52:42.244821', '2011-10-21 14:52:42.244821')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Reiciendis velit voluptate provident sit consequatur.', 2, '2011-10-21 14:52:42.248679', '2011-10-21 14:52:42.248679')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Iure repellendus earum doloribus unde laborum qui.', 3, '2011-10-21 14:52:42.253107', '2011-10-21 14:52:42.253107')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Minima mollitia quasi quaerat in quia aliquam.', 4, '2011-10-21 14:52:42.258104', '2011-10-21 14:52:42.258104')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vel dignissimos corrupti ipsam possimus minima tempore maxime sunt.', 5, '2011-10-21 14:52:42.262810', '2011-10-21 14:52:42.262810')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Numquam fuga ipsum rem quae et doloribus doloremque dolorem.', 6, '2011-10-21 14:52:42.267206', '2011-10-21 14:52:42.267206')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut tenetur ullam ipsum explicabo unde omnis nihil recusandae.', 1, '2011-10-21 14:52:42.272053', '2011-10-21 14:52:42.272053')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui quisquam quae ut pariatur totam nemo consectetur.', 2, '2011-10-21 14:52:42.276569', '2011-10-21 14:52:42.276569')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Fugiat quia in pariatur maiores officiis temporibus.', 3, '2011-10-21 14:52:42.281580', '2011-10-21 14:52:42.281580')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quia suscipit excepturi corrupti esse qui.', 4, '2011-10-21 14:52:42.286438', '2011-10-21 14:52:42.286438')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Minima error sit sint modi tempora officia.', 5, '2011-10-21 14:52:42.291112', '2011-10-21 14:52:42.291112')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Excepturi eaque harum et quae odit eius.', 6, '2011-10-21 14:52:42.295116', '2011-10-21 14:52:42.295116')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ea quae deleniti et quo doloribus et repellendus sunt.', 1, '2011-10-21 14:52:42.300336', '2011-10-21 14:52:42.300336')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Beatae a dolorem reprehenderit consequatur in est minima rerum aut.', 2, '2011-10-21 14:52:42.304086', '2011-10-21 14:52:42.304086')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et ea nihil ab omnis exercitationem.', 3, '2011-10-21 14:52:42.308158', '2011-10-21 14:52:42.308158')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eligendi soluta aut sed at exercitationem quod qui modi voluptas.', 4, '2011-10-21 14:52:42.312450', '2011-10-21 14:52:42.312450')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nihil libero sit ut optio dignissimos quae aspernatur ad.', 5, '2011-10-21 14:52:42.317090', '2011-10-21 14:52:42.317090')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui voluptatibus optio nisi omnis pariatur.', 6, '2011-10-21 14:52:42.322807', '2011-10-21 14:52:42.322807')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Provident reprehenderit quisquam non numquam nisi facilis.', 1, '2011-10-21 14:52:42.327998', '2011-10-21 14:52:42.327998')[0m
+  [1m[35mAREL (1.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Perferendis qui culpa laudantium optio.', 2, '2011-10-21 14:52:42.332604', '2011-10-21 14:52:42.332604')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eius sapiente corrupti quisquam est iusto dolores.', 3, '2011-10-21 14:52:42.338194', '2011-10-21 14:52:42.338194')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ipsa ut molestiae odit fugiat blanditiis consequuntur animi totam et.', 4, '2011-10-21 14:52:42.343084', '2011-10-21 14:52:42.343084')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eum consequuntur ipsam ea quia molestiae illum sint.', 5, '2011-10-21 14:52:42.348404', '2011-10-21 14:52:42.348404')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Consequuntur qui amet voluptatem possimus ut velit.', 6, '2011-10-21 14:52:42.353134', '2011-10-21 14:52:42.353134')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui facilis quia quo cumque et.', 1, '2011-10-21 14:52:42.358663', '2011-10-21 14:52:42.358663')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Esse pariatur ad tempore dolores corporis ipsum odit qui.', 2, '2011-10-21 14:52:42.363309', '2011-10-21 14:52:42.363309')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Non expedita impedit eligendi et molestiae molestias doloribus.', 3, '2011-10-21 14:52:42.367600', '2011-10-21 14:52:42.367600')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ad sit qui fugiat quisquam ut.', 4, '2011-10-21 14:52:42.371659', '2011-10-21 14:52:42.371659')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Illo magnam voluptate debitis sit quod est omnis.', 5, '2011-10-21 14:52:42.376426', '2011-10-21 14:52:42.376426')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ipsum vitae aut in numquam.', 6, '2011-10-21 14:52:42.381221', '2011-10-21 14:52:42.381221')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Est voluptatem sed deserunt sapiente.', 1, '2011-10-21 14:52:42.386913', '2011-10-21 14:52:42.386913')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ut consequatur facilis non ab qui id.', 2, '2011-10-21 14:52:42.391488', '2011-10-21 14:52:42.391488')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et nemo vel molestiae dolorem molestias hic adipisci et quaerat.', 3, '2011-10-21 14:52:42.395791', '2011-10-21 14:52:42.395791')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Facere ab voluptas aut aut eum cum quia repellendus.', 4, '2011-10-21 14:52:42.400708', '2011-10-21 14:52:42.400708')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ipsum nulla quidem voluptas iure sapiente assumenda aliquid quam ducimus.', 5, '2011-10-21 14:52:42.404793', '2011-10-21 14:52:42.404793')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quis sit ut nostrum nam fuga aliquam ab qui eos.', 6, '2011-10-21 14:52:42.408903', '2011-10-21 14:52:42.408903')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatibus consectetur illum labore dolorem quia suscipit unde.', 1, '2011-10-21 14:52:42.414874', '2011-10-21 14:52:42.414874')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Laborum est cumque velit voluptas et modi est suscipit.', 2, '2011-10-21 14:52:42.419625', '2011-10-21 14:52:42.419625')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Doloremque sed omnis inventore maxime repellat recusandae optio aut.', 3, '2011-10-21 14:52:42.423898', '2011-10-21 14:52:42.423898')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Necessitatibus omnis et soluta illum.', 4, '2011-10-21 14:52:42.427970', '2011-10-21 14:52:42.427970')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Expedita quo vitae velit illum temporibus.', 5, '2011-10-21 14:52:42.432747', '2011-10-21 14:52:42.432747')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Qui quasi minima voluptatem sed minus beatae unde voluptatem consequatur.', 6, '2011-10-21 14:52:42.436979', '2011-10-21 14:52:42.436979')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sit dolorem similique asperiores suscipit deserunt et voluptas nobis et.', 1, '2011-10-21 14:52:42.442336', '2011-10-21 14:52:42.442336')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Facere explicabo maiores amet ipsam quis quod pariatur omnis.', 2, '2011-10-21 14:52:42.447696', '2011-10-21 14:52:42.447696')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Error fuga ut ut assumenda aliquid in tempore totam.', 3, '2011-10-21 14:52:42.452931', '2011-10-21 14:52:42.452931')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Blanditiis cum accusantium et perspiciatis magni quaerat maiores illum.', 4, '2011-10-21 14:52:42.457982', '2011-10-21 14:52:42.457982')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Veritatis quod unde accusamus impedit cumque.', 5, '2011-10-21 14:52:42.462684', '2011-10-21 14:52:42.462684')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Enim eveniet placeat aperiam expedita unde.', 6, '2011-10-21 14:52:42.467081', '2011-10-21 14:52:42.467081')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Maxime accusamus vitae quae in iusto sint non nesciunt.', 1, '2011-10-21 14:52:42.472005', '2011-10-21 14:52:42.472005')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Velit enim nam vel beatae occaecati architecto.', 2, '2011-10-21 14:52:42.477074', '2011-10-21 14:52:42.477074')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Esse est ut unde doloribus assumenda dolore rerum.', 3, '2011-10-21 14:52:42.481528', '2011-10-21 14:52:42.481528')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Possimus consequatur reiciendis consequuntur laboriosam quae nobis tempore.', 4, '2011-10-21 14:52:42.485886', '2011-10-21 14:52:42.485886')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et consequuntur corrupti recusandae velit.', 5, '2011-10-21 14:52:42.490281', '2011-10-21 14:52:42.490281')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sapiente atque voluptate esse velit expedita alias.', 6, '2011-10-21 14:52:42.494769', '2011-10-21 14:52:42.494769')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Alias cum necessitatibus sapiente occaecati.', 1, '2011-10-21 14:52:42.499803', '2011-10-21 14:52:42.499803')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Perferendis saepe tenetur est esse consequatur enim quisquam officiis.', 2, '2011-10-21 14:52:42.504230', '2011-10-21 14:52:42.504230')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Rerum doloremque ut eligendi qui et voluptas fugiat quia.', 3, '2011-10-21 14:52:42.508959', '2011-10-21 14:52:42.508959')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Accusamus est occaecati enim voluptas nihil unde qui officia.', 4, '2011-10-21 14:52:42.514061', '2011-10-21 14:52:42.514061')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Cupiditate et autem eos distinctio excepturi est.', 5, '2011-10-21 14:52:42.518728', '2011-10-21 14:52:42.518728')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Minima exercitationem odio est aut dolores hic.', 6, '2011-10-21 14:52:42.523279', '2011-10-21 14:52:42.523279')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nisi dolorum sunt iste sed inventore voluptatibus nulla.', 1, '2011-10-21 14:52:42.528495', '2011-10-21 14:52:42.528495')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ea assumenda qui optio laborum minus sunt itaque.', 2, '2011-10-21 14:52:42.563755', '2011-10-21 14:52:42.563755')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptates aut at iure temporibus quo molestiae vitae magni velit.', 3, '2011-10-21 14:52:42.568225', '2011-10-21 14:52:42.568225')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ab et consequatur perspiciatis vel nostrum voluptatem maxime.', 4, '2011-10-21 14:52:42.572644', '2011-10-21 14:52:42.572644')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sed mollitia vitae sapiente ipsam ea qui maxime est et.', 5, '2011-10-21 14:52:42.577570', '2011-10-21 14:52:42.577570')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Assumenda voluptas sit dolorem dolor dicta enim sed sunt.', 6, '2011-10-21 14:52:42.582252', '2011-10-21 14:52:42.582252')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Laborum similique ea quo quo debitis.', 1, '2011-10-21 14:52:42.587638', '2011-10-21 14:52:42.587638')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Nobis magnam similique quidem labore officiis vero iure officia animi.', 2, '2011-10-21 14:52:42.592124', '2011-10-21 14:52:42.592124')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Est dolorem praesentium harum facilis libero maiores.', 3, '2011-10-21 14:52:42.596745', '2011-10-21 14:52:42.596745')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quia eum rerum quo est ea aliquid veniam suscipit.', 4, '2011-10-21 14:52:42.602033', '2011-10-21 14:52:42.602033')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Perspiciatis vel veritatis sed distinctio aut quia dolores.', 5, '2011-10-21 14:52:42.606045', '2011-10-21 14:52:42.606045')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut reprehenderit quo recusandae aliquid.', 6, '2011-10-21 14:52:42.610768', '2011-10-21 14:52:42.610768')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatem soluta et facilis tenetur ipsum ipsa inventore ducimus.', 1, '2011-10-21 14:52:42.616510', '2011-10-21 14:52:42.616510')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Est atque mollitia pariatur itaque quas aliquid illum iure.', 2, '2011-10-21 14:52:42.621335', '2011-10-21 14:52:42.621335')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Officia tenetur sed sunt est et et doloribus est aut.', 3, '2011-10-21 14:52:42.625702', '2011-10-21 14:52:42.625702')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Reprehenderit blanditiis aut qui asperiores aspernatur.', 4, '2011-10-21 14:52:42.630228', '2011-10-21 14:52:42.630228')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Praesentium quo esse molestiae nihil omnis dolorum nihil sequi soluta.', 5, '2011-10-21 14:52:42.635333', '2011-10-21 14:52:42.635333')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quam pariatur dolor dolores consectetur exercitationem ipsa aut inventore dolorem.', 6, '2011-10-21 14:52:42.639548', '2011-10-21 14:52:42.639548')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Est ut culpa reiciendis recusandae et.', 1, '2011-10-21 14:52:42.645176', '2011-10-21 14:52:42.645176')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Excepturi accusantium provident officia rerum vitae.', 2, '2011-10-21 14:52:42.649871', '2011-10-21 14:52:42.649871')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Reiciendis dolorum quasi adipisci id ea.', 3, '2011-10-21 14:52:42.655022', '2011-10-21 14:52:42.655022')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Eos qui porro eum accusamus.', 4, '2011-10-21 14:52:42.659737', '2011-10-21 14:52:42.659737')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Dicta ipsum ad architecto repellendus voluptatibus sint occaecati quis.', 5, '2011-10-21 14:52:42.663937', '2011-10-21 14:52:42.663937')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatem autem laboriosam accusantium qui animi.', 6, '2011-10-21 14:52:42.668545', '2011-10-21 14:52:42.668545')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Itaque earum amet est suscipit molestias sed mollitia.', 1, '2011-10-21 14:52:42.673004', '2011-10-21 14:52:42.673004')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatibus enim laudantium dolores voluptas.', 2, '2011-10-21 14:52:42.677515', '2011-10-21 14:52:42.677515')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Omnis consectetur consequatur nesciunt quia incidunt officiis est.', 3, '2011-10-21 14:52:42.682177', '2011-10-21 14:52:42.682177')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ab quidem accusantium mollitia ullam voluptas debitis aut suscipit.', 4, '2011-10-21 14:52:42.686666', '2011-10-21 14:52:42.686666')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Magnam occaecati qui maiores molestiae vitae soluta fugit ea atque.', 5, '2011-10-21 14:52:42.690974', '2011-10-21 14:52:42.690974')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Amet omnis nesciunt sequi soluta at et veniam.', 6, '2011-10-21 14:52:42.695020', '2011-10-21 14:52:42.695020')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Tempora dolores quia itaque sint cumque.', 1, '2011-10-21 14:52:42.700641', '2011-10-21 14:52:42.700641')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Atque sint et necessitatibus distinctio veritatis quo voluptates qui.', 2, '2011-10-21 14:52:42.705490', '2011-10-21 14:52:42.705490')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aspernatur dolores officia eos et dignissimos maiores.', 3, '2011-10-21 14:52:42.710155', '2011-10-21 14:52:42.710155')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sit cum voluptatum qui sint.', 4, '2011-10-21 14:52:42.715297', '2011-10-21 14:52:42.715297')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Iure voluptate porro odit et aut.', 5, '2011-10-21 14:52:42.719895', '2011-10-21 14:52:42.719895')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Aut eaque doloribus fuga nemo cum tempora earum eveniet ab.', 6, '2011-10-21 14:52:42.724806', '2011-10-21 14:52:42.724806')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sunt beatae iure est temporibus voluptatibus voluptates voluptatem.', 1, '2011-10-21 14:52:42.730002', '2011-10-21 14:52:42.730002')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et est voluptatem aspernatur sint praesentium.', 2, '2011-10-21 14:52:42.734796', '2011-10-21 14:52:42.734796')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Porro repellat doloribus cupiditate iusto dolores.', 3, '2011-10-21 14:52:42.740206', '2011-10-21 14:52:42.740206')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Reiciendis dolores ducimus voluptatem aliquid.', 4, '2011-10-21 14:52:42.744975', '2011-10-21 14:52:42.744975')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatibus dolores recusandae sunt et natus facilis fugiat id.', 5, '2011-10-21 14:52:42.750062', '2011-10-21 14:52:42.750062')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Ex fugiat in cupiditate dignissimos.', 6, '2011-10-21 14:52:42.755333', '2011-10-21 14:52:42.755333')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" LIMIT 6
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Quas et et provident aspernatur quae facilis rerum illum.', 1, '2011-10-21 14:52:42.761077', '2011-10-21 14:52:42.761077')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vitae ducimus deleniti est qui et doloribus.', 2, '2011-10-21 14:52:42.765136', '2011-10-21 14:52:42.765136')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Vel ducimus sed id in.', 3, '2011-10-21 14:52:42.769893', '2011-10-21 14:52:42.769893')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Earum quaerat aut et dolorem dicta quo.', 4, '2011-10-21 14:52:42.773946', '2011-10-21 14:52:42.773946')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Fugit non consequatur quasi facere.', 5, '2011-10-21 14:52:42.778695', '2011-10-21 14:52:42.778695')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Et occaecati corporis consequatur consequatur nihil beatae assumenda sit.', 6, '2011-10-21 14:52:42.783481', '2011-10-21 14:52:42.783481')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 6[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Necessitatibus ut maiores sunt voluptatem aut dolorem rerum eos.', 1, '2011-10-21 14:52:42.788595', '2011-10-21 14:52:42.788595')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Cumque et et cupiditate doloremque vel nostrum quia.', 2, '2011-10-21 14:52:42.793178', '2011-10-21 14:52:42.793178')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Voluptatum cumque omnis iure quidem qui.', 3, '2011-10-21 14:52:42.797344', '2011-10-21 14:52:42.797344')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Provident officia repudiandae nulla molestiae vero possimus non nam.', 4, '2011-10-21 14:52:42.801926', '2011-10-21 14:52:42.801926')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sint quo incidunt quia blanditiis aliquid consequuntur reprehenderit.', 5, '2011-10-21 14:52:42.806587', '2011-10-21 14:52:42.806587')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ('Sed quis illum quisquam omnis.', 6, '2011-10-21 14:52:42.810846', '2011-10-21 14:52:42.810846')[0m
+  [1m[35mUser Load (4.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 2, '2011-10-21 14:52:42.836597', '2011-10-21 14:52:42.836597')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 3, '2011-10-21 14:52:42.845357', '2011-10-21 14:52:42.845357')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 4, '2011-10-21 14:52:42.849625', '2011-10-21 14:52:42.849625')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 5, '2011-10-21 14:52:42.853348', '2011-10-21 14:52:42.853348')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 6, '2011-10-21 14:52:42.857275', '2011-10-21 14:52:42.857275')[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 7, '2011-10-21 14:52:42.861246', '2011-10-21 14:52:42.861246')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 8, '2011-10-21 14:52:42.866017', '2011-10-21 14:52:42.866017')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 9, '2011-10-21 14:52:42.869757', '2011-10-21 14:52:42.869757')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 10, '2011-10-21 14:52:42.873442', '2011-10-21 14:52:42.873442')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 11, '2011-10-21 14:52:42.877145', '2011-10-21 14:52:42.877145')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 12, '2011-10-21 14:52:42.880474', '2011-10-21 14:52:42.880474')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 13, '2011-10-21 14:52:42.884055', '2011-10-21 14:52:42.884055')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 14, '2011-10-21 14:52:42.887736', '2011-10-21 14:52:42.887736')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 15, '2011-10-21 14:52:42.891484', '2011-10-21 14:52:42.891484')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 16, '2011-10-21 14:52:42.895881', '2011-10-21 14:52:42.895881')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 17, '2011-10-21 14:52:42.900253', '2011-10-21 14:52:42.900253')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 18, '2011-10-21 14:52:42.903803', '2011-10-21 14:52:42.903803')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 19, '2011-10-21 14:52:42.907831', '2011-10-21 14:52:42.907831')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 20, '2011-10-21 14:52:42.912374', '2011-10-21 14:52:42.912374')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 21, '2011-10-21 14:52:42.915706', '2011-10-21 14:52:42.915706')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 22, '2011-10-21 14:52:42.919247', '2011-10-21 14:52:42.919247')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 23, '2011-10-21 14:52:42.923033', '2011-10-21 14:52:42.923033')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 24, '2011-10-21 14:52:42.926618', '2011-10-21 14:52:42.926618')[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 25, '2011-10-21 14:52:42.930570', '2011-10-21 14:52:42.930570')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 26, '2011-10-21 14:52:42.935206', '2011-10-21 14:52:42.935206')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 27, '2011-10-21 14:52:42.938661', '2011-10-21 14:52:42.938661')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 28, '2011-10-21 14:52:42.942768', '2011-10-21 14:52:42.942768')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 29, '2011-10-21 14:52:42.947179', '2011-10-21 14:52:42.947179')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 30, '2011-10-21 14:52:42.950615', '2011-10-21 14:52:42.950615')[0m
+  [1m[35mAREL (0.7ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 31, '2011-10-21 14:52:42.954505', '2011-10-21 14:52:42.954505')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 32, '2011-10-21 14:52:42.959304', '2011-10-21 14:52:42.959304')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 33, '2011-10-21 14:52:42.962918', '2011-10-21 14:52:42.962918')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 34, '2011-10-21 14:52:42.967056', '2011-10-21 14:52:42.967056')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 35, '2011-10-21 14:52:42.971529', '2011-10-21 14:52:42.971529')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 36, '2011-10-21 14:52:42.975215', '2011-10-21 14:52:42.975215')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 37, '2011-10-21 14:52:42.979593', '2011-10-21 14:52:42.979593')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 38, '2011-10-21 14:52:42.983759', '2011-10-21 14:52:42.983759')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 39, '2011-10-21 14:52:42.988183', '2011-10-21 14:52:42.988183')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 40, '2011-10-21 14:52:42.992196', '2011-10-21 14:52:42.992196')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 41, '2011-10-21 14:52:42.996099', '2011-10-21 14:52:42.996099')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 42, '2011-10-21 14:52:43.000660', '2011-10-21 14:52:43.000660')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 43, '2011-10-21 14:52:43.005419', '2011-10-21 14:52:43.005419')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 44, '2011-10-21 14:52:43.009903', '2011-10-21 14:52:43.009903')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 45, '2011-10-21 14:52:43.014419', '2011-10-21 14:52:43.014419')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 46, '2011-10-21 14:52:43.018157', '2011-10-21 14:52:43.018157')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 47, '2011-10-21 14:52:43.022538', '2011-10-21 14:52:43.022538')
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 48, '2011-10-21 14:52:43.027416', '2011-10-21 14:52:43.027416')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 49, '2011-10-21 14:52:43.032544', '2011-10-21 14:52:43.032544')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 50, '2011-10-21 14:52:43.037045', '2011-10-21 14:52:43.037045')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (1, 51, '2011-10-21 14:52:43.041060', '2011-10-21 14:52:43.041060')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (4, 1, '2011-10-21 14:52:43.045670', '2011-10-21 14:52:43.045670')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (5, 1, '2011-10-21 14:52:43.049798', '2011-10-21 14:52:43.049798')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (6, 1, '2011-10-21 14:52:43.054008', '2011-10-21 14:52:43.054008')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (7, 1, '2011-10-21 14:52:43.058206', '2011-10-21 14:52:43.058206')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (8, 1, '2011-10-21 14:52:43.062372', '2011-10-21 14:52:43.062372')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (9, 1, '2011-10-21 14:52:43.066602', '2011-10-21 14:52:43.066602')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (10, 1, '2011-10-21 14:52:43.071584', '2011-10-21 14:52:43.071584')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (11, 1, '2011-10-21 14:52:43.076439', '2011-10-21 14:52:43.076439')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (12, 1, '2011-10-21 14:52:43.080738', '2011-10-21 14:52:43.080738')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (13, 1, '2011-10-21 14:52:43.084827', '2011-10-21 14:52:43.084827')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (14, 1, '2011-10-21 14:52:43.089082', '2011-10-21 14:52:43.089082')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (15, 1, '2011-10-21 14:52:43.093744', '2011-10-21 14:52:43.093744')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (16, 1, '2011-10-21 14:52:43.133054', '2011-10-21 14:52:43.133054')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (17, 1, '2011-10-21 14:52:43.137435', '2011-10-21 14:52:43.137435')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (18, 1, '2011-10-21 14:52:43.140933', '2011-10-21 14:52:43.140933')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (19, 1, '2011-10-21 14:52:43.144764', '2011-10-21 14:52:43.144764')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (20, 1, '2011-10-21 14:52:43.149060', '2011-10-21 14:52:43.149060')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (21, 1, '2011-10-21 14:52:43.153677', '2011-10-21 14:52:43.153677')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (22, 1, '2011-10-21 14:52:43.158083', '2011-10-21 14:52:43.158083')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (23, 1, '2011-10-21 14:52:43.162049', '2011-10-21 14:52:43.162049')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (24, 1, '2011-10-21 14:52:43.166493', '2011-10-21 14:52:43.166493')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (25, 1, '2011-10-21 14:52:43.171187', '2011-10-21 14:52:43.171187')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (26, 1, '2011-10-21 14:52:43.175117', '2011-10-21 14:52:43.175117')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (27, 1, '2011-10-21 14:52:43.179696', '2011-10-21 14:52:43.179696')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (28, 1, '2011-10-21 14:52:43.183933', '2011-10-21 14:52:43.183933')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (29, 1, '2011-10-21 14:52:43.188769', '2011-10-21 14:52:43.188769')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (30, 1, '2011-10-21 14:52:43.193447', '2011-10-21 14:52:43.193447')[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (31, 1, '2011-10-21 14:52:43.197631', '2011-10-21 14:52:43.197631')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (32, 1, '2011-10-21 14:52:43.202390', '2011-10-21 14:52:43.202390')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (33, 1, '2011-10-21 14:52:43.205808', '2011-10-21 14:52:43.205808')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (34, 1, '2011-10-21 14:52:43.210153', '2011-10-21 14:52:43.210153')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (35, 1, '2011-10-21 14:52:43.214559', '2011-10-21 14:52:43.214559')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (36, 1, '2011-10-21 14:52:43.218379', '2011-10-21 14:52:43.218379')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (37, 1, '2011-10-21 14:52:43.222541', '2011-10-21 14:52:43.222541')
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (38, 1, '2011-10-21 14:52:43.227212', '2011-10-21 14:52:43.227212')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (39, 1, '2011-10-21 14:52:43.231499', '2011-10-21 14:52:43.231499')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (40, 1, '2011-10-21 14:52:43.235697', '2011-10-21 14:52:43.235697')[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "relationships" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (41, 1, '2011-10-21 14:52:43.239492', '2011-10-21 14:52:43.239492')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-10-21 16:53:31 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+Completed 404 Not Found in 44ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project with ID=3):
+  app/controllers/projects_controller.rb:7:in `show'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 16:53:37 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-21 14:53:39.027731', '2011-10-21 14:53:39.027731')[0m
+Completed 500 Internal Server Error in 1068ms
+
+NoMethodError (undefined method `address_components_of_type' for #<Project:0x1d7e1b8>):
+  app/models/project.rb:11:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-21 16:53:46 +0200
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 153ms (Views: 38.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-10-21 16:53:53 +0200
+
+ActionController::RoutingError (No route matches "/projects"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 16:53:58 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (162.9ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (50.7ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (224.3ms)
+Completed 200 OK in 281ms (Views: 241.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 16:54:04 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-21 14:54:05.568725', '2011-10-21 14:54:05.568725')
+Completed 500 Internal Server Error in 767ms
+
+NoMethodError (undefined method `address_components_of_type' for #<Project:0x32fcabc>):
+  app/models/project.rb:11:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (85.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 16:54:41 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-21 14:54:42.258573', '2011-10-21 14:54:42.258573')[0m
+Completed 500 Internal Server Error in 346ms
+
+NoMethodError (undefined method `address_components_of_type' for #<Project:0x2b11dac>):
+  app/models/project.rb:11:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-10-21 16:54:45 +0200
+
+ActionController::RoutingError (No route matches "/projects"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-10-21 16:55:25 +0200
+
+ActionController::RoutingError (No route matches "/projects"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-10-21 16:55:37 +0200
+
+ActionController::RoutingError (No route matches "/projects"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 16:55:57 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (101.8ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (104.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (222.1ms)
+Completed 200 OK in 259ms (Views: 227.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 16:56:02 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-21 14:56:02.959092', '2011-10-21 14:56:02.959092')
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 881ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2011-10-21 16:56:03 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (106.4ms)
+Completed 200 OK in 161ms (Views: 111.7ms | ActiveRecord: 1.2ms)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-21 17:06:06 +0200
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (3.1ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 74ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 17:06:14 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (14.4ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 127ms (Views: 109.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 17:06:41 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"79 Unwin Drive, Hamilton, NJ", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '79 Unwin Drive, Hamilton, NJ', NULL, NULL, '', '2011-10-21 15:06:41.923294', '2011-10-21 15:06:41.923294')
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 69ms
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2011-10-21 17:06:41 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 2 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (103.8ms)
+Completed 200 OK in 128ms (Views: 108.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 17:10:47 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (46.0ms)
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (54.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (110.4ms)
+Completed 200 OK in 132ms (Views: 114.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 17:10:54 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"San Francisco, CA", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'San Francisco, CA', 37.7749295, -122.4194155, '', '2011-10-21 15:10:54.607039', '2011-10-21 15:10:54.607039')
+Redirected to http://localhost:3000/projects/3
+Completed 302 Found in 426ms
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-10-21 17:10:54 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (104.3ms)
+Completed 200 OK in 129ms (Views: 108.6ms | ActiveRecord: 1.1ms)
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
