@@ -1,0 +1,27 @@
+<% title "Projects" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Address</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>State</th>
+  </tr>
+  <% for project in @projects %>
+    <tr>
+      <td><%= project.title %></td>
+      <td><%= project.user_id %></td>
+      <td><%= project.address %></td>
+      <td><%= project.latitude %></td>
+      <td><%= project.longitude %></td>
+      <td><%= project.state %></td>
+      <td><%= link_to "Show", project %></td>
+      <td><%= link_to "Edit", edit_project_path(project) %></td>
+      <td><%= link_to "Destroy", project, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Project", new_project_path %></p>

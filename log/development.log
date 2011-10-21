@@ -317,3 +317,286 @@ DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3
   [1m[35mSQL (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822233125')
   [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829021049')[0m
   [1m[35mSQL (2.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829210229')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (9.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111021125458')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("microposts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_microposts_on_user_id_and_created_at')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id_and_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-21 15:03:16 +0200
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mMicropost Load (12.7ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_micropost_form.html.erb (7.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered shared/_feed_item.html.erb (97.1ms)
+Rendered shared/_feed.html.erb (98.8ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (6.7ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))[0m
+Rendered shared/_stats.html.erb (28.2ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (2.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (233.1ms)
+Completed 200 OK in 389ms (Views: 237.2ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 15:06:20 +0200
+
+ActionController::RoutingError (No route matches "/projects/new"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 15:06:32 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/new.html.erb within layouts/application (58.7ms)
+Completed 500 Internal Server Error in 106ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    1: <% title "New Project" %>
+    2: 
+    3: <%= render 'form' %>
+    4: 
+  app/helpers/application_helper.rb:4:in `title'
+  app/views/projects/new.html.erb:1:in `_app_views_projects_new_html_erb__382100306_6921300__458141425'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.4ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 15:08:22 +0200
+  Processing by ProjectsController#new as HTML
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_projects__form_html_erb___75966160_26783570_99425130 at /Users/mmelone12/rprojects/garden/app/views/projects/_form.html.erb:2)
+Rendered projects/_form.html.erb (15.9ms)
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (84.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/new.html.erb within layouts/application (128.1ms)
+Completed 200 OK in 147ms (Views: 132.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 15:10:08 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (15.1ms)
+Rendered projects/new.html.erb within layouts/application (17.3ms)
+Completed 500 Internal Server Error in 74ms
+
+ActionView::Template::Error (undefined local variable or method `error_messages' for #<#<Class:0x36c2214>:0x36c0d4c>):
+    1: <%= form_for @project do |f| %>
+    2:   <%= error_messages %>
+    3:   <p>
+    4:     <%= f.label :title %><br />
+    5:     <%= f.text_field :title %>
+  app/views/projects/_form.html.erb:2:in `block in _app_views_projects__form_html_erb___75966160_28699400_99425130'
+  app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb___75966160_28699400_99425130'
+  app/views/projects/new.html.erb:3:in `_app_views_projects_new_html_erb__382100306_28705000__458141425'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 15:10:28 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (18.4ms)
+Rendered projects/new.html.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (undefined local variable or method `shared' for #<#<Class:0x30b88c8>:0x308d254>):
+    1: <%= form_for @project do |f| %>
+    2:   <%= shared/error_messages %>
+    3:   <p>
+    4:     <%= f.label :title %><br />
+    5:     <%= f.text_field :title %>
+  app/views/projects/_form.html.erb:2:in `block in _app_views_projects__form_html_erb___75966160_25436440_99425130'
+  app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb___75966160_25436440_99425130'
+  app/views/projects/new.html.erb:3:in `_app_views_projects_new_html_erb__382100306_25451160__458141425'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (41.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.5ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-21 15:11:02 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (15.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (92.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 146ms (Views: 131.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-10-21 15:11:09 +0200
+
+ActionController::RoutingError (No route matches "/projects"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 15:19:03 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+  [1m[35mSQL (18.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed 500 Internal Server Error in 33ms
+
+NoMethodError (undefined method `geocoded_by' for #<Class:0x3289058>):
+  app/models/project.rb:3:in `<class:Project>'
+  app/models/project.rb:1:in `<top (required)>'
+  app/controllers/projects_controller.rb:15:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (45.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (58.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 15:20:47 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"orlando, fl", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (13.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'orlando, fl', 28.5383355, -81.3792365, '', '2011-10-21 13:20:49.494181', '2011-10-21 13:20:49.494181')
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 1305ms
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2011-10-21 15:20:49 +0200
+
+ActionController::RoutingError (No route matches "/projects/1"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 15:21:10 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-21 13:21:11.111676', '2011-10-21 13:21:11.111676')[0m
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 362ms
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2011-10-21 15:21:11 +0200
+
+ActionController::RoutingError (No route matches "/projects/2"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-21 15:23:25 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iKDTGP0ReO2PtHoX9Wtl3FxYKJWu1NljjspxEHzKVy0=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-21 13:23:26.092890', '2011-10-21 13:23:26.092890')
+Redirected to http://localhost:3000/projects/3
+Completed 302 Found in 421ms
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-10-21 15:23:26 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 60ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    1: <% title "Project" %>
+    2: 
+    3: <p>
+    4:   <strong>Title:</strong>
+  app/helpers/application_helper.rb:4:in `title'
+  app/views/projects/show.html.erb:1:in `_app_views_projects_show_html_erb___362294479_26593640__601649764'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.3ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-10-21 15:24:05 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (22.7ms)
+Completed 500 Internal Server Error in 82ms
+
+ActionView::Template::Error (undefined method `edit_project_path' for #<#<Class:0x35e81e0>:0x35e745c>):
+    24: </p>
+    25: 
+    26: <p>
+    27:   <%= link_to "Edit", edit_project_path(@project) %> |
+    28:   <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
+    29:   <%= link_to "View All", projects_path %>
+    30: </p>
+  app/views/projects/show.html.erb:27:in `_app_views_projects_show_html_erb___362294479_28259630__601649764'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-10-21 15:25:17 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (104.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (145.0ms)
+Completed 200 OK in 198ms (Views: 149.9ms | ActiveRecord: 0.7ms)
