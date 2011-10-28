@@ -37,5 +37,5 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_url, :notice => "Successfully destroyed project."
-  end
+  end   
 end

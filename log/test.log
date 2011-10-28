@@ -11517,3 +11517,91 @@ Completed 500 Internal Server Error in 36ms
 Redirected to http://test.host/projects
 Completed 302 Found in 3ms
   [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" LIMIT 1[0m
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>#<Project id: 298486374, title: "MyString", user_id: 1, address: "MyString", latitude: 1.5, longitude: 1.5, state: "MyString", created_at: "2011-10-21 15:19:15", updated_at: "2011-10-21 15:19:15">}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (35.8ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 57ms (Views: 51.4ms | ActiveRecord: 1.9ms)
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (99.6ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.9ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 110ms (Views: 108.9ms | ActiveRecord: 0.3ms)
+  Processing by ProjectsController#create as HTML
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, NULL, NULL, NULL, NULL, '2011-10-21 15:19:15.331931', '2011-10-21 15:19:15.331931')
+Redirected to http://test.host/projects/980190963
+Completed 302 Found in 32ms
+  Processing by ProjectsController#create as HTML
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, NULL, NULL, NULL, NULL, '2011-10-21 15:19:15.378312', '2011-10-21 15:19:15.378312')[0m
+Redirected to http://test.host/projects/980190963
+Completed 302 Found in 3ms
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>#<Project id: 298486374, title: "MyString", user_id: 1, address: "MyString", latitude: 1.5, longitude: 1.5, state: "MyString", created_at: "2011-10-21 15:19:15", updated_at: "2011-10-21 15:19:15">}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+Completed 500 Internal Server Error in 37ms
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+  Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>#<Project id: 298486374, title: "MyString", user_id: 1, address: "MyString", latitude: 1.5, longitude: 1.5, state: "MyString", created_at: "2011-10-21 15:19:15", updated_at: "2011-10-21 15:19:15">}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "projects" WHERE "projects"."id" = 298486374
+Redirected to http://test.host/projects
+Completed 302 Found in 2ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" LIMIT 1[0m
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>#<Project id: 298486374, title: "MyString", user_id: 1, address: "MyString", latitude: 1.5, longitude: 1.5, state: "MyString", created_at: "2011-10-21 15:19:31", updated_at: "2011-10-21 15:19:31">}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (35.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 57ms (Views: 50.9ms | ActiveRecord: 76.7ms)
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (95.1ms)
+Rendered layouts/_stylesheets.html.erb (0.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.2ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 104ms (Views: 103.6ms | ActiveRecord: 0.2ms)
+  Processing by ProjectsController#create as HTML
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, NULL, NULL, NULL, NULL, '2011-10-21 15:19:31.764963', '2011-10-21 15:19:31.764963')
+Redirected to http://test.host/projects/980190963
+Completed 302 Found in 11ms
+  Processing by ProjectsController#create as HTML
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, NULL, NULL, NULL, NULL, '2011-10-21 15:19:31.790656', '2011-10-21 15:19:31.790656')[0m
+Redirected to http://test.host/projects/980190963
+Completed 302 Found in 3ms
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>#<Project id: 298486374, title: "MyString", user_id: 1, address: "MyString", latitude: 1.5, longitude: 1.5, state: "MyString", created_at: "2011-10-21 15:19:31", updated_at: "2011-10-21 15:19:31">}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+Completed 500 Internal Server Error in 36ms
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+  Processing by ProjectsController#destroy as HTML
+  Parameters: {"id"=>#<Project id: 298486374, title: "MyString", user_id: 1, address: "MyString", latitude: 1.5, longitude: 1.5, state: "MyString", created_at: "2011-10-21 15:19:31", updated_at: "2011-10-21 15:19:31">}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "projects" WHERE "projects"."id" = 298486374
+Redirected to http://test.host/projects
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "projects" WHERE "projects"."id" = 298486374 LIMIT 1[0m

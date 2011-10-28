@@ -1781,3 +1781,1903 @@ Rendered layouts/_footer.html.erb (1.0ms)
 Rendered projects/show.html.erb within layouts/application (104.3ms)
 Completed 200 OK in 129ms (Views: 108.6ms | ActiveRecord: 1.1ms)
   [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (22.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-22 08:37:17 +0200
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (12.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 163ms (Views: 39.9ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 08:37:25 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (102.9ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (77.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (198.1ms)
+Completed 200 OK in 265ms (Views: 208.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 08:37:36 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (4.7ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', 28.514664, -81.14397799999999, '', '2011-10-22 06:37:37.514795', '2011-10-22 06:37:37.514795')
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 1081ms
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2011-10-22 08:37:37 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 4 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (82.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 131ms (Views: 111.3ms | ActiveRecord: 5.5ms)
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" LIMIT 1
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 08:49:55 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 25ms
+
+NameError (undefined local variable or method `fetch_state' for #<Project:0xf42234>):
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 08:55:10 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.5ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (80.5ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered projects/new.html.erb within layouts/application (104.3ms)
+Completed 200 OK in 126ms (Views: 108.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 08:55:30 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed 500 Internal Server Error in 1562ms
+
+NameError (undefined local variable or method `project' for #<Class:0x11a54f4>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 08:56:00 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1013ms
+
+NoMethodError (undefined method `city' for #<Array:0x250d528>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 08:56:18 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1067ms
+
+NoMethodError (undefined method `state' for #<Array:0x15f1b84>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 08:56:56 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1469ms
+
+NoMethodError (undefined method `state' for #<Array:0x13bf1cc>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 11:58:31 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1710ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 11:59:16 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2960 divisadero street, san francisco, ca', 37.797053, -122.441933, '', '2011-10-22 09:59:17.310185', '2011-10-22 09:59:17.310185')[0m
+Redirected to http://localhost:3000/projects/5
+Completed 302 Found in 392ms
+
+
+Started GET "/projects/5" for 127.0.0.1 at 2011-10-22 11:59:17 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 5 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (77.3ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (99.5ms)
+Completed 200 OK in 150ms (Views: 103.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 12:03:12 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.3ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (80.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (103.5ms)
+Completed 200 OK in 125ms (Views: 107.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:03:33 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1029ms
+
+NoMethodError (undefined method `state' for #<Array:0x205bc8c>):
+  app/models/project.rb:16:in `set_location'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:08:45 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+Completed 500 Internal Server Error in 7ms
+
+TypeError (wrong argument type Class (expected Module)):
+  app/models/project.rb:2:in `include'
+  app/models/project.rb:2:in `<class:Project>'
+  app/models/project.rb:1:in `<top (required)>'
+  app/controllers/projects_controller.rb:15:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:17:18 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+Completed 500 Internal Server Error in 7ms
+
+TypeError (wrong argument type Class (expected Module)):
+  app/models/project.rb:2:in `include'
+  app/models/project.rb:2:in `<class:Project>'
+  app/models/project.rb:1:in `<top (required)>'
+  app/controllers/projects_controller.rb:15:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:17:29 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 24ms
+
+NameError (undefined local variable or method `street' for #<Project:0x1164800>):
+  app/models/project.rb:9:in `address'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:20:16 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/models/project.rb:13: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/projects_controller.rb:15:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:20:36 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed 500 Internal Server Error in 805ms
+
+NameError (undefined local variable or method `obj' for #<Class:0x142c308>):
+  app/models/project.rb:7:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (35.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:20:56 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed 500 Internal Server Error in 323ms
+
+NameError (undefined local variable or method `geo' for #<Class:0x1600ddc>):
+  app/models/project.rb:7:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:23:12 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Seattle, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/models/project.rb:6: formal argument cannot be an instance variable
+  geocoded_by :address do |@project,geo|
+                                   ^):
+  app/controllers/projects_controller.rb:15:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:25:52 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"", "latitude"=>"", "longitude"=>"", "state"=>"Seattle, Washington"}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '', 47.6062095, -122.3320708, 'Seattle, Washington', '2011-10-22 10:25:52.555230', '2011-10-22 10:25:52.555230')[0m
+Redirected to http://localhost:3000/projects/6
+Completed 302 Found in 467ms
+
+
+Started GET "/projects/6" for 127.0.0.1 at 2011-10-22 12:25:52 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (49.9ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (100.1ms)
+Completed 200 OK in 123ms (Views: 104.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 12:35:22 +0200
+  Processing by ProjectsController#new as HTML
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/models/project.rb:6: syntax error, unexpected '\n', expecting '='):
+  app/controllers/projects_controller.rb:11:in `new'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 12:36:06 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.2ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (79.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 124ms (Views: 107.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 12:36:17 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Los Angeles, California", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Los Angeles, California', NULL, NULL, '', '2011-10-22 10:36:18.204010', '2011-10-22 10:36:18.204010')[0m
+Redirected to http://localhost:3000/projects/7
+Completed 302 Found in 411ms
+
+
+Started GET "/projects/7" for 127.0.0.1 at 2011-10-22 12:36:18 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 7 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (76.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 150ms (Views: 131.5ms | ActiveRecord: 1.3ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 7 LIMIT 1
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 4 LIMIT 1[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 4 LIMIT 1
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 13:01:14 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (138.1ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (102.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (255.6ms)
+Completed 200 OK in 315ms (Views: 260.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:01:23 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Miami, FL', NULL, NULL, '', '2011-10-22 11:01:24.455394', '2011-10-22 11:01:24.455394')
+Completed 500 Internal Server Error in 1026ms
+
+NoMethodError (undefined method `address_components_of_type' for #<Project:0x1426bd8>):
+  app/models/project.rb:7:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:08:03 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+Completed 500 Internal Server Error in 8ms
+
+TypeError (can't convert Symbol into Integer):
+  app/models/project.rb:6:in `<class:Project>'
+  app/models/project.rb:1:in `<top (required)>'
+  app/controllers/projects_controller.rb:15:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:12:14 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Miami, FL', 25.7889689, -80.2264393, '', '2011-10-22 11:12:15.368951', '2011-10-22 11:12:15.368951')[0m
+Redirected to http://localhost:3000/projects/8
+Completed 302 Found in 419ms
+
+
+Started GET "/projects/8" for 127.0.0.1 at 2011-10-22 13:12:15 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 8 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (79.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (102.5ms)
+Completed 200 OK in 126ms (Views: 107.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 13:20:29 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (14.7ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (50.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (74.7ms)
+Completed 200 OK in 126ms (Views: 107.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:20:40 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Deltona, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Deltona, FL', NULL, NULL, '', '2011-10-22 11:20:41.047203', '2011-10-22 11:20:41.047203')[0m
+Redirected to http://localhost:3000/projects/9
+Completed 302 Found in 460ms
+
+
+Started GET "/projects/9" for 127.0.0.1 at 2011-10-22 13:20:41 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 9 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (80.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (103.3ms)
+Completed 200 OK in 154ms (Views: 107.6ms | ActiveRecord: 1.3ms)
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 9 LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 9 LIMIT 1
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 13:22:35 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.4ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (81.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (104.5ms)
+Completed 200 OK in 126ms (Views: 108.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:23:00 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"", "latitude"=>"28.514664", "longitude"=>"-81.143978", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed 500 Internal Server Error in 1015ms
+
+NoMethodError (undefined method `city=' for #<Class:0x10f09f0>):
+  app/models/project.rb:9:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:24:07 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Topeka, Kansas", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Topeka, Kansas', NULL, NULL, '', '2011-10-22 11:24:07.982393', '2011-10-22 11:24:07.982393')
+Redirected to http://localhost:3000/projects/10
+Completed 302 Found in 68ms
+
+
+Started GET "/projects/10" for 127.0.0.1 at 2011-10-22 13:24:08 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 10 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (79.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (102.2ms)
+Completed 200 OK in 126ms (Views: 106.8ms | ActiveRecord: 1.3ms)
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 10 LIMIT 1[0m
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 13:27:07 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (79.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (103.3ms)
+Completed 200 OK in 152ms (Views: 107.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:27:12 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Tacoma, Washington", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 434ms
+
+NoMethodError (undefined method `city=' for #<Project:0x141fc34>):
+  app/models/project.rb:9:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 13:36:40 +0200
+  Processing by ProjectsController#new as HTML
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/models/project.rb:15: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/projects_controller.rb:11:in `new'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-22 13:37:40 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (80.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (104.2ms)
+Completed 200 OK in 127ms (Views: 108.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:37:58 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Trenton, New Jersey", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 457ms
+
+NameError (undefined local variable or method `set_label' for #<Project:0x21ca168>):
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:38:13 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Trenton, New Jersey", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 964ms
+
+NoMethodError (undefined method `city' for #<Array:0x21c6c0c>):
+  app/models/project.rb:10:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.2ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:39:49 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Trenton, New Jersey", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1320ms
+
+NoMethodError (undefined method `city' for #<Array:0x2216acc>):
+  app/models/project.rb:10:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-22 13:40:29 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Trenton, New Jersey", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 920ms
+
+NoMethodError (undefined method `state' for #<Array:0x2280d28>):
+  app/models/project.rb:10:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-24 17:15:52 +0200
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (8.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (27.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (3.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (83.5ms)
+Completed 200 OK in 303ms (Views: 128.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:15:58 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (117.3ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (79.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (215.0ms)
+Completed 200 OK in 346ms (Views: 228.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:16:32 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1540ms
+
+NoMethodError (undefined method `city=' for #<Project:0x1afdcf4>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (32.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:17:30 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 1265ms
+
+NoMethodError (undefined method `city=' for #<Project:0x1bfb9bc>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (14.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 3 LIMIT 1
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:28:19 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (21.5ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 15:28:23.881358', '2011-10-24 15:28:23.881358')
+Redirected to http://localhost:3000/projects/11
+Completed 302 Found in 4486ms
+
+
+Started GET "/projects/11" for 127.0.0.1 at 2011-10-24 17:28:24 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 11 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (78.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 142ms (Views: 123.2ms | ActiveRecord: 22.5ms)
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 11 LIMIT 1[0m
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:34:17 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.5ms)
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+Rendered layouts/_header.html.erb (66.9ms)
+Rendered projects/new.html.erb within layouts/application (88.0ms)
+Completed 500 Internal Server Error in 138ms
+
+ActionView::Template::Error (The :dependent option expects either :destroy, :delete_all, :nullify or :restrict (:destroyec)):
+    3:   <nav class="round">
+    4:     <ul>
+    5:       <li><%= link_to "Home", root_path %></li>
+    6:       <% if signed_in? %>
+    7:         <li><%= link_to "Profile", current_user %></li>
+    8:         <li><%= link_to "Users", users_path %></li>
+    9:         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/models/user.rb:29:in `<class:User>'
+  app/models/user.rb:16:in `<top (required)>'
+  app/helpers/sessions_helper.rb:46:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/helpers/sessions_helper.rb:17:in `signed_in?'
+  app/views/layouts/_header.html.erb:6:in `_app_views_layouts__header_html_erb__883750238_17367580_697866606'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___439190986_20352380_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:34:58 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (23.4ms)
+Rendered projects/new.html.erb within layouts/application (44.4ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (The :dependent option expects either :destroy, :delete_all, :nullify or :restrict (:destroyec)):
+    3:   <nav class="round">
+    4:     <ul>
+    5:       <li><%= link_to "Home", root_path %></li>
+    6:       <% if signed_in? %>
+    7:         <li><%= link_to "Profile", current_user %></li>
+    8:         <li><%= link_to "Users", users_path %></li>
+    9:         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/models/user.rb:29:in `<class:User>'
+  app/models/user.rb:16:in `<top (required)>'
+  app/helpers/sessions_helper.rb:46:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/helpers/sessions_helper.rb:17:in `signed_in?'
+  app/views/layouts/_header.html.erb:6:in `_app_views_layouts__header_html_erb__883750238_14620210_697866606'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___439190986_19813420_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:36:43 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.4ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (23.8ms)
+Rendered projects/new.html.erb within layouts/application (44.3ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (The :dependent option expects either :destroy, :delete_all, :nullify or :restrict (:destroyec)):
+    3:   <nav class="round">
+    4:     <ul>
+    5:       <li><%= link_to "Home", root_path %></li>
+    6:       <% if signed_in? %>
+    7:         <li><%= link_to "Profile", current_user %></li>
+    8:         <li><%= link_to "Users", users_path %></li>
+    9:         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/models/user.rb:29:in `<class:User>'
+  app/models/user.rb:16:in `<top (required)>'
+  app/helpers/sessions_helper.rb:46:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/helpers/sessions_helper.rb:17:in `signed_in?'
+  app/views/layouts/_header.html.erb:6:in `_app_views_layouts__header_html_erb__883750238_15035310_697866606'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___439190986_20017180_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:36:46 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (14.2ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (23.5ms)
+Rendered projects/new.html.erb within layouts/application (45.0ms)
+Completed 500 Internal Server Error in 97ms
+
+ActionView::Template::Error (The :dependent option expects either :destroy, :delete_all, :nullify or :restrict (:destroyec)):
+    3:   <nav class="round">
+    4:     <ul>
+    5:       <li><%= link_to "Home", root_path %></li>
+    6:       <% if signed_in? %>
+    7:         <li><%= link_to "Profile", current_user %></li>
+    8:         <li><%= link_to "Users", users_path %></li>
+    9:         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+  app/models/user.rb:29:in `<class:User>'
+  app/models/user.rb:16:in `<top (required)>'
+  app/helpers/sessions_helper.rb:46:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/helpers/sessions_helper.rb:17:in `signed_in?'
+  app/views/layouts/_header.html.erb:6:in `_app_views_layouts__header_html_erb__883750238_16962880_697866606'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb___439190986_20089090_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-24 17:37:27 +0200
+  Processing by PagesController#home as HTML
+Completed 500 Internal Server Error in 50ms
+
+ArgumentError (The :dependent option expects either :destroy, :delete_all, :nullify or :restrict (:destroyec)):
+  app/models/user.rb:29:in `<class:User>'
+  app/models/user.rb:16:in `<top (required)>'
+  app/helpers/sessions_helper.rb:46:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/helpers/sessions_helper.rb:17:in `signed_in?'
+  app/controllers/pages_controller.rb:5:in `home'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:38:22 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.4ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (104.6ms)
+Completed 200 OK in 126ms (Views: 108.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:38:29 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 15:38:34.539879', '2011-10-24 15:38:34.539879')
+Completed 500 Internal Server Error in 5224ms
+
+NameError (undefined local variable or method `results' for #<Project:0x18bbdec>):
+  app/models/project.rb:19:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:39:28 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 3665ms
+
+NoMethodError (undefined method `zipcode=' for #<Project:0x198dd74>):
+  app/models/project.rb:11:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:47:40 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 15:47:43.335738', '2011-10-24 15:47:43.335738')[0m
+Completed 500 Internal Server Error in 3070ms
+
+SystemStackError (stack level too deep):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:48:12 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 15:48:15.088614', '2011-10-24 15:48:15.088614')
+Redirected to http://localhost:3000/projects/12
+Completed 302 Found in 3074ms
+
+
+Started GET "/projects/12" for 127.0.0.1 at 2011-10-24 17:48:15 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 12 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (76.1ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 149ms (Views: 131.6ms | ActiveRecord: 1.7ms)
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 12 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:50:34 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 2826ms
+
+NoMethodError (undefined method `zipcode=' for #<Project:0x2006868>):
+  app/models/project.rb:8:in `block in <class:Project>'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:55:17 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (15.0ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (78.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (103.4ms)
+Completed 200 OK in 125ms (Views: 108.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:55:24 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+Completed 500 Internal Server Error in 24ms
+
+NoMethodError (undefined method `lat' for #<Project:0x1b9d740>):
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:55:47 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2960 divisadero street, san francisco, ca', NULL, NULL, '', '2011-10-24 15:55:50.743531', '2011-10-24 15:55:50.743531')
+Redirected to http://localhost:3000/projects/13
+Completed 302 Found in 3076ms
+
+
+Started GET "/projects/13" for 127.0.0.1 at 2011-10-24 17:55:50 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 13 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (78.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (100.7ms)
+Completed 200 OK in 152ms (Views: 105.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 17:57:44 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.1ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.3ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (104.1ms)
+Completed 200 OK in 125ms (Views: 108.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:57:51 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2960 divisadero street, san francisco, ca', NULL, NULL, '', '2011-10-24 15:57:52.822806', '2011-10-24 15:57:52.822806')
+Completed 500 Internal Server Error in 954ms
+
+NameError (undefined local variable or method `obj' for #<Project:0x1aff018>):
+  app/models/project.rb:14:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:58:29 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2960 divisadero street, san francisco, ca', NULL, NULL, '', '2011-10-24 15:58:30.617903', '2011-10-24 15:58:30.617903')[0m
+Completed 500 Internal Server Error in 1349ms
+
+NameError (undefined local variable or method `obj' for #<Project:0x1b001fc>):
+  app/models/project.rb:13:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:58:47 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2960 divisadero street, san francisco, ca', NULL, NULL, '', '2011-10-24 15:58:50.045147', '2011-10-24 15:58:50.045147')
+Completed 500 Internal Server Error in 2865ms
+
+NameError (undefined local variable or method `geo' for #<Project:0x1b072cc>):
+  app/models/project.rb:13:in `state'
+  app/controllers/projects_controller.rb:16:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 17:59:21 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2960 divisadero street, san francisco, ca", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2960 divisadero street, san francisco, ca', NULL, NULL, '', '2011-10-24 15:59:23.945251', '2011-10-24 15:59:23.945251')[0m
+Redirected to http://localhost:3000/projects/14
+Completed 302 Found in 2191ms
+
+
+Started GET "/projects/14" for 127.0.0.1 at 2011-10-24 17:59:23 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 14 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (79.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (101.9ms)
+Completed 200 OK in 126ms (Views: 106.3ms | ActiveRecord: 1.4ms)
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 14 LIMIT 1
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-10-24 18:07:27 +0200
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (43.8ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (50.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (103.9ms)
+Completed 200 OK in 125ms (Views: 108.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:07:32 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:07:32.965623', '2011-10-24 16:07:32.965623')[0m
+Redirected to http://localhost:3000/projects/15
+Completed 302 Found in 690ms
+
+
+Started GET "/projects/15" for 127.0.0.1 at 2011-10-24 18:07:33 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 15 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (80.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (102.8ms)
+Completed 200 OK in 126ms (Views: 107.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:14:49 +0200
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/helpers/projects_helper.rb:7: syntax error, unexpected $end, expecting keyword_end):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/projects_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:15:21 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:15:22.485787', '2011-10-24 16:15:22.485787')[0m
+Redirected to http://localhost:3000/projects/16
+Completed 302 Found in 869ms
+
+
+Started GET "/projects/16" for 127.0.0.1 at 2011-10-24 18:15:22 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 16 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `hardiness_zone' for #<Project:0x273574c>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.hardiness_zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_20477920_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:17:26 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:17:29.666089', '2011-10-24 16:17:29.666089')[0m
+Redirected to http://localhost:3000/projects/17
+Completed 302 Found in 3074ms
+
+
+Started GET "/projects/17" for 127.0.0.1 at 2011-10-24 18:17:29 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 17 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `hardiness_zone' for #<Project:0x1b9c0d4>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.hardiness_zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_14468300_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.7ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:18:17 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:18:20.730051', '2011-10-24 16:18:20.730051')[0m
+Redirected to http://localhost:3000/projects/18
+Completed 302 Found in 3046ms
+
+
+Started GET "/projects/18" for 127.0.0.1 at 2011-10-24 18:18:20 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 18 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 67ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x264b6d8>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_20070970_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:19:53 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:19:56.823680', '2011-10-24 16:19:56.823680')[0m
+Redirected to http://localhost:3000/projects/19
+Completed 302 Found in 3073ms
+
+
+Started GET "/projects/19" for 127.0.0.1 at 2011-10-24 18:19:56 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 19 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (41.3ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (undefined method `state=' for nil:NilClass):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/models/project.rb:15:in `zone'
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_14129900_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:20:50 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:20:53.425298', '2011-10-24 16:20:53.425298')[0m
+Redirected to http://localhost:3000/projects/20
+Completed 302 Found in 3074ms
+
+
+Started GET "/projects/20" for 127.0.0.1 at 2011-10-24 18:20:53 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (undefined local variable or method `project' for #<Project:0x1ce7e48>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/models/project.rb:15:in `zone'
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_15035340_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:22:24 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:22:27.633777', '2011-10-24 16:22:27.633777')[0m
+Redirected to http://localhost:3000/projects/21
+Completed 302 Found in 3076ms
+
+
+Started GET "/projects/21" for 127.0.0.1 at 2011-10-24 18:22:27 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 21 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (42.0ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x1a2fc64>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_13721260_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:23:34 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:23:36.175724', '2011-10-24 16:23:36.175724')[0m
+Redirected to http://localhost:3000/projects/22
+Completed 302 Found in 1513ms
+
+
+Started GET "/projects/22" for 127.0.0.1 at 2011-10-24 18:23:36 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 22 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (41.5ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (undefined method `state' for nil:NilClass):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/models/project.rb:15:in `zone'
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_14426370_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:25:47 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:25:50.479856', '2011-10-24 16:25:50.479856')[0m
+Redirected to http://localhost:3000/projects/23
+Completed 302 Found in 3047ms
+
+
+Started GET "/projects/23" for 127.0.0.1 at 2011-10-24 18:25:50 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 23 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x21014c0>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_17160640_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:28:37 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:28:39.227733', '2011-10-24 16:28:39.227733')[0m
+Redirected to http://localhost:3000/projects/24
+Completed 302 Found in 2131ms
+
+
+Started GET "/projects/24" for 127.0.0.1 at 2011-10-24 18:28:39 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 24 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x26569ac>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_20092570_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:30:37 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:30:40.892041', '2011-10-24 16:30:40.892041')[0m
+Redirected to http://localhost:3000/projects/25
+Completed 302 Found in 3072ms
+
+
+Started GET "/projects/25" for 127.0.0.1 at 2011-10-24 18:30:40 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 25 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (41.6ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (undefined local variable or method `params' for #<Project:0x1b6064c>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/models/project.rb:15:in `zone'
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_14223600_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:31:37 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:31:37.475254', '2011-10-24 16:31:37.475254')[0m
+Redirected to http://localhost:3000/projects/26
+Completed 302 Found in 368ms
+
+
+Started GET "/projects/26" for 127.0.0.1 at 2011-10-24 18:31:37 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 26 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x1bba868>):
+    20: </p>
+    21: <p>
+    22:   <strong>State:</strong>
+    23:   <%= @project.state %><%= @project.zone %>
+    24: </p>
+    25: 
+    26: <p>
+  app/views/projects/show.html.erb:23:in `_app_views_projects_show_html_erb__804912322_14481350_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:33:12 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, '', '2011-10-24 16:33:15.135085', '2011-10-24 16:33:15.135085')[0m
+Redirected to http://localhost:3000/projects/27
+Completed 302 Found in 3046ms
+
+
+Started GET "/projects/27" for 127.0.0.1 at 2011-10-24 18:33:15 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 27 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 67ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x26aceec>):
+    24: </p>
+    25: <p>
+    26:   <strong>Zone:</strong>
+    27:   <%= @project.zone %>
+    28: </p>
+    29: <p>
+    30:   <%= link_to "Edit", edit_project_path(@project) %> |
+  app/views/projects/show.html.erb:27:in `_app_views_projects_show_html_erb__804912322_20223800_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:35:14 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:35:16.032699', '2011-10-24 16:35:16.032699')[0m
+Redirected to http://localhost:3000/projects/28
+Completed 302 Found in 1476ms
+
+
+Started GET "/projects/28" for 127.0.0.1 at 2011-10-24 18:35:16 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 28 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x27a0f10>):
+    24: </p>
+    25: <p>
+    26:   <strong>Zone:</strong>
+    27:   <%= @project.zone %>
+    28: </p>
+    29: <p>
+    30:   <%= link_to "Edit", edit_project_path(@project) %> |
+  app/views/projects/show.html.erb:27:in `_app_views_projects_show_html_erb__804912322_20616190_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:35:45 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:35:47.908524', '2011-10-24 16:35:47.908524')[0m
+Redirected to http://localhost:3000/projects/29
+Completed 302 Found in 2384ms
+
+
+Started GET "/projects/29" for 127.0.0.1 at 2011-10-24 18:35:47 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 29 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (43.2ms)
+Completed 500 Internal Server Error in 68ms
+
+ActionView::Template::Error (undefined local variable or method `params' for #<Project:0x1b7fc40>):
+    24: </p>
+    25: <p>
+    26:   <strong>Zone:</strong>
+    27:   <%= @project.zone %>
+    28: </p>
+    29: <p>
+    30:   <%= link_to "Edit", edit_project_path(@project) %> |
+  app/models/project.rb:15:in `zone'
+  app/views/projects/show.html.erb:27:in `_app_views_projects_show_html_erb__804912322_14350590_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:36:19 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:36:19.683344', '2011-10-24 16:36:19.683344')[0m
+Redirected to http://localhost:3000/projects/30
+Completed 302 Found in 377ms
+
+
+Started GET "/projects/30" for 127.0.0.1 at 2011-10-24 18:36:19 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 30 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined method `state' for nil:NilClass):
+    24: </p>
+    25: <p>
+    26:   <strong>Zone:</strong>
+    27:   <%= @project.zone %>
+    28: </p>
+    29: <p>
+    30:   <%= link_to "Edit", edit_project_path(@project) %> |
+  app/models/project.rb:15:in `zone'
+  app/views/projects/show.html.erb:27:in `_app_views_projects_show_html_erb__804912322_14459800_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (35.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (41.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:36:46 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:36:47.291099', '2011-10-24 16:36:47.291099')[0m
+Redirected to http://localhost:3000/projects/31
+Completed 302 Found in 809ms
+
+
+Started GET "/projects/31" for 127.0.0.1 at 2011-10-24 18:36:47 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 31 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (82.2ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (107.6ms)
+Completed 200 OK in 133ms (Views: 112.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:37:11 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:37:11.786402', '2011-10-24 16:37:11.786402')[0m
+Redirected to http://localhost:3000/projects/32
+Completed 302 Found in 367ms
+
+
+Started GET "/projects/32" for 127.0.0.1 at 2011-10-24 18:37:11 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 32 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (78.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (102.2ms)
+Completed 200 OK in 156ms (Views: 106.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:37:43 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:37:43.821452', '2011-10-24 16:37:43.821452')[0m
+Redirected to http://localhost:3000/projects/33
+Completed 302 Found in 506ms
+
+
+Started GET "/projects/33" for 127.0.0.1 at 2011-10-24 18:37:43 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 33 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (79.9ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (102.5ms)
+Completed 200 OK in 126ms (Views: 107.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:38:21 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:38:22.375204', '2011-10-24 16:38:22.375204')[0m
+Redirected to http://localhost:3000/projects/34
+Completed 302 Found in 779ms
+
+
+Started GET "/projects/34" for 127.0.0.1 at 2011-10-24 18:38:22 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 34 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (78.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (100.8ms)
+Completed 200 OK in 152ms (Views: 105.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:39:18 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:39:19.629976', '2011-10-24 16:39:19.629976')[0m
+Redirected to http://localhost:3000/projects/35
+Completed 302 Found in 1522ms
+
+
+Started GET "/projects/35" for 127.0.0.1 at 2011-10-24 18:39:19 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 35 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (79.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (102.2ms)
+Completed 200 OK in 127ms (Views: 107.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-10-24 18:39:51 +0200
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"46EXzB78Jcxij2pqzfcRA+ZaBrakJakUdHY270zXZgM=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"2648 Rainbow Springs Lane, Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, 'Florida', '2011-10-24 16:39:52.340339', '2011-10-24 16:39:52.340339')[0m
+Redirected to http://localhost:3000/projects/36
+Completed 302 Found in 933ms
+
+
+Started GET "/projects/36" for 127.0.0.1 at 2011-10-24 18:39:52 +0200
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 36 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `zone' for #<Project:0x274b90c>):
+    24: </p>
+    25: <p>
+    26:   <strong>Zone:</strong>
+    27:   <%= @project.zone %>
+    28: </p>
+    29: <p>
+    30:   <%= link_to "Edit", edit_project_path(@project) %> |
+  app/views/projects/show.html.erb:27:in `_app_views_projects_show_html_erb__804912322_20559740_224908149'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (19.6ms)[0m  [1mCREATE TABLE "plant_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111028213613')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (11.6ms)[0m  PRAGMA index_list("hzones")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_microposts_on_user_id_and_created_at')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("plant_groups")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE "hzones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (12.5ms)[0m  CREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "plant_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (2.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111028213613')
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100821203213')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822012431')
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822204528')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822233125')
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829021049')[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829210229')
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100831012055')[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111021125458')
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111021134225')[0m
