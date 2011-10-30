@@ -4,4 +4,8 @@
 # Examples:
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+#   Mayor.create(:name => 'Daley', :city => cities.first)                   
+
+tomatoes = Plant.create([{ :name => "Tommy Toe", :type => "Vegetable",
+  :group => "Tomato"}, { :name => "Calendula", :type => "Flower", 
+  :group => "Flower"}])
