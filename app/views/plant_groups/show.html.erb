@@ -1,0 +1,8 @@
+  <strong>Project:</strong>
+  <%= @plant_group.project(:id) %>
+</p>
+<p>
+  <%= link_to "Edit", edit_plant_group_path(@plant_group) %> |
+  <%= link_to "Destroy", @plant_group, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", plant_groups_path %>
+</p>

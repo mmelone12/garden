@@ -3,8 +3,10 @@
   <head>
     <title><%= title %></title>
     <%= csrf_meta_tag %>
-    <%= render 'layouts/stylesheets' %>
-    <%= javascript_include_tag :defaults %>
+    <%= render 'layouts/stylesheets' %> 
+    <%= javascript_include_tag 'jquery.min.js', 'jquery_ujs.js',
+    'jquery-ui.js', 'application.js', 'jquery.colorbox-min', 
+    'jquery.listselect.js' %>
   </head>
   <body>
     <div class="container">

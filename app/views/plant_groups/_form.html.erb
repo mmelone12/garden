@@ -1,0 +1,10 @@
+<%= form_for @plant_group do |f| %>
+<p>
+		<select class="listselect" name="myfield[]">
+			<option value="1"><%= Plant.find(1).name %></option>
+			<option value="2">Development</option>
+			<option value="3">Web hosting</option>
+			<option value="4">Maintenance</option>
+		</select>
+  <p><%= f.submit %></p>
+<% end %>

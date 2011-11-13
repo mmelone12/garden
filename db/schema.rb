@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111029123814) do
+ActiveRecord::Schema.define(:version => 20111106202403) do
 
   create_table "hzones", :force => true do |t|
     t.integer  "project_id"
@@ -28,10 +28,13 @@ ActiveRecord::Schema.define(:version => 20111029123814) do
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
   create_table "plant_groups", :force => true do |t|
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
+    t.integer  "plant1"
   end
+
+  add_index "plant_groups", ["project_id"], :name => "index_plant_groups_on_project_id"
 
   create_table "plants", :force => true do |t|
     t.string   "name"

@@ -4,6 +4,7 @@ gem 'rails', '3.0.9'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
 gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+gem 'jquery-rails', '>= 1.0.12'
 gem 'geocoder'
 
 group :development do
@@ -12,6 +13,7 @@ group :development do
   gem 'faker', '0.3.1'
   gem 'nifty-generators', '>= 0.4.5'
   gem 'mocha', '>= 0'
+  gem 'mongrel', '>= 1.2.0.pre2'
 end
 
 group :test do
