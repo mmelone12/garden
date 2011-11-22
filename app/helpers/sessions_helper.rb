@@ -7,11 +7,19 @@ module SessionsHelper
   
   def current_user=(user)
     @current_user = user
+  end    
+  
+  def current_project=(project)
+    @current_project = project
   end
   
   def current_user
     @current_user ||= user_from_remember_token
   end      
+     
+  def current_project
+    @current_project ||= project
+  end
   
   def signed_in?
     !current_user.nil?
@@ -24,6 +32,10 @@ module SessionsHelper
 
   def current_user?(user)
     user == current_user
+  end
+     
+  def current_project?(project)
+    project == current_project
   end
   
   def authenticate
@@ -46,6 +58,10 @@ module SessionsHelper
       User.authenticate_with_salt(*remember_token)
     end
     
+    def project_from_remember_token
+      Project.find(params[:id])
+    end
+    
     def remember_token
       cookies.signed[:remember_token] || [nil, nil]
     end
@@ -58,4 +74,3 @@ module SessionsHelper
       session[:return_to] = nil
     end
 end
-

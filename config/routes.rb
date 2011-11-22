@@ -11,7 +11,8 @@ SampleApp::Application.routes.draw do
   resources :relationships, :only => [:create, :destroy]
   resources :projects,      :only => [:new, :show, :edit, :create, :destroy]      
   resources :plant_groups,  :only => [:new, :show, :edit, :create, :destroy]   
-  resources :plants,        :only => [:new, :show, :edit, :create, :destroy]
+  resources :plants,        :only => [:new, :show, :edit, :create, :destroy] 
+  resources :prelationships, :only => [:create]
   
   root :to => "pages#home"
 

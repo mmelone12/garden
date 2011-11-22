@@ -2,7 +2,11 @@ class Project < ActiveRecord::Base
   attr_accessible :title, :address, :latitude, :longitude, :state      
   
   belongs_to :user 
-  has_one :plant_group
+  has_one :plant_group        
+  has_many :prelationships, :foreign_key => "pfollower_id",
+                            :dependent => :destroy   
+  has_many :pfollowing, :through => :prelationships, :source => :pfollowed 
+   
 
   geocoded_by :address do |project,results|
     if geo = results.first
@@ -22,5 +26,13 @@ class Project < ActiveRecord::Base
   
   def plant_collection
     Plant.where("project_id = ?", id) 
+  end       
+  
+  def pfollowing?(pfollowed)
+    prelationships.find_by_pfollowed_id(pfollowed)  
+  end  
+  
+  def pfollow!(pfollowed)
+    prelationships.create!(:pfollowed_id => pfollowed.id)
   end
 end

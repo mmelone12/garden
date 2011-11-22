@@ -7346,3 +7346,1923 @@ Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/ac
 Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
   [1m[36mPlantGroup Load (2.4ms)[0m  [1mSELECT "plant_groups".* FROM "plant_groups"[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+Migrating to CreatePlants (20111029114822)
+Migrating to AddPlantTypeToPlants (20111029123218)
+Migrating to RemoveTypeFromPlants (20111029123814)
+Migrating to RemoveProjectIdFromPlantGroup (20111103172508)
+Migrating to RemoveColumnFromPlantGroups (20111106193154)
+Migrating to AddColumnToPlantGroups (20111106193311)
+Migrating to AddPlant1ToPlantGroups (20111106202403)
+Migrating to CreatePrelationships (20111113105524)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (8.7ms)[0m  [1mCREATE TABLE "prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.5ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id_and_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+Migrating to CreatePlants (20111029114822)
+Migrating to AddPlantTypeToPlants (20111029123218)
+Migrating to RemoveTypeFromPlants (20111029123814)
+Migrating to RemoveProjectIdFromPlantGroup (20111103172508)
+Migrating to RemoveColumnFromPlantGroups (20111106193154)
+Migrating to AddColumnToPlantGroups (20111106193311)
+Migrating to AddPlant1ToPlantGroups (20111106202403)
+Migrating to CreatePrelationships (20111113105524)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("prelationships")
+  [1m[36mSQL (378.3ms)[0m  [1mCREATE INDEX "index_prelationships_on_follower_id" ON "prelationships" ("follower_id")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("prelationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_prelationships_on_follower_id')[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE INDEX "index_prelationships_on_followed_id" ON "prelationships" ("followed_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111113105524')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("hzones")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("microposts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_microposts_on_user_id_and_created_at')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("plant_groups")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_plant_groups_on_project_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("plants")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_prelationships_on_follower_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE TABLE "hzones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "plant_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "project_id" integer, "plant1" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("plant_groups")[0m
+  [1m[35mSQL (2.3ms)[0m  CREATE INDEX "index_plant_groups_on_project_id" ON "plant_groups" ("project_id")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "group" varchar(255), "created_at" datetime, "updated_at" datetime, "plant_type" varchar(255)) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE TABLE "prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (2.3ms)[0m  CREATE INDEX "index_prelationships_on_followed_id" ON "prelationships" ("followed_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_followed_id')
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE INDEX "index_prelationships_on_follower_id" ON "prelationships" ("follower_id")[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.4ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_info('index_relationships_on_follower_id_and_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111113105524')[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100821203213')
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822012431')[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822204528')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822233125')[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829021049')
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829210229')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100831012055')
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111021125458')[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111021134225')
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111028213613')[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111029114822')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111029123218')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111029123814')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111103172508')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111106193154')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111106193311')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111106202403')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+Migrating to CreatePlants (20111029114822)
+Migrating to AddPlantTypeToPlants (20111029123218)
+Migrating to RemoveTypeFromPlants (20111029123814)
+Migrating to RemoveProjectIdFromPlantGroup (20111103172508)
+Migrating to RemoveColumnFromPlantGroups (20111106193154)
+Migrating to AddColumnToPlantGroups (20111106193311)
+Migrating to AddPlant1ToPlantGroups (20111106202403)
+Migrating to CreatePrelationships (20111113105524)
+Migrating to RenameColumn (20111113111147)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+Migrating to CreatePlants (20111029114822)
+Migrating to AddPlantTypeToPlants (20111029123218)
+Migrating to RemoveTypeFromPlants (20111029123814)
+Migrating to RemoveProjectIdFromPlantGroup (20111103172508)
+Migrating to RemoveColumnFromPlantGroups (20111106193154)
+Migrating to AddColumnToPlantGroups (20111106193311)
+Migrating to AddPlant1ToPlantGroups (20111106202403)
+Migrating to CreatePrelationships (20111113105524)
+Migrating to RenameColumn (20111113111147)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+Migrating to CreatePlants (20111029114822)
+Migrating to AddPlantTypeToPlants (20111029123218)
+Migrating to RemoveTypeFromPlants (20111029123814)
+Migrating to RemoveProjectIdFromPlantGroup (20111103172508)
+Migrating to RemoveColumnFromPlantGroups (20111106193154)
+Migrating to AddColumnToPlantGroups (20111106193311)
+Migrating to AddPlant1ToPlantGroups (20111106202403)
+Migrating to CreatePrelationships (20111113105524)
+Migrating to RenameColumn (20111113111147)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "altered_prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pfollower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("prelationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_prelationships_on_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_follower_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE INDEX "temp_index_altered_prelationships_on_followed_id" ON "altered_prelationships" ("followed_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('temp_index_altered_prelationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_prelationships_on_follower_id" ON "altered_prelationships" ("pfollower_id")[0m
+  [1m[35mSQL (0.7ms)[0m  DROP TABLE "prelationships"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pfollower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_prelationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_prelationships_on_follower_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('temp_index_altered_prelationships_on_followed_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE INDEX "index_prelationships_on_follower_id" ON "prelationships" ("pfollower_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_prelationships_on_followed_id" ON "prelationships" ("followed_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "altered_prelationships"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pfollower_id" integer, "pfollowed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("prelationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_prelationships_on_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_follower_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE INDEX "temp_index_altered_prelationships_on_followed_id" ON "altered_prelationships" ("pfollowed_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('temp_index_altered_prelationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_prelationships_on_follower_id" ON "altered_prelationships" ("pfollower_id")[0m
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "prelationships"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pfollower_id" integer, "pfollowed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_prelationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_prelationships_on_follower_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('temp_index_altered_prelationships_on_followed_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE INDEX "index_prelationships_on_follower_id" ON "prelationships" ("pfollower_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_prelationships_on_followed_id" ON "prelationships" ("pfollowed_id")[0m
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "altered_prelationships"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111113111147')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("hzones")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("microposts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_microposts_on_user_id_and_created_at')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("plant_groups")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_plant_groups_on_project_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("plants")
+  [1m[36mSQL (0.3ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_prelationships_on_follower_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (15.2ms)[0m  CREATE TABLE "hzones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE INDEX "index_microposts_on_user_id_and_created_at" ON "microposts" ("user_id", "created_at")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.3ms)[0m  CREATE TABLE "plant_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "project_id" integer, "plant1" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("plant_groups")[0m
+  [1m[35mSQL (2.7ms)[0m  CREATE INDEX "index_plant_groups_on_project_id" ON "plant_groups" ("project_id")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE "plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "group" varchar(255), "created_at" datetime, "updated_at" datetime, "plant_type" varchar(255)) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE TABLE "prelationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pfollower_id" integer, "pfollowed_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (2.4ms)[0m  CREATE INDEX "index_prelationships_on_followed_id" ON "prelationships" ("pfollowed_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("prelationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_followed_id')
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE INDEX "index_prelationships_on_follower_id" ON "prelationships" ("pfollower_id")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.8ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "address" varchar(255), "latitude" float, "longitude" float, "state" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (1.7ms)[0m  [1mCREATE INDEX "index_relationships_on_followed_id" ON "relationships" ("followed_id")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("relationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_follower_id_and_followed_id" ON "relationships" ("follower_id", "followed_id")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id_and_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_followed_id')[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE INDEX "index_relationships_on_follower_id" ON "relationships" ("follower_id")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (2.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (2.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111113111147')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100821203213')
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822012431')[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100822204528')
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100822233125')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100829021049')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20100829210229')[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20100831012055')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111021125458')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111021134225')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111028213613')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111029114822')
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111029123218')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111029123814')
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111103172508')[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111106193154')
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111106193311')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111106202403')
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111113105524')[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-13 12:51:25 +0100
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mMicropost Load (3.7ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1) OR user_id = 1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_micropost_form.html.erb (8.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered shared/_feed_item.html.erb (203.7ms)
+Rendered shared/_feed.html.erb (207.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (45.6ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))[0m
+Rendered shared/_stats.html.erb (70.8ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+Rendered layouts/_header.html.erb (2.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (352.4ms)
+Completed 200 OK in 693ms (Views: 385.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 12:51:48 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.9ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (81.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (105.3ms)
+Completed 200 OK in 163ms (Views: 110.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 12:51:58 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'miami, FL', NULL, NULL, 'Florida', '2011-11-13 11:51:59.112704', '2011-11-13 11:51:59.112704')[0m
+Redirected to http://localhost:3000/plant_groups/new
+Completed 302 Found in 1157ms
+
+
+Started GET "/plant_groups/new" for 127.0.0.1 at 2011-11-13 12:51:59 +0100
+  Processing by PlantGroupsController#new as HTML
+Rendered shared/_plant_group_form.html.erb (59.3ms)
+Rendered plant_groups/new.html.erb within layouts/application (61.5ms)
+Completed 500 Internal Server Error in 104ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    1:       
+    2: 
+    3: <%= collection_select(:plant_group, :plant1, @plants, :id, :name, options ={:prompt => "-Select your plants"}, :class => "listselect") %>
+  app/views/shared/_plant_group_form.html.erb:3:in `_app_views_shared__plant_group_form_html_erb__406914326_10598690_1269674'
+  app/views/plant_groups/new.html.erb:3:in `_app_views_plant_groups_new_html_erb___35942196_10605380_986884771'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 12:54:02 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (21.9ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'miami, FL', NULL, NULL, 'Florida', '2011-11-13 11:54:02.993958', '2011-11-13 11:54:02.993958')
+Redirected to http://localhost:3000/plant_groups/new
+Completed 302 Found in 833ms
+
+
+Started GET "/plant_groups/new" for 127.0.0.1 at 2011-11-13 12:54:03 +0100
+  Processing by PlantGroupsController#new as HTML
+Rendered shared/_plant_group_form.html.erb (0.8ms)
+Rendered plant_groups/new.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    1:       
+    2: 
+    3: <%= collection_select(:prelationships, :pfollowed_id, @plants, :id, :name, options ={:prompt => "-Select your plants"}, :class => "listselect") %>
+  app/views/shared/_plant_group_form.html.erb:3:in `_app_views_shared__plant_group_form_html_erb__406914326_10480490_1269674'
+  app/views/plant_groups/new.html.erb:3:in `_app_views_plant_groups_new_html_erb___35942196_10485330_986884771'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 13:14:17 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'miami, FL', NULL, NULL, 'Florida', '2011-11-13 12:14:19.742393', '2011-11-13 12:14:19.742393')
+Redirected to http://localhost:3000/plant_groups/new
+Completed 302 Found in 879ms
+
+
+Started GET "/plant_groups/new" for 127.0.0.1 at 2011-11-13 13:14:19 +0100
+  Processing by PlantGroupsController#new as HTML
+Rendered shared/_plant_group_form.html.erb (68.5ms)
+Rendered plant_groups/new.html.erb within layouts/application (94.2ms)
+Completed 500 Internal Server Error in 176ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Plants):
+    1:       
+    2: 
+    3: <%= collection_select(:prelationships, :pfollowed_id, Plants.all, :id, :name, options ={:prompt => "-Select your plants"}, :class => "listselect") %>
+  app/views/shared/_plant_group_form.html.erb:3:in `_app_views_shared__plant_group_form_html_erb__450711010_9864580_79846382'
+  app/views/plant_groups/new.html.erb:3:in `_app_views_plant_groups_new_html_erb___849142683_9870040__1430015'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 13:18:34 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'miami, FL', NULL, NULL, 'Florida', '2011-11-13 12:18:34.948252', '2011-11-13 12:18:34.948252')[0m
+Redirected to http://localhost:3000/plant_groups/new
+Completed 302 Found in 470ms
+
+
+Started GET "/plant_groups/new" for 127.0.0.1 at 2011-11-13 13:18:34 +0100
+  Processing by PlantGroupsController#new as HTML
+Rendered shared/_plant_group_form.html.erb (26.9ms)
+Rendered plant_groups/new.html.erb within layouts/application (49.0ms)
+Completed 500 Internal Server Error in 140ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Plants):
+    1:       
+    2: 
+    3: <%= collection_select(:prelationships, :pfollowed_id, Plants.all, :id, :name, options ={:prompt => "-Select your plants"}, :class => "listselect") %>
+  app/views/shared/_plant_group_form.html.erb:3:in `_app_views_shared__plant_group_form_html_erb__450711010_20531520_79846382'
+  app/views/plant_groups/new.html.erb:3:in `_app_views_plant_groups_new_html_erb___849142683_20774740__1430015'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.7ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mPlant Load (0.3ms)[0m  [1mSELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mPlant Load (23.5ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:13:33 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (70.8ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'miami, FL', NULL, NULL, 'Florida', '2011-11-13 17:13:36.549449', '2011-11-13 17:13:36.549449')
+Completed 500 Internal Server Error in 7055ms
+
+SQLite3::BusyException (database is locked):
+  app/controllers/projects_controller.rb:18:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.7ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 18:14:03 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (130.3ms)
+Rendered layouts/_stylesheets.html.erb (12.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (65.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/new.html.erb within layouts/application (232.2ms)
+Completed 200 OK in 279ms (Views: 252.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:14:08 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Orlando, FL', NULL, NULL, 'Florida', '2011-11-13 17:14:10.200028', '2011-11-13 17:14:10.200028')
+Completed 500 Internal Server Error in 6941ms
+
+SQLite3::BusyException (database is locked):
+  app/controllers/projects_controller.rb:18:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:18:11 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Orlando, FL', NULL, NULL, '', '2011-11-13 17:18:15.572901', '2011-11-13 17:18:15.572901')[0m
+Redirected to http://localhost:3000/plant_groups/new
+Completed 302 Found in 4539ms
+
+
+Started GET "/plant_groups/new" for 127.0.0.1 at 2011-11-13 18:18:15 +0100
+  Processing by PlantGroupsController#new as HTML
+Rendered shared/_plants_form.html.erb (59.2ms)
+Rendered plant_groups/new.html.erb within layouts/application (61.5ms)
+Completed 500 Internal Server Error in 111ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Plants):
+    1:       
+    2: 
+    3: <%= collection_select(:prelationships, :pfollowed_id, Plants.all, :id, :name, options ={:prompt => "-Select your plants"}, :class => "listselect") %>
+  app/views/shared/_plants_form.html.erb:3:in `_app_views_shared__plants_form_html_erb___1071303831_20637310_139255260'
+  app/views/plant_groups/new.html.erb:3:in `_app_views_plant_groups_new_html_erb__318631990_20653460__561467256'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.7ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:19:02 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Orlando, FL', NULL, NULL, 'Florida', '2011-11-13 17:19:04.122745', '2011-11-13 17:19:04.122745')
+Redirected to http://localhost:3000/plant_groups/new
+Completed 302 Found in 1617ms
+
+
+Started GET "/plant_groups/new" for 127.0.0.1 at 2011-11-13 18:19:04 +0100
+  Processing by PlantGroupsController#new as HTML
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (32.8ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (81.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered plant_groups/new.html.erb within layouts/application (124.2ms)
+Completed 200 OK in 172ms (Views: 127.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 18:22:44 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.7ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (53.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (107.2ms)
+Completed 200 OK in 137ms (Views: 111.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:22:57 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"orlando, fl", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'orlando, fl', NULL, NULL, 'Florida', '2011-11-13 17:22:57.716857', '2011-11-13 17:22:57.716857')
+Redirected to 
+Completed 404 Not Found in 480ms
+
+ActionController::RoutingError (No route matches {:action=>"edit", :controller=>"projects"}):
+  app/controllers/projects_controller.rb:18:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:23:48 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"orlando, fl", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'orlando, fl', NULL, NULL, 'Florida', '2011-11-13 17:23:48.604185', '2011-11-13 17:23:48.604185')[0m
+Rendered projects/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 483ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    1: <% title "Edit Project" %>
+    2: 
+    3: <%= render 'form' %>
+    4: <%= render 'shared/plants_form' %>  
+  app/helpers/application_helper.rb:4:in `title'
+  app/views/projects/edit.html.erb:1:in `_app_views_projects_edit_html_erb__364760837_19337920__561467256'
+  app/controllers/projects_controller.rb:18:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:24:22 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"orlando, fl", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'orlando, fl', NULL, NULL, 'Florida', '2011-11-13 17:24:23.865319', '2011-11-13 17:24:23.865319')
+Rendered projects/_form.html.erb (7.5ms)
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (60.8ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (53.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/edit.html.erb within layouts/application (134.9ms)
+Completed 200 OK in 1942ms (Views: 138.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/projects/72" for 127.0.0.1 at 2011-11-13 18:31:35 +0100
+
+ActionController::RoutingError (No route matches "/projects/72"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.5ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 18:35:00 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.5ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (83.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (107.2ms)
+Completed 200 OK in 137ms (Views: 111.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:35:06 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Orlando, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Orlando, FL', NULL, NULL, 'Florida', '2011-11-13 17:35:09.977712', '2011-11-13 17:35:09.977712')
+Redirected to http://localhost:3000/projects/73
+Completed 302 Found in 3007ms
+
+
+Started GET "/projects/73" for 127.0.0.1 at 2011-11-13 18:35:10 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 73 LIMIT 1[0m
+  [1m[35mPlant Load (1.3ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plant_group_form.html.erb (11.5ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (85.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (137.4ms)
+Completed 200 OK in 196ms (Views: 140.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 18:37:26 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (43.5ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (53.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 137ms (Views: 111.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:37:39 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"cheyenne, wyoming", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'cheyenne, wyoming', NULL, NULL, '', '2011-11-13 17:37:42.121946', '2011-11-13 17:37:42.121946')[0m
+Redirected to http://localhost:3000/projects/74
+Completed 302 Found in 3053ms
+
+
+Started GET "/projects/74" for 127.0.0.1 at 2011-11-13 18:37:42 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"74"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 74 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plant_group_form.html.erb (11.4ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (81.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (132.4ms)
+Completed 200 OK in 163ms (Views: 135.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 18:39:24 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.7ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/new.html.erb within layouts/application (105.9ms)
+Completed 200 OK in 164ms (Views: 110.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:39:31 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Hamilton, NJ", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Hamilton, NJ', NULL, NULL, '', '2011-11-13 17:39:34.838281', '2011-11-13 17:39:34.838281')
+Redirected to http://localhost:3000edit
+Completed 302 Found in 3080ms
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:39:43 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Hamilton, NJ", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Hamilton, NJ', NULL, NULL, '', '2011-11-13 17:39:46.865014', '2011-11-13 17:39:46.865014')[0m
+Redirected to http://localhost:3000edit
+Completed 302 Found in 3082ms
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:40:18 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Hamilton, NJ", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Hamilton, NJ', NULL, NULL, 'New Jersey', '2011-11-13 17:40:18.975675', '2011-11-13 17:40:18.975675')
+Redirected to 
+Completed 404 Not Found in 460ms
+
+ActionController::RoutingError (No route matches {:action=>"edit", :controller=>"projects"}):
+  app/controllers/projects_controller.rb:17:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:40:43 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Hamilton, NJ", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Hamilton, NJ', NULL, NULL, 'New Jersey', '2011-11-13 17:40:45.338665', '2011-11-13 17:40:45.338665')[0m
+Redirected to 
+Completed 404 Not Found in 2349ms
+
+ActionController::RoutingError (No route matches {:action=>"edit", :controller=>"projects"}):
+  app/controllers/projects_controller.rb:17:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:41:37 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Hamilton, NJ", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Hamilton, NJ', NULL, NULL, 'New Jersey', '2011-11-13 17:41:37.898628', '2011-11-13 17:41:37.898628')
+Rendered projects/_form.html.erb (8.2ms)
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (60.3ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (53.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/edit.html.erb within layouts/application (135.5ms)
+Completed 200 OK in 830ms (Views: 138.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/projects/79" for 127.0.0.1 at 2011-11-13 18:44:25 +0100
+
+ActionController::RoutingError (No route matches "/projects/79"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/projects/79" for 127.0.0.1 at 2011-11-13 18:44:45 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 79 LIMIT 1[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plant_group_form.html.erb (11.4ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (82.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (134.4ms)
+Completed 200 OK in 165ms (Views: 137.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/projects/79" for 127.0.0.1 at 2011-11-13 18:45:07 +0100
+
+ActionController::RoutingError (No route matches "/projects/79"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/79" for 127.0.0.1 at 2011-11-13 18:45:15 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"79"}
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 79 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plant_group_form.html.erb (11.5ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (82.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (133.6ms)
+Completed 200 OK in 194ms (Views: 136.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-13 18:49:56 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (13.8ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (81.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/new.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 164ms (Views: 110.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-13 18:50:00 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "user_id"=>"", "address"=>"Paris, Texas", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+WARNING: Can't mass-assign protected attributes: user_id
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Paris, Texas', NULL, NULL, 'Texas', '2011-11-13 17:50:03.951648', '2011-11-13 17:50:03.951648')
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (35.9ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (83.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/edit.html.erb within layouts/application (131.8ms)
+Completed 200 OK in 3167ms (Views: 135.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/projects/80" for 127.0.0.1 at 2011-11-13 18:50:11 +0100
+
+ActionController::RoutingError (No route matches "/projects/80"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/projects/80" for 127.0.0.1 at 2011-11-13 18:50:19 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 80 LIMIT 1[0m
+  [1m[35mPlant Load (1.1ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plant_group_form.html.erb (11.5ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (89.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (141.9ms)
+Completed 200 OK in 202ms (Views: 145.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/80/edit" for 127.0.0.1 at 2011-11-13 18:58:29 +0100
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"80"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 80 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (48.2ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (82.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/edit.html.erb within layouts/application (141.6ms)
+Completed 200 OK in 202ms (Views: 144.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/80" for 127.0.0.1 at 2011-11-13 18:59:19 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 80 LIMIT 1[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (12.9ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (83.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (136.9ms)
+Completed 200 OK in 196ms (Views: 140.1ms | ActiveRecord: 2.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-18 15:32:38 +0100
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (27.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mMicropost Load (6.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1) OR user_id = 1) ORDER BY microposts.created_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships
+ WHERE follower_id = 1) OR user_id = 1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_micropost_form.html.erb (8.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered shared/_feed_item.html.erb (172.9ms)
+Rendered shared/_feed.html.erb (177.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "microposts" WHERE ("microposts".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (38.2ms)
+  [1m[35mSQL (18.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".followed_id WHERE (("relationships".follower_id = 1))
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users".id = "relationships".follower_id WHERE (("relationships".followed_id = 1))[0m
+Rendered shared/_stats.html.erb (74.7ms)
+Rendered layouts/_stylesheets.html.erb (18.4ms)
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (364.6ms)
+Completed 200 OK in 725ms (Views: 374.6ms | ActiveRecord: 55.3ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2011-11-18 15:32:43 +0100
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-18 15:32:43 +0100
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (16.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered pages/home.html.erb within layouts/application (46.6ms)
+Completed 500 Internal Server Error in 107ms
+
+ActionView::Template::Error (Missing partial shared/titleform with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/mmelone12/rprojects/garden/app/views"):
+    20: <p>
+    21:   This is the home page for the <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
+    22: </p>            
+    23: <%= render 'shared/titleform' %>  
+    24: 
+    25: <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+    26: 
+  app/views/pages/home.html.erb:23:in `_app_views_pages_home_html_erb___614127556_10099660__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-18 15:33:04 +0100
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered shared/_titleform.html.erb (0.8ms)
+Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for @project do |f| %>
+    2:   <p>
+    3:     <%= f.label :address %><br />
+    4:     <%= f.text_field :address %>
+  app/views/shared/_titleform.html.erb:1:in `_app_views_shared__titleform_html_erb__64074407_9198740_632728968'
+  app/views/pages/home.html.erb:23:in `_app_views_pages_home_html_erb___614127556_10075300__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-11-18 15:34:42 +0100
+  Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered shared/_titleform.html.erb (9.9ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.9ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 120ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-18 15:34:57 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"address"=>"2648 Rainbow Springs Lane, Orlando, FL"}, "commit"=>"Create Project"}
+  [1m[35mAREL (25.7ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, NULL, '2011-11-18 14:35:00.999155', '2011-11-18 14:35:00.999155')
+Redirected to http://localhost:3000new
+Completed 302 Found in 3346ms
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-18 16:56:00 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"address"=>"2648 Rainbow Springs Lane, Orlando, FL"}, "commit"=>"Create Project"}
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, NULL, '2011-11-18 15:56:03.637624', '2011-11-18 15:56:03.637624')[0m
+Redirected to http://localhost:3000/projects/82
+Completed 302 Found in 3084ms
+
+
+Started GET "/projects/82" for 127.0.0.1 at 2011-11-18 16:56:03 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"82"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 82 LIMIT 1
+  [1m[36mPlant Load (0.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 82))[0m
+Rendered shared/_plants_form.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (107.4ms)
+Completed 500 Internal Server Error in 141ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    1:       
+    2: <%= form_for @project.prelationships.build(:pfollowed_id =>
+    3: @plant.id) do |f| %>
+    4:   <%= collection_select(:prelationships, :pfollowed_id, Plant.all, :id, :name, options ={:prompt => "Select your plants"}, :class => "listselect") %>  
+    5:   <div class="actions">
+    6: 	<%= f.submit "Update" %>
+  app/views/shared/_plants_form.html.erb:3:in `_app_views_shared__plants_form_html_erb__483828154_19207100__510535512'
+  app/views/projects/show.html.erb:17:in `_app_views_projects_show_html_erb___120355964_9809750__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-18 16:58:18 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"address"=>"2648 Rainbow Springs Lane, Orlando, FL"}, "commit"=>"Create Project"}
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, NULL, '2011-11-18 15:58:21.548363', '2011-11-18 15:58:21.548363')
+Redirected to http://localhost:3000/projects/83
+Completed 302 Found in 3084ms
+
+
+Started GET "/projects/83" for 127.0.0.1 at 2011-11-18 16:58:21 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"83"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 83 LIMIT 1[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 83))
+Rendered shared/_plants_form.html.erb (17.7ms)
+Rendered projects/show.html.erb within layouts/application (100.2ms)
+Completed 500 Internal Server Error in 133ms
+
+ActionView::Template::Error (undefined method `prelationships_path' for #<#<Class:0x11d7c10>:0x11d6e00>):
+    1:       
+    2: <%= form_for @project.prelationships.build(:pfollowed_id =>
+    3: :plant_id) do |f| %>
+    4:   <%= collection_select(:prelationships, :pfollowed_id, Plant.all, :id, :name, options ={:prompt => "Select your plants"}, :class => "listselect") %>  
+    5:   <div class="actions">
+    6: 	<%= f.submit "Update" %>
+  app/views/shared/_plants_form.html.erb:3:in `_app_views_shared__plants_form_html_erb__483828154_18730540__510535512'
+  app/views/projects/show.html.erb:17:in `_app_views_projects_show_html_erb___120355964_9351460__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-18 16:59:49 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"address"=>"2648 Rainbow Springs Lane, Orlando, FL"}, "commit"=>"Create Project"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES (NULL, NULL, '2648 Rainbow Springs Lane, Orlando, FL', NULL, NULL, NULL, '2011-11-18 15:59:52.450051', '2011-11-18 15:59:52.450051')[0m
+Redirected to http://localhost:3000/projects/84
+Completed 302 Found in 3086ms
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-18 16:59:52 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.3ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (23.2ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (107.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (224.1ms)
+Completed 200 OK in 258ms (Views: 227.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-18 17:00:26 +0100
+
+ActionController::RoutingError (uninitialized constant PrelationshipsController):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-18 17:05:57 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"3"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 71ms
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-11-18 17:05:57 +0100
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (47.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered sessions/new.html.erb within layouts/application (58.5ms)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-18 17:06:41 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"2"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-18 17:12:51 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-18 17:13:35 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Update"}
+Completed 404 Not Found in 14ms
+
+ActiveRecord::RecordNotFound (Couldn't find Plant without an ID):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 19:56:22 +0100
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:5: syntax error, unexpected tIVAR, expecting ')'
+    @project.follow!(@plant)
+            ^):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 19:58:36 +0100
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:6: syntax error, unexpected tIVAR, expecting ')'
+    @project.follow!(@plant)
+            ^):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 19:59:35 +0100
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:5: syntax error, unexpected tCONSTANT, expecting ')'
+    Project.find(params[:id]).follow!(@plant)
+           ^):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:01:18 +0100
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:5: syntax error, unexpected tCONSTANT, expecting ')'
+    Project(find)(params[:id]).follow!(@plant)
+           ^
+/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:5: syntax error, unexpected '(', expecting keyword_end
+    Project(find)(params[:id]).follow!(@plant)
+                  ^
+/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:5: syntax error, unexpected ')', expecting keyword_end
+    Project(find)(params[:id]).follow!(@plant)
+                              ^):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:09:33 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mProject Load (79.4ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (5.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.3ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (22.2ms)
+Rendered layouts/_stylesheets.html.erb (2.7ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (57.0ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (206.7ms)
+Completed 200 OK in 444ms (Views: 271.9ms | ActiveRecord: 87.6ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:09:39 +0100
+
+SyntaxError (/Users/mmelone12/rprojects/garden/app/controllers/prelationships_controller.rb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+    current_project.follow!(@plant)
+                   ^):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:13:39 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"2"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:22:51 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"3"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.8ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:31:22 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+  [1m[36mPlant Load (1.3ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (55.7ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (79.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (198.6ms)
+Completed 200 OK in 230ms (Views: 202.0ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:31:28 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"4"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:37:27 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"4"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.3ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:37:32 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered shared/_plants_form.html.erb (1.4ms)
+Rendered projects/show.html.erb within layouts/application (82.0ms)
+Completed 500 Internal Server Error in 113ms
+
+ActionView::Template::Error (undefined method `authenticate_with_salt' for #<Class:0x2527e14>):
+    1:       
+    2: <%= form_for current_project.prelationships.build(:pfollowed_id =>
+    3: @project_id) do |f| %>
+    4:   <%= collection_select(:plant, :id, Plant.all, :id, :name, options ={:prompt => "Select your plants"}, :class => "listselect") %>  
+    5:   <div class="actions">
+  app/helpers/sessions_helper.rb:62:in `project_from_remember_token'
+  app/helpers/sessions_helper.rb:21:in `current_project'
+  app/views/shared/_plants_form.html.erb:2:in `_app_views_shared__plants_form_html_erb__483828154_20252700__510535512'
+  app/views/projects/show.html.erb:17:in `_app_views_projects_show_html_erb___120355964_17617570__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.3ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:40:05 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.2ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+Rendered shared/_plants_form.html.erb (7.9ms)
+Rendered projects/show.html.erb within layouts/application (88.7ms)
+Completed 500 Internal Server Error in 123ms
+
+ActionView::Template::Error (undefined local variable or method `project' for #<#<Class:0x12233f4>:0x12224b8>):
+    1:       
+    2: <%= form_for current_project.prelationships.build(:pfollowed_id =>
+    3: @project_id) do |f| %>
+    4:   <%= collection_select(:plant, :id, Plant.all, :id, :name, options ={:prompt => "Select your plants"}, :class => "listselect") %>  
+    5:   <div class="actions">
+  app/helpers/sessions_helper.rb:21:in `current_project'
+  app/views/shared/_plants_form.html.erb:2:in `_app_views_shared__plants_form_html_erb__483828154_19561390__510535512'
+  app/views/projects/show.html.erb:17:in `_app_views_projects_show_html_erb___120355964_9506020__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:42:43 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.2ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+Rendered shared/_plants_form.html.erb (7.9ms)
+Rendered projects/show.html.erb within layouts/application (60.1ms)
+Completed 500 Internal Server Error in 124ms
+
+ActionView::Template::Error (undefined local variable or method `project' for #<#<Class:0x27a5d80>:0x27a4ebc>):
+    1:       
+    2: <%= form_for current_project.prelationships.build(:pfollowed_id =>
+    3: @project_id) do |f| %>
+    4:   <%= collection_select(:plant, :id, Plant.all, :id, :name, options ={:prompt => "Select your plants"}, :class => "listselect") %>  
+    5:   <div class="actions">
+  app/helpers/sessions_helper.rb:21:in `current_project'
+  app/views/shared/_plants_form.html.erb:2:in `_app_views_shared__plants_form_html_erb__483828154_18762990__510535512'
+  app/views/projects/show.html.erb:17:in `_app_views_projects_show_html_erb___120355964_20783610__342199842'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:43:58 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+  [1m[36mPlant Load (1.3ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (53.4ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (77.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (193.9ms)
+Completed 200 OK in 228ms (Views: 197.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:44:04 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "plant"=>{"id"=>"4"}, "commit"=>"Update"}
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:46:16 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (53.3ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (49.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (167.1ms)
+Completed 200 OK in 231ms (Views: 170.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:46:19 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "plant"=>{"id"=>"3"}, "commit"=>"Follow"}
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:47:07 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (22.5ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (50.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 231ms (Views: 170.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:47:11 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Follow"}
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 20:48:02 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (22.3ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (77.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (194.3ms)
+Completed 200 OK in 228ms (Views: 197.7ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 20:48:05 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Follow"}
+Completed 500 Internal Server Error in 44ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-20 23:31:52 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (16.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.5ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.3ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (23.3ms)
+Rendered layouts/_stylesheets.html.erb (8.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (86.3ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (237.5ms)
+Completed 200 OK in 454ms (Views: 273.8ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-20 23:31:57 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Pfollow"}
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (30.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-21 19:53:16 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.3ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (22.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (90.0ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (240.7ms)
+Completed 200 OK in 412ms (Views: 274.2ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-21 19:53:23 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"2"}, "commit"=>"Pfollow"}
+Completed 404 Not Found in 20ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project without an ID):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-21 19:55:10 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.2ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+  [1m[36mPlant Load (1.3ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (20.8ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (75.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (184.4ms)
+Completed 200 OK in 215ms (Views: 187.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-21 19:55:14 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Pfollow"}
+Completed 500 Internal Server Error in 2ms
+
+NameError (undefined local variable or method `project' for #<PrelationshipsController:0x139e79c>):
+  app/helpers/sessions_helper.rb:21:in `current_project'
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-21 19:55:59 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1
+  [1m[36mPlant Load (0.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (51.4ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (73.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (187.3ms)
+Completed 200 OK in 218ms (Views: 190.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-21 19:56:03 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Pfollow"}
+Completed 404 Not Found in 21ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project without an ID):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/projects/84" for 127.0.0.1 at 2011-11-21 19:59:41 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 84 LIMIT 1[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 84))
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (51.1ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (76.5ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (192.2ms)
+Completed 200 OK in 254ms (Views: 195.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-21 19:59:46 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"4"}, "commit"=>"Update"}
+Completed 404 Not Found in 20ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project without an ID):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2011-11-21 20:04:08 +0100
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (113.2ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (88.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/new.html.erb within layouts/application (283.5ms)
+Completed 200 OK in 475ms (Views: 370.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2011-11-21 20:04:17 +0100
+  Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "project"=>{"title"=>"", "address"=>"Miami, FL", "latitude"=>"", "longitude"=>"", "state"=>""}, "commit"=>"Create Project"}
+  [1m[35mAREL (23.7ms)[0m  INSERT INTO "projects" ("title", "user_id", "address", "latitude", "longitude", "state", "created_at", "updated_at") VALUES ('', NULL, 'Miami, FL', NULL, NULL, 'Florida', '2011-11-21 19:04:19.338975', '2011-11-21 19:04:19.338975')
+Redirected to http://localhost:3000/projects/85
+Completed 302 Found in 2093ms
+
+
+Started GET "/projects/85" for 127.0.0.1 at 2011-11-21 20:04:19 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"85"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 85 LIMIT 1[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 85))
+  [1m[36mPlant Load (1.4ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (24.7ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (77.9ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (193.1ms)
+Completed 200 OK in 227ms (Views: 196.3ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/prelationships" for 127.0.0.1 at 2011-11-21 20:04:25 +0100
+  Processing by PrelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKqa1f0M2yPLQDHbRLnxl3SiwBeTus/1q1hpZjD7hgY=", "prelationships"=>{"pfollowed_id"=>"5"}, "commit"=>"Pfollow"}
+Completed 404 Not Found in 20ms
+
+ActiveRecord::RecordNotFound (Couldn't find Project without an ID):
+  app/controllers/prelationships_controller.rb:4:in `create'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
