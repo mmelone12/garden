@@ -1,8 +1,7 @@
 class Project < ActiveRecord::Base                    
   attr_accessible :title, :address, :latitude, :longitude, :state      
   
-  belongs_to :user 
-  has_one :plant_group        
+  belongs_to :user        
   has_many :prelationships, :foreign_key => "pfollower_id",
                             :dependent => :destroy   
   has_many :pfollowing, :through => :prelationships, :source => :pfollowed 

@@ -1,18 +1,21 @@
 SampleApp::Application.routes.draw do
 
   resources :users do
-    member do
+    member do     
       get :following, :followers
     end
-  end
+  end   
   
-  resources :sessions,      :only => [:new, :create, :destroy]
-  resources :microposts,    :only => [:create, :destroy]
-  resources :relationships, :only => [:create, :destroy]
-  resources :projects,      :only => [:new, :show, :edit, :create, :destroy]      
-  resources :plant_groups,  :only => [:new, :show, :edit, :create, :destroy]   
-  resources :plants,        :only => [:new, :show, :edit, :create, :destroy] 
+  resources :sessions,       :only => [:new, :create, :destroy]
+  resources :microposts,     :only => [:create, :destroy]
+  resources :relationships,  :only => [:create, :destroy]  
   resources :prelationships, :only => [:create]
+  resources :plants   
+  resources :projects do        
+    member do
+       get :pfollowing, :pfollowers  
+    end
+  end
   
   root :to => "pages#home"
 

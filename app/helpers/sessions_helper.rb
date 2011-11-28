@@ -3,6 +3,11 @@ module SessionsHelper
   def sign_in(user)
     cookies.permanent.signed[:remember_token] = [user.id, user.salt]
     self.current_user = user
+  end      
+  
+  def project_sign_in(project)
+    cookies.permanent.signed[:remember_token] = [project.id]
+    self.current_project = project
   end
   
   def current_user=(user)
@@ -18,11 +23,15 @@ module SessionsHelper
   end      
      
   def current_project
-    @current_project ||= project
+    @current_project ||= project_from_remember_token
   end
   
   def signed_in?
     !current_user.nil?
+  end      
+  
+  def project_signed_in?
+    !current_project.nil?
   end
   
   def sign_out
@@ -40,6 +49,10 @@ module SessionsHelper
   
   def authenticate
     deny_access unless signed_in?
+  end    
+  
+  def project_authenticate
+    deny_access unless project_signed_in?
   end
 
   def deny_access
@@ -59,7 +72,7 @@ module SessionsHelper
     end
     
     def project_from_remember_token
-      Project.find(params[:id])
+      Project.project_authenticate(*remember_token)
     end
     
     def remember_token

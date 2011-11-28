@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController      
-
   
   def index
     @projects = Project.all
@@ -40,5 +39,19 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_url, :notice => "Successfully destroyed project."
-  end   
+  end 
+  
+  def pfollowing
+    @title = "Pfollowing"
+    @project = Project.find(params[:id])
+    @plants = @plant.pfollowing.paginate(:page => params[:page])
+    render 'show_pfollow'
+  end    
+  
+  def pfollowers
+    @title = "Pfollowers"
+    @project = Project.find(params[:id])
+    @plants = @plant.pfollowers.paginate(:page => params[:page])
+    render 'show_pfollow'
+  end
 end
