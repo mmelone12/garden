@@ -33,5 +33,5 @@ class Project < ActiveRecord::Base
   
   def pfollow!(pfollowed)
     prelationships.create!(:pfollowed_id => pfollowed.id)
-  end
+  end         
 end

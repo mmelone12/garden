@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113111147) do
+ActiveRecord::Schema.define(:version => 20111206150957) do
 
   create_table "hzones", :force => true do |t|
     t.integer  "project_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20111113111147) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "plant_type"
+    t.string   "image_path"
   end
 
   create_table "prelationships", :force => true do |t|
