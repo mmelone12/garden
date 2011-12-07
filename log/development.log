@@ -13858,3 +13858,1266 @@ DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3
   [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111106202403')
   [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111113105524')[0m
   [1m[35mSQL (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111113111147')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPlant Load (0.4ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1
+  [1m[36mPlant Load (0.5ms)[0m  [1mSELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1[0m
+  [1m[35mPlant Load (0.5ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1
+  [1m[36mPlant Load (0.5ms)[0m  [1mSELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1[0m
+  [1m[35mPlant Load (0.4ms)[0m  SELECT "plants".* FROM "plants" LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "plants" SET "image_path" = 'tomato.jpg', "updated_at" = '2011-12-06 15:44:19.054125' WHERE "plants"."id" = 1[0m
+  [1m[35mPlant Load (0.8ms)[0m  SELECT "plants".* FROM "plants" LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-06 16:50:10 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91))[0m
+Rendered projects/show.html.erb within layouts/application (156.7ms)
+Completed 500 Internal Server Error in 303ms
+
+ActionView::Template::Error (undefined method `symbolize_keys!' for :image_path:Symbol):
+    16: </p>                         
+    17: <p>
+    18:   <strong>Plant Images:</strong>
+    19:   <%= image_tag(@project.pfollowing, :image_path)%>  
+    20: </p>
+    21:  <%= render 'shared/plants_form' %>            
+    22: <p>
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_11934170_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.4ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-06 16:54:03 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+ERROR: compiling _app_views_projects_show_html_erb___319027776_20873740_210542090 RAISED /Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_projects_show_html_erb___319027776_20873740_210542090(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "projects/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<p>
+  <strong>Address:</strong>
+  ');@output_buffer.append= ( @project.address );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>State:</strong>
+  ');@output_buffer.append= ( @project.state );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Zone:</strong>
+  ');@output_buffer.append= ( @project.zone );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>                
+<p>
+  <strong>Plants:</strong>
+  ');@output_buffer.append= ( @project.pfollowing );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('</p>                         
+<p>
+  <strong>Plant Images:</strong>
+  ');@output_buffer.append= ( image_tag(@project.pfollowing(:image_path));@output_buffer.safe_concat('  
+');@output_buffer.safe_concat('</p>
+ ');@output_buffer.append= ( render 'shared/plants_form' );@output_buffer.safe_concat('            
+');@output_buffer.safe_concat('<p>
+  ');@output_buffer.append= ( link_to "Edit", edit_project_path(@project) );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "View All", projects_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__295371892__process_action__92786533__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered projects/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 59ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:29: syntax error, unexpected keyword_end, expecting ')'):
+    24:   <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
+    25:   <%= link_to "View All", projects_path %>
+    26: </p>
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.8ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-06 16:54:21 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.3ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91))
+  [1m[36mPlant Load (1.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91))[0m
+Rendered projects/show.html.erb within layouts/application (96.2ms)
+Completed 500 Internal Server Error in 128ms
+
+ActionView::Template::Error (can't convert ActiveRecord::Associations::HasManyThroughAssociation into String):
+    16: </p>                         
+    17: <p>
+    18:   <strong>Plant Images:</strong>
+    19:   <%= image_tag(@project.pfollowing(:image_path))%>  
+    20: </p>
+    21:  <%= render 'shared/plants_form' %>            
+    22: <p>
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_5835990_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:07:39 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.4ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91))[0m
+Rendered projects/show.html.erb within layouts/application (92.1ms)
+Completed 500 Internal Server Error in 166ms
+
+ActionView::Template::Error (undefined method `pfollowing' for nil:NilClass):
+    16: </p>                         
+    17: <p>
+    18:   <strong>Plant Images:</strong>
+    19:   <%= image_tag(@plants.pfollowing(:image_path))%>  
+    20: </p>
+    21:  <%= render 'shared/plants_form' %>            
+    22: <p>
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_18007220_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:24:49 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+Completed 500 Internal Server Error in 27ms
+
+NoMethodError (undefined method `pfollowing' for nil:NilClass):
+  app/controllers/projects_controller.rb:9:in `show'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.2ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:27:48 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+  [1m[36mPlant Load (1.9ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (17.7ms)
+Rendered layouts/_stylesheets.html.erb (10.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (216.0ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (364.0ms)
+Completed 200 OK in 441ms (Views: 367.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:27:54 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.1ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+  [1m[36mPlant Load (1.8ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "plants".* FROM "plants"
+Rendered shared/_plants_form.html.erb (16.6ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (74.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (113.1ms)
+Completed 200 OK in 211ms (Views: 115.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:41:30 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.1ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+ERROR: compiling _app_views_projects__show_pfollow_html_erb__157437793_20432660_659759336 RAISED /Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected '(', expecting ')'
+...output_buffer.append= ( @plant(:image_path) );@output_buffer...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...append= ( @plant(:image_path) );@output_buffer.safe_concat('
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:13: syntax error, unexpected '(', expecting ')'
+           image_tag(@plant(:image_path))
+                            ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:18: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_projects__show_pfollow_html_erb__157437793_20432660_659759336(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "projects/_show_pfollow";_old_output_buffer = @output_buffer;show_pfollow = local_assigns[:show_pfollow];;@output_buffer = ActionView::OutputBuffer.new;        if @plants.any? 
+@output_buffer.safe_concat('        <ul class="users">
+          ');@output_buffer.append= ( render @plants );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        </ul>  
+        ');@output_buffer.append= ( will_paginate @plants );@output_buffer.safe_concat('
+');       end 
+@output_buffer.safe_concat('    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> ');@output_buffer.append= ( @plant.name );@output_buffer.safe_concat('<br />
+      <strong>Image</strong> ');@output_buffer.append= ( @plant(:image_path) );@output_buffer.safe_concat('
+');       if @plants.any? 
+@output_buffer.append_if_string=          @plants.each do |user| 
+           image_tag(@plant(:image_path))
+         end 
+@output_buffer.safe_concat('      '); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_7179170_210542090'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__295371892__process_action__92786533__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered projects/_show_pfollow.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (43.1ms)
+Completed 500 Internal Server Error in 117ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected '(', expecting ')'
+...output_buffer.append= ( @plant(:image_path) );@output_buffer...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...append= ( @plant(:image_path) );@output_buffer.safe_concat('
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:13: syntax error, unexpected '(', expecting ')'
+           image_tag(@plant(:image_path))
+                            ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:18: syntax error, unexpected $end, expecting keyword_end):
+    7:     </td>
+    8:     <td class="sidebar round">
+    9:       <strong>Name</strong> <%= @plant.name %><br />
+    10:       <strong>Image</strong> <%= @plant(:image_path) %>
+    11:       <% if @plants.any? %>
+    12:         <% @plants.each do |user| %>
+    13:           <% image_tag(@plant(:image_path))%>
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_7179170_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:43:45 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+ERROR: compiling _app_views_projects__show_pfollow_html_erb__157437793_11269380_659759336 RAISED /Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected '(', expecting ')'
+...fer.append= ( image_tag @plant(:image_path) );@output_buffer...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...image_tag @plant(:image_path) );@output_buffer.safe_concat('
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:13: syntax error, unexpected '(', expecting keyword_end
+           image_tag @plant(:image_path) 
+                            ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:18: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_projects__show_pfollow_html_erb__157437793_11269380_659759336(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "projects/_show_pfollow";_old_output_buffer = @output_buffer;show_pfollow = local_assigns[:show_pfollow];;@output_buffer = ActionView::OutputBuffer.new;        if @plants.any? 
+@output_buffer.safe_concat('        <ul class="users">
+          ');@output_buffer.append= ( render @plants );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        </ul>  
+        ');@output_buffer.append= ( will_paginate @plants );@output_buffer.safe_concat('
+');       end 
+@output_buffer.safe_concat('    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> ');@output_buffer.append= ( @plant.name );@output_buffer.safe_concat('<br />
+      <strong>Image</strong> ');@output_buffer.append= ( image_tag @plant(:image_path) );@output_buffer.safe_concat('
+');       if @plants.any? 
+@output_buffer.append_if_string=          @plants.each do |user| 
+           image_tag @plant(:image_path) 
+         end 
+@output_buffer.safe_concat('      '); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_12427730_210542090'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__295371892__process_action__92786533__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered projects/_show_pfollow.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 121ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected '(', expecting ')'
+...fer.append= ( image_tag @plant(:image_path) );@output_buffer...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...image_tag @plant(:image_path) );@output_buffer.safe_concat('
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:13: syntax error, unexpected '(', expecting keyword_end
+           image_tag @plant(:image_path) 
+                            ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:16: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:18: syntax error, unexpected $end, expecting keyword_end):
+    7:     </td>
+    8:     <td class="sidebar round">
+    9:       <strong>Name</strong> <%= @plant.name %><br />
+    10:       <strong>Image</strong> <%= image_tag @plant(:image_path) %>
+    11:       <% if @plants.any? %>
+    12:         <% @plants.each do |user| %>
+    13:           <% image_tag @plant(:image_path) %>
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_12427730_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:48:12 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.1ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+ERROR: compiling _app_views_projects__show_pfollow_html_erb__157437793_9910430_659759336 RAISED /Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:11: syntax error, unexpected '<', expecting ')'
+      <% if @plants.any? );@output_buffer.safe_concat('
+       ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:11: syntax error, unexpected tIVAR, expecting ')'
+      <% if @plants.any? );@output_buffer.safe_concat('
+                   ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:16: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_projects__show_pfollow_html_erb__157437793_9910430_659759336(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "projects/_show_pfollow";_old_output_buffer = @output_buffer;show_pfollow = local_assigns[:show_pfollow];;@output_buffer = ActionView::OutputBuffer.new;        if @plants.any? 
+@output_buffer.safe_concat('        <ul class="users">
+          ');@output_buffer.append= ( render @plants );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        </ul>  
+        ');@output_buffer.append= ( will_paginate @plants );@output_buffer.safe_concat('
+');       end 
+@output_buffer.safe_concat('    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> ');@output_buffer.append= ( @plant.name );@output_buffer.safe_concat('<br />
+      <strong>Image</strong> ');@output_buffer.append= ( image_tag("tomato.jpg")
+      <% if @plants.any? );@output_buffer.safe_concat('
+');@output_buffer.append_if_string=          @plants.each do |user| 
+           image_tag("tomato.jpg") 
+         end 
+@output_buffer.safe_concat('      '); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_11091120_210542090'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__295371892__process_action__92786533__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered projects/_show_pfollow.html.erb (1.2ms)
+Rendered projects/show.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 117ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:11: syntax error, unexpected '<', expecting ')'
+      <% if @plants.any? );@output_buffer.safe_concat('
+       ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:11: syntax error, unexpected tIVAR, expecting ')'
+      <% if @plants.any? );@output_buffer.safe_concat('
+                   ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:16: syntax error, unexpected keyword_ensure, expecting $end):
+    8:     <td class="sidebar round">
+    9:       <strong>Name</strong> <%= @plant.name %><br />
+    10:       <strong>Image</strong> <%= image_tag("tomato.jpg")
+    11:       <% if @plants.any? %>
+    12:         <% @plants.each do |user| %>
+    13:           <% image_tag("tomato.jpg") %>
+    14:         <% end %>
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_11091120_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:49:06 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.1ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+Rendered projects/_show_pfollow.html.erb (1.8ms)
+Rendered projects/show.html.erb within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 114ms
+
+ActionView::Template::Error (Missing partial plants/plant with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/mmelone12/rprojects/garden/app/views"):
+    1:        <% if @plants.any? %>
+    2:         <ul class="users">
+    3:           <%= render @plants %>
+    4:         </ul>  
+    5:         <%= will_paginate @plants %>
+    6:       <% end %>
+  app/views/projects/_show_pfollow.html.erb:3:in `_app_views_projects__show_pfollow_html_erb__157437793_20495600_659759336'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_7944300_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:51:51 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1[0m
+  [1m[35mPlant Load (1.1ms)[0m  SELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0
+Rendered projects/_show_pfollow.html.erb (1.6ms)
+Rendered projects/show.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (Missing partial plants/plant with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/mmelone12/rprojects/garden/app/views"):
+    1:        <% if @plants.any? %>
+    2:         <ul class="users">
+    3:           <%= render @plants %>
+    4:         </ul>  
+    5:         <%= will_paginate @plants %>
+    6:       <% end %>
+  app/views/projects/_show_pfollow.html.erb:3:in `_app_views_projects__show_pfollow_html_erb__157437793_11929820_659759336'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb___319027776_20050770_210542090'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:53:34 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.3ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (68.7ms)
+Rendered projects/show.html.erb within layouts/application (84.1ms)
+Completed 500 Internal Server Error in 293ms
+
+ActionView::Template::Error (Missing partial plants/plant with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/mmelone12/rprojects/garden/app/views"):
+    1:        <% if @plants.any? %>
+    2:         <ul class="users">
+    3:           <%= render @plants %>
+    4:         </ul>  
+    5:         <%= will_paginate @plants %>
+    6:       <% end %>
+  app/views/projects/_show_pfollow.html.erb:3:in `_app_views_projects__show_pfollow_html_erb___143415855_9274560__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_17207400__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.5ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:54:14 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (1.8ms)
+Rendered projects/show.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 119ms
+
+ActionView::Template::Error (Missing partial plants/plant with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/mmelone12/rprojects/garden/app/views"):
+    1:        <% if @plants.any? %>
+    2:         <ul class="users">
+    3:           <%= render @plants %>
+    4:         </ul>  
+    5:         <%= will_paginate @plants %>
+    6:       <% end %>
+  app/views/projects/_show_pfollow.html.erb:3:in `_app_views_projects__show_pfollow_html_erb___143415855_18176440__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_18884410__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:54:46 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (1.8ms)
+Rendered projects/show.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 122ms
+
+ActionView::Template::Error (Missing partial plants/plant with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/mmelone12/rprojects/garden/app/views"):
+    1:        <% if @plants.any? %>
+    2:         <ul class="users">
+    3:           <%= render @plants %>
+    4:         </ul>  
+    5:         <%= will_paginate @plants %>
+    6:       <% end %>
+  app/views/projects/_show_pfollow.html.erb:3:in `_app_views_projects__show_pfollow_html_erb___143415855_17635390__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_18279110__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:56:45 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (0.8ms)
+Rendered projects/show.html.erb within layouts/application (40.3ms)
+Completed 500 Internal Server Error in 117ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    6:       <% end %>
+    7:     </td>
+    8:     <td class="sidebar round">
+    9:       <strong>Name</strong> <%= @plant.name %><br />
+    10:       <strong>Image</strong> <%= image_tag("tomato.jpg")
+  app/views/projects/_show_pfollow.html.erb:9:in `_app_views_projects__show_pfollow_html_erb___143415855_20672570__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_17198170__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 11:57:05 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+ERROR: compiling _app_views_projects__show_pfollow_html_erb___143415855_19216480__437188882 RAISED /Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:9: syntax error, unexpected '(', expecting ')'
+...output_buffer.append= ( @plant(:name) );@output_buffer.safe_...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:9: syntax error, unexpected ')', expecting keyword_end
+...uffer.append= ( @plant(:name) );@output_buffer.safe_concat('...
+...                               ^
+Function body:           def _app_views_projects__show_pfollow_html_erb___143415855_19216480__437188882(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "projects/_show_pfollow";_old_output_buffer = @output_buffer;show_pfollow = local_assigns[:show_pfollow];;@output_buffer = ActionView::OutputBuffer.new;        if @plants.any? 
+@output_buffer.safe_concat('        <ul class="users">
+          
+        </ul>  
+        ');@output_buffer.append= ( will_paginate @plants );@output_buffer.safe_concat('
+');       end 
+@output_buffer.safe_concat('    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> ');@output_buffer.append= ( @plant(:name) );@output_buffer.safe_concat('<br />
+      <strong>Image</strong> <%= image_tag("tomato.jpg")
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/mmelone12/rprojects/garden/app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_20314510__777504011'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__95330772__process_action__441458169__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:103:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered projects/_show_pfollow.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 118ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:9: syntax error, unexpected '(', expecting ')'
+...output_buffer.append= ( @plant(:name) );@output_buffer.safe_...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/projects/_show_pfollow.html.erb:9: syntax error, unexpected ')', expecting keyword_end
+...uffer.append= ( @plant(:name) );@output_buffer.safe_concat('...
+...                               ^):
+    6:       <% end %>
+    7:     </td>
+    8:     <td class="sidebar round">
+    9:       <strong>Name</strong> <%= @plant(:name) %><br />
+    10:       <strong>Image</strong> <%= image_tag("tomato.jpg")
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_20314510__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPlant Load (0.3ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:00:08 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (0.9ms)
+Rendered projects/show.html.erb within layouts/application (14.5ms)
+Completed 500 Internal Server Error in 123ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    6:       <% end %>
+    7:     </td>
+    8:     <td class="sidebar round">
+    9:       <strong>Name</strong> <%= @plant.name %><br />
+    10:       <strong>Image</strong> <%= image_tag("tomato.jpg")
+  app/views/projects/_show_pfollow.html.erb:9:in `_app_views_projects__show_pfollow_html_erb___143415855_18119720__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_18658640__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.4ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:19:08 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (0.6ms)
+  [1m[35mPlant Load (2.0ms)[0m  SELECT "plants".* FROM "plants"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (46.9ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (74.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (148.3ms)
+Completed 200 OK in 255ms (Views: 151.2ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:20:38 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (24.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (0.5ms)
+  [1m[35mPlant Load (1.8ms)[0m  SELECT "plants".* FROM "plants"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (16.2ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (73.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (113.4ms)
+Completed 200 OK in 208ms (Views: 116.0ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:21:40 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (9.0ms)
+Rendered projects/show.html.erb within layouts/application (48.7ms)
+Completed 500 Internal Server Error in 120ms
+
+ActionView::Template::Error (undefined method `plant' for #<#<Class:0x129885c>:0x1292c68>):
+    2:     <% @plants.each do |plant| %>
+    3:       <li>
+    4: 	     <%= plant.name %> 
+    5: 	     <%= plant(:image_path) %>
+    6: 	  </li>
+    7: 	<% end %>
+    8:   </ul>  
+  app/views/projects/_show_pfollow.html.erb:5:in `block in _app_views_projects__show_pfollow_html_erb___143415855_20458310__437188882'
+  app/views/projects/_show_pfollow.html.erb:2:in `each'
+  app/views/projects/_show_pfollow.html.erb:2:in `_app_views_projects__show_pfollow_html_erb___143415855_20458310__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_9278060__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:22:20 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.1ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (1.3ms)
+Rendered projects/show.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (can't convert nil into String):
+    2:     <% @plants.each do |plant| %>
+    3:       <li>
+    4: 	     <%= plant.name %> 
+    5: 	     <%= image_tag(plant.image_path)%>
+    6: 	  </li>
+    7: 	<% end %>
+    8:   </ul>  
+  app/views/projects/_show_pfollow.html.erb:5:in `block in _app_views_projects__show_pfollow_html_erb___143415855_18286680__437188882'
+  app/views/projects/_show_pfollow.html.erb:2:in `each'
+  app/views/projects/_show_pfollow.html.erb:2:in `_app_views_projects__show_pfollow_html_erb___143415855_18286680__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_19438770__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:23:11 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (1.1ms)
+  [1m[35mPlant Load (29.8ms)[0m  SELECT "plants".* FROM "plants"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (46.4ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (49.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered projects/show.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 226ms (Views: 97.1ms | ActiveRecord: 32.1ms)
+  [1m[36mPlant Load (0.5ms)[0m  [1mSELECT "plants".* FROM "plants" WHERE "plants"."id" = 1 LIMIT 1[0m
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:24:42 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (1.2ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (1.5ms)
+Rendered projects/show.html.erb within layouts/application (44.8ms)
+Completed 500 Internal Server Error in 121ms
+
+ActionView::Template::Error (can't convert nil into String):
+    2:     <% @plants.each do |plant| %>
+    3:       <li>
+    4: 	     <%= plant.name %> 
+    5: 	     <%= image_tag(plant.image_path)%>
+    6: 	  </li>
+    7: 	<% end %>
+    8:   </ul>  
+  app/views/projects/_show_pfollow.html.erb:5:in `block in _app_views_projects__show_pfollow_html_erb___143415855_20315610__437188882'
+  app/views/projects/_show_pfollow.html.erb:2:in `each'
+  app/views/projects/_show_pfollow.html.erb:2:in `_app_views_projects__show_pfollow_html_erb___143415855_20315610__437188882'
+  app/views/projects/show.html.erb:19:in `_app_views_projects_show_html_erb__664675357_7540120__777504011'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+  [1m[35mPlant Load (0.5ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 2 LIMIT 1
+  [1m[36mPlant Load (0.4ms)[0m  [1mSELECT "plants".* FROM "plants" WHERE "plants"."id" = 3 LIMIT 1[0m
+  [1m[35mPlant Load (0.5ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 4 LIMIT 1
+  [1m[36mPlant Load (0.4ms)[0m  [1mSELECT "plants".* FROM "plants" WHERE "plants"."id" = 5 LIMIT 1[0m
+  [1m[35mPlant Load (0.5ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 2 LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "plants" SET "image_path" = 'calendula.jpg', "updated_at" = '2011-12-07 11:34:05.013877' WHERE "plants"."id" = 2[0m
+  [1m[35mPlant Load (0.6ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE "plants" SET "image_path" = 'corn.jpg', "updated_at" = '2011-12-07 11:34:27.390267' WHERE "plants"."id" = 3[0m
+  [1m[35mPlant Load (0.5ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 4 LIMIT 1
+  [1m[36mAREL (0.8ms)[0m  [1mUPDATE "plants" SET "image_path" = 'peas.jpg', "updated_at" = '2011-12-07 11:34:51.686870' WHERE "plants"."id" = 4[0m
+  [1m[35mPlant Load (0.5ms)[0m  SELECT "plants".* FROM "plants" WHERE "plants"."id" = 5 LIMIT 1
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE "plants" SET "image_path" = 'onion.jpg', "updated_at" = '2011-12-07 11:35:16.535224' WHERE "plants"."id" = 5[0m
+
+
+Started GET "/projects/91" for 127.0.0.1 at 2011-12-07 12:35:39 +0100
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 91 LIMIT 1
+  [1m[36mPlant Load (0.9ms)[0m  [1mSELECT "plants".* FROM "plants" INNER JOIN "prelationships" ON "plants".id = "prelationships".pfollowed_id WHERE (("prelationships".pfollower_id = 91)) LIMIT 30 OFFSET 0[0m
+Rendered projects/_show_pfollow.html.erb (1.1ms)
+  [1m[35mPlant Load (1.2ms)[0m  SELECT "plants".* FROM "plants"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "plants".* FROM "plants"[0m
+Rendered shared/_plants_form.html.erb (16.8ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (78.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered projects/show.html.erb within layouts/application (121.3ms)
+Completed 200 OK in 228ms (Views: 124.9ms | ActiveRecord: 3.3ms)

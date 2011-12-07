@@ -5,7 +5,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])        
+    @project = Project.find(params[:id])   
+    @plants = @project.pfollowing.paginate(:page => params[:page])    
   end
 
   def new

@@ -1,0 +1,8 @@
+  <ul class ="users">
+    <% @plants.each do |plant| %>
+      <li>
+	     <%= plant.name %> 
+	     <%= image_tag(plant.image_path)%>
+	  </li>
+	<% end %>
+  </ul>  
