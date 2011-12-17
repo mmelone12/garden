@@ -131,4 +131,44 @@ $(document).ready(function(){
 		
 $(document).ready(function(){
 		$(".listselect").listselect();
-	});   
+	});                 
+	
+$(function() {
+			$( "#resizable" ).resizable({
+				containment: "#container"
+			});
+		}); 					
+	
+$(function() {
+	$( ".draggable" ).draggable();
+	$( ".droppable" ).droppable({
+		drop: function( event, ui ) {
+			$( this )
+				.addClass( "ui-state-highlight" )
+				.find( "p" )
+					.html( "Dropped!" );
+			}
+		});
+	});	
+	
+$(function() {
+		$( "#droppable1" ).droppable({
+			drop: function( event, ui ) {
+				$( this )
+					.addClass( "ui-state-highlight" )
+					.find( "p" )
+						.html( "Dropped!" );
+			}
+		});
+	});
+	
+$(function() {
+    $('div.circle').mouseover(function() {
+        $('div.outer-circle').addClass('hover');
+        $('div.middle-circle').addClass('hover');
+    });
+    $('div.circle').mouseout(function() {
+        $('div.outer-circle').removeClass('hover');
+        $('div.middle-circle').removeClass('hover');
+    });
+});

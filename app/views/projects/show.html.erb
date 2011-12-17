@@ -1,24 +1,20 @@
 <p>
-  <strong>Address:</strong>
+  <strong>This Garden's Address:</strong>
   <%= @project.address %>
 </p>
 <p>
-  <strong>State:</strong>
-  <%= @project.state %>
-</p>
+  <strong>This Garden's State and Hardiness Zone:</strong>
+  <%= @project.state %> and it <%= @project.zone %>
+</p> 
+<%= render 'shared/plants_form' %>                                    
 <p>
-  <strong>Zone:</strong>
-  <%= @project.zone %>
-</p>                
+  <strong>Your Garden's Plants:</strong>
+<%= render 'show_pfollow' %>   
+</p>  
 <p>
   <strong>Plants:</strong>
   <%= @plants %> 
-</p>                         
-<p>
-  <strong>Plant Images:</strong>
-<%= render 'show_pfollow' %>   
-</p>
- <%= render 'shared/plants_form' %>            
+</p>         
 <p>
   <%= link_to "Edit", edit_project_path(@project) %> |
   <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |

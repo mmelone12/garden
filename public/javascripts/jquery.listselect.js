@@ -2,17 +2,17 @@
     $.fn.listselect = function (options) {
         var defaults = {
             size: 10,
-            listTitle: "All",
-            selectedTitle: "Selected"
+            listTitle: "Plant List",
+            selectedTitle: "Selected Plants"
         }
 
         var options = $.extend(defaults, options);
 
         return this.each(function () {
-            var listContainer = $("<div style=\"margin-right: 5px; float: left; width: 200px;\"></div>");
-            if (options.listTitle && options.listTitle != '') listContainer.append("<strong>" + options.listTitle + "</strong>");
+            var listContainer = $("<div style=\"float: left; position: relative; width: 200px;\"></div>")
+	        if (options.listTitle && options.listTitle != '') listContainer.append("<strong>" + options.listTitle + "</strong>");
 
-            var selectedContainer = $("<div style=\"float: left; width: 200px;\"></div>");
+            var selectedContainer = $("<div style=\"float: left; position: relative; width: 200px;\"></div>");
             if (options.selectedTitle && options.selectedTitle != '') selectedContainer.append("<strong>" + options.selectedTitle + "</strong>");
 
             var selected = $(this);

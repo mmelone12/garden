@@ -9,32 +9,11 @@
       <%= f.submit "Pfollow" %>
     </div>
 <% end %>   
-
-<%= form_for @project.prelationships.build(:pfollowed_id =>
-                                           @project_id) do |f| %>
-    <%= select(:prelationship, :pfollower_id, Plant.all, { :multiple => true, :size =>5 }, :class => "listselect") %>
-    <%= hidden_field_tag :project_id, @project.id %>
-    <div class="actions">
-      <%= f.submit "Pfollow" %>
-    </div>
-<% end %>       
-         
-<%= form_for @project.prelationships.build(:pfollowed_id =>
-                                           @project_id) do |f| %>
-<%= select_tag("pickleplants", "<option>Tomato</option>Corn</option>".html_safe, :multiple =>  
-	           true, :class => "listselect") %>  
-	<%= hidden_field_tag :project_id, @project.id %>
-	    <div class="actions">
-	      <%= f.submit "Pfollow" %>
-	    </div>
+<div id="droppable1" class="droppablec">
+	<p>Leftover Plants</p>
+	<% @plants.each do |plant| 4.times do %>   
+	<%= image_tag(plant.image_path, :class => "draggablea", :size => 
+	              "15x15")%>     
 	<% end %> 
-	
-<%= form_for @project.prelationships.build(:pfollowed_id =>
-	                                       @project_id) do |f| %>
-	<%= select_tag :selected, options_for_select(["Tomato", "Corn", 
-		"Carrot"]), :multiple => true, :class => "listselect" %>  
-		<%= hidden_field_tag :project_id, @project.id %>
-		    <div class="actions">
-		      <%= f.submit "Pfollow" %>
-		    </div>
-		<% end %>
+	<% end %>                    
+	</div>

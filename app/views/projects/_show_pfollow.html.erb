@@ -1,8 +1,21 @@
-  <ul class ="users">
-    <% @plants.each do |plant| %>
-      <li>
-	     <%= plant.name %> 
-	     <%= image_tag(plant.image_path)%>
-	  </li>
-	<% end %>
-  </ul>  
+   <ul class ="users">
+    <% @plants.each do |plant| %>  
+      <li>                          
+	     <%= plant.name %>   
+	     <%= image_tag(plant.image_path, :class => "draggable", :size => "50x50")%>       
+	  </li>   
+	  <% end %>  
+  </ul>   
+  <br>
+  <div style="position: relative; left: 0; top: 0;">
+	<div id="container" class="ui-widget-content">  
+
+		<%= image_tag("dirt.jpg", :id => "resizable", :class => "droppable")%>
+		<% @plants.each do |plant| 8.times do %>   
+		<%= image_tag(plant.image_path, :class => "draggable", :size => 
+		              "50x50")%>    
+		<% end %> 
+		<% end %>
+	</div>  
+   </div>
+
