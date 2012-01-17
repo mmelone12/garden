@@ -140,7 +140,7 @@ $(function() {
 		}); 					
 	
 $(function() {
-	$( ".draggable" ).draggable();
+	$( ".draggable" ).draggable({ snap: true, grid: [ 20,20]});
 	$( ".droppable" ).droppable({
 		drop: function( event, ui ) {
 			$( this )
