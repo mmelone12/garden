@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111206150957) do
+ActiveRecord::Schema.define(:version => 20120117161613) do
 
   create_table "hzones", :force => true do |t|
     t.integer  "project_id"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(:version => 20111206150957) do
 
   add_index "prelationships", ["pfollowed_id"], :name => "index_prelationships_on_followed_id"
   add_index "prelationships", ["pfollower_id"], :name => "index_prelationships_on_follower_id"
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",       :precision => 8, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "title"

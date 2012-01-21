@@ -23385,3 +23385,689 @@ ActionController::RoutingError (No route matches "/stylesheets/images/ui-bg_glos
   
 
 Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+  [1m[36mSQL (1.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100821203213)
+Migrating to AddEmailUniquenessIndex (20100822012431)
+Migrating to AddPasswordToUsers (20100822204528)
+Migrating to AddSaltToUsers (20100822233125)
+Migrating to AddAdminToUsers (20100829021049)
+Migrating to CreateMicroposts (20100829210229)
+Migrating to CreateRelationships (20100831012055)
+Migrating to CreateProjects (20111021125458)
+Migrating to CreateHzones (20111021134225)
+Migrating to CreatePlantGroups (20111028213613)
+Migrating to CreatePlants (20111029114822)
+Migrating to AddPlantTypeToPlants (20111029123218)
+Migrating to RemoveTypeFromPlants (20111029123814)
+Migrating to AddColumnToPlantGroups (20111106193311)
+Migrating to AddPlant1ToPlantGroups (20111106202403)
+Migrating to CreatePrelationships (20111113105524)
+Migrating to RenameColumn (20111113111147)
+Migrating to AddImageToPlants (20111206150957)
+Migrating to CreateProducts (20120117161613)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120117161613')
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("hzones")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("microposts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_microposts_on_user_id_and_created_at')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("plant_groups")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_plant_groups_on_project_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("plants")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("prelationships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_prelationships_on_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_prelationships_on_follower_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("products")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("relationships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_follower_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_relationships_on_follower_id_and_followed_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_relationships_on_followed_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-17 17:21:55 +0100
+  Processing by PagesController#home as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered shared/_titleform.html.erb (72.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.6ms)
+Rendered layouts/_footer.html.erb (1.5ms)
+Rendered pages/home.html.erb within layouts/application (115.4ms)
+Completed 200 OK in 345ms (Views: 147.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-01-17 17:22:06 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (47.7ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered products/index.html.erb within layouts/application (57.8ms)
+Completed 200 OK in 73ms (Views: 62.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2012-01-17 17:48:26 +0100
+  Processing by ProductsController#new as HTML
+ERROR: compiling _app_views_products__form_html_erb___813016774_19807540__485403780 RAISED /Users/mmelone12/rprojects/garden/app/views/products/_form.html.erb:15: syntax error, unexpected ':'
+...tput_buffer.append= ( f.label : title );@output_buffer.safe_...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/products/_form.html.erb:16: syntax error, unexpected ':'
+...buffer.append= ( f.text_field : title );@output_buffer.safe_...
+...                               ^
+Function body:           def _app_views_products__form_html_erb___813016774_19807540__485403780(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "products/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@product) do |f| @output_buffer.safe_concat('
+');   if @product.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@product.errors.count, "error") );@output_buffer.safe_concat(' prohibited this product from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @product.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label : title );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field : title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :description );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :image_url );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :image_url );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :price );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :price );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/mmelone12/rprojects/garden/app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___515110467_19812430_658925392'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/Users/mmelone12/rprojects/garden/app/controllers/products_controller.rb:29:in `new'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__226776636__process_action__972654924__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered products/_form.html.erb (55.6ms)
+Rendered products/new.html.erb within layouts/application (57.5ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/products/_form.html.erb:15: syntax error, unexpected ':'
+...tput_buffer.append= ( f.label : title );@output_buffer.safe_...
+...                               ^
+/Users/mmelone12/rprojects/garden/app/views/products/_form.html.erb:16: syntax error, unexpected ':'
+...buffer.append= ( f.text_field : title );@output_buffer.safe_...
+...                               ^):
+    12:   <% end %>
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label : title %><br />
+    16:     <%= f.text_field : title %>
+    17:   </div>
+    18:   <div class="field">
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___515110467_19812430_658925392'
+  app/controllers/products_controller.rb:29:in `new'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2012-01-17 17:49:11 +0100
+  Processing by ProductsController#new as HTML
+Rendered products/_form.html.erb (38.2ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (46.9ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered products/new.html.erb within layouts/application (95.8ms)
+Completed 200 OK in 114ms (Views: 100.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2012-01-17 17:53:58 +0100
+  Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7khSosfeUazkEsXR2A2p2twRdHiUMJd6WKsWOS8QE+I=", "product"=>{"title"=>"Calendula Seed", "description"=>"Great for growing Calendulas!", "image_url"=>"/images/seed products/calendula_seed.jpg", "price"=>"2.99"}, "commit"=>"Create Product"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Calendula Seed', 'Great for growing Calendulas!', '/images/seed products/calendula_seed.jpg', 2.99, '2012-01-17 16:53:58.883201', '2012-01-17 16:53:58.883201')[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 137ms
+
+
+Started GET "/products/1" for 127.0.0.1 at 2012-01-17 17:53:59 +0100
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (73.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered products/show.html.erb within layouts/application (93.5ms)
+Completed 200 OK in 142ms (Views: 98.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-01-17 17:54:30 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+ERROR: compiling _app_views_products_index_html_erb___279647971_18227310_658925392 RAISED /Users/mmelone12/rprojects/garden/app/views/products/index.html.erb:23: syntax error, unexpected '\n', expecting tASSOC
+Function body:           def _app_views_products_index_html_erb___279647971_18227310_658925392(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "products/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id="product_list">
+  <h1>Listing products</h1>
+
+  <table>
+');@output_buffer.append_if_string=    @products.each do |product| 
+@output_buffer.safe_concat('    <tr class="');@output_buffer.append= ( cycle('list_line_odd', 'list_line_even') );@output_buffer.safe_concat('">
+	
+	  <td>
+		');@output_buffer.append= ( image_tag(product.image_url, :class => 'list_image') );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	  </td>
+	
+	<td class="list description">
+	   <dl>
+		 <dt>');@output_buffer.append= ( product.title );@output_buffer.safe_concat('</dt>
+		 <dd>');@output_buffer.append= ( truncate(strip_tags(product.description),
+		         :length => 80) );@output_buffer.safe_concat('</dd>
+		</dl>
+	</td>
+	
+	<td class="list_actions">
+		');@output_buffer.append= ( link_to 'Show', product );@output_buffer.safe_concat('<br/>
+        ');@output_buffer.append= ( link_to 'Edit', edit_product_path(product) );@output_buffer.safe_concat('<br/>
+        ');@output_buffer.append= ( link_to 'Destroy', product, :confirm => 'Are you sure?', :method    
+                                        => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </td>
+  </tr>
+');    end 
+@output_buffer.safe_concat('  </table>
+</div> 
+
+<br />
+
+');@output_buffer.append= ( link_to 'New Product', new_product_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/Users/mmelone12/rprojects/garden/app/controllers/products_controller.rb:7:in `index'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__226776636__process_action__957424522__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/products/index.html.erb:23: syntax error, unexpected '\n', expecting tASSOC):
+    20: 	<td class="list_actions">
+    21: 		<%= link_to 'Show', product %><br/>
+    22:         <%= link_to 'Edit', edit_product_path(product) %><br/>
+    23:         <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method    
+    24:                                         => :delete %>
+    25:     </td>
+    26:   </tr>
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.5ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-01-17 17:56:00 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products"
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (47.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered products/index.html.erb within layouts/application (139.5ms)
+Completed 200 OK in 154ms (Views: 143.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-01-17 18:01:17 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (74.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered products/index.html.erb within layouts/application (95.6ms)
+Completed 200 OK in 110ms (Views: 99.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-01-17 18:01:24 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products"
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (48.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered products/index.html.erb within layouts/application (95.5ms)
+Completed 200 OK in 110ms (Views: 99.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-01-17 18:03:00 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT "products".* FROM "products"[0m
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (75.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered products/index.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 111ms (Views: 101.0ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/mmelone12/rprojects/garden/config/environment.rb:5)
+
+
+Started GET "/store" for 127.0.0.1 at 2012-01-21 16:58:43 +0100
+
+ActionController::RoutingError (No route matches "/store"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/store/indez" for 127.0.0.1 at 2012-01-21 19:05:42 +0100
+
+ActionController::RoutingError (No route matches "/store/indez"):
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/store/index" for 127.0.0.1 at 2012-01-21 19:05:45 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (34.2ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+ERROR: compiling _app_views_store_index_html_erb___866715064_18121490_752257180 RAISED /Users/mmelone12/rprojects/garden/app/views/store/index.html.erb:3: syntax error, unexpected '<', expecting ')'
+<% end );@output_buffer.safe_concat('
+ ^
+/Users/mmelone12/rprojects/garden/app/views/store/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mmelone12/rprojects/garden/app/views/store/index.html.erb:19: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_store_index_html_erb___866715064_18121490_752257180(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "store/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; if notice 
+@output_buffer.safe_concat('<p id="notice">');@output_buffer.append= ( notice %</p>
+<% end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+<h1>Our Garden Catalog</h1>
+
+');@output_buffer.append_if_string=  @products.each do |product| 
+@output_buffer.safe_concat('	<div class="entry">
+	  ');@output_buffer.append= ( image_tag(product.image_url) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	  <h3>');@output_buffer.append= ( product.title );@output_buffer.safe_concat('</h3> 
+	  ');@output_buffer.append= ( sanitize(product.description) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	  <div class="price_line">
+		<span class="price">');@output_buffer.append= ( number_to_currency(product.price) );@output_buffer.safe_concat('</span>
+	  </div>
+	</div>
+'); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/mmelone12/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__203266946__process_action__439520758__callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/sendfile.rb:106:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/runtime.rb:17:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/lock.rb:11:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/content_length.rb:13:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/chunked.rb:15:in `call'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.2.4/lib/rack/handler/mongrel.rb:67:in `process'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+/Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+Rendered store/index.html.erb within layouts/application (126.1ms)
+Completed 500 Internal Server Error in 257ms
+
+ActionView::Template::Error (/Users/mmelone12/rprojects/garden/app/views/store/index.html.erb:3: syntax error, unexpected '<', expecting ')'
+<% end );@output_buffer.safe_concat('
+ ^
+/Users/mmelone12/rprojects/garden/app/views/store/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/mmelone12/rprojects/garden/app/views/store/index.html.erb:19: syntax error, unexpected $end, expecting keyword_end):
+    1: <% if notice %>
+    2: <p id="notice"><%= notice %</p>
+    3: <% end %>
+    4: 
+    5: <h1>Our Garden Catalog</h1>
+    6: 
+  
+
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (50.1ms)
+Rendered /Users/mmelone12/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (67.9ms)
+
+
+Started GET "/store/index" for 127.0.0.1 at 2012-01-21 19:06:22 +0100
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.8ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered layouts/_stylesheets.html.erb (26.9ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Rendered layouts/_header.html.erb (169.8ms)
+Rendered layouts/_footer.html.erb (1.7ms)
+Rendered store/index.html.erb within layouts/application (748.3ms)
+Completed 200 OK in 765ms (Views: 750.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/store/index" for 127.0.0.1 at 2012-01-21 19:21:48 +0100
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.8ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Rendered layouts/_header.html.erb (47.5ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered store/index.html.erb within layouts/application (94.9ms)
+Completed 200 OK in 112ms (Views: 99.3ms | ActiveRecord: 1.1ms)

@@ -1,5 +1,9 @@
 SampleApp::Application.routes.draw do
 
+  get "store/index"
+
+  resources :products
+
   resources :users do
     member do     
       get :following, :followers
