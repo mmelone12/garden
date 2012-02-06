@@ -6,7 +6,8 @@ class PagesController < ApplicationController
       @micropost = Micropost.new
       @feed_items = current_user.feed.paginate(:page => params[:page])   
     else
-      @project = Project.new
+      @project = Project.new    
+      @cart = current_cart
     end
   end
 

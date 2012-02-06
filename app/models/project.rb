@@ -21,11 +21,7 @@ class Project < ActiveRecord::Base
     else
       "Could be cold"
     end
-  end     
-  
-  def plant_collection
-    Plant.where("project_id = ?", id) 
-  end       
+  end           
   
   def pfollowing?(pfollowed)
     prelationships.find_by_pfollowed_id(pfollowed)  

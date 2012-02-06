@@ -6,6 +6,11 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)                   
 
-tomatoes = Plant.create([{ :name => "Tommy Toe", :type => "Vegetable",
-  :group => "Tomato"}, { :name => "Calendula", :type => "Flower", 
+Plant.create([{ 
+  :name => "Pumpkin," 
+  :type => "Vegetable", 
+  :annualperennial => "Annual",
+  :soil_type => "Moist"
+  :},
+  { :name => "Calendula", :type => "Flower", 
   :group => "Flower"}])

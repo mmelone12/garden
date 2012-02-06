@@ -2,7 +2,7 @@ module ApplicationHelper
   
   # Return a title on a per-page basis.
   def title
-    base_title = "Ruby on Rails Tutorial Sample App"
+    base_title = "Gardenzie: Build & Grow"
     if @title.nil?
       base_title
     else
@@ -14,7 +14,11 @@ module ApplicationHelper
     image_tag("logo.png", :alt => "Sample App", :class => "round")
   end  
   
-  def vegetables
+  def hidden_div_if(condition, attributes = {}, &block)
+    if condition
+      attributes["style"] = "display: none"
+    end 
+    content_tag("div", attributes, &block)
   end
 end
   
