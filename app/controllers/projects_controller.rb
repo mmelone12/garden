@@ -28,12 +28,16 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])  
-    @plant_group = @project.plant_group
     if @project.update_attributes(params[:project])
       redirect_to @project, :notice  => "Successfully updated project."
     else
       render :action => 'edit'
     end
+  end                   
+  
+  def instructions
+    @project = Project.find(params[:id]) 
+    @plants = @project.pfollowing.paginate(:page => params[:page]) 
   end
 
   def destroy

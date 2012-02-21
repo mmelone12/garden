@@ -29,5 +29,13 @@ class Project < ActiveRecord::Base
   
   def pfollow!(pfollowed)
     prelationships.create!(:pfollowed_id => pfollowed.id)
-  end       
+  end  
+  
+  def sowing_lines
+    @project = Project.find(params[:id])
+    @plants = @project.pfollowing.paginate(:page => params[:page])     
+    @first_sower = @project.pfollowing(:order => "sow_days_after_last_frost").last
+    "Begin by " 
+    @second_sower =
+  end     
 end
