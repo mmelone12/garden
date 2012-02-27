@@ -59,8 +59,9 @@
 .ui-widget { font-family: segoe ui, Arial, sans-serif; font-size: 1.1em; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: segoe ui, Arial, sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #dfd9c3; background: #f5f3e5 url(images/ui-bg_highlight-hard_100_f5f3e5_1x100.png) 50% top repeat-x; color: #312e25; }
-.ui-widget-content a { color: #312e25; }
+.ui-widget-content { border: 1px solid #dfd9c3; background: #f5f3e5 url(images/ui-bg_highlight-hard_100_f5f3e5_1x100.png) 50% top repeat-x; color: #312e25; list-style: none }
+.ui-widget-content a { color: #312e25; }                                                                                                                     
+.ui-widget-contentb { list-style: none }
 .ui-widget-header { border: 1px solid #d4ccb0; background: #ece8da url(images/ui-bg_gloss-wave_100_ece8da_500x100.png) 20% 20% repeat-x; color: #433f38; font-weight: bold; font-size: .5em; }
 .ui-widget-header a { color: #433f38; }
 
@@ -566,4 +567,17 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
  * http://docs.jquery.com/UI/Progressbar#theming
  */
 .ui-progressbar { height:2em; text-align: left; }
-.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }     
+
+#gallery { float: left; width: 65%; min-height: 12em; } * html #gallery { height: 12em; } /* IE6 */
+.gallery.custom-state-active { background: #eee; }
+.gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+.gallery li h5 { margin: 0 0 0.4em; cursor: move; }
+.gallery li a { float: right; }
+.gallery li a.ui-icon-zoomin { float: left; }
+.gallery li img { width: 100%; cursor: move; }
+
+#trash { float: right; width: 32%; min-height: 18em; padding: 1%;} * html #trash { height: 18em; } /* IE6 */
+#trash h4 { line-height: 16px; margin: 0 0 0.4em; }
+#trash h4 .ui-icon { float: left; }
+#trash .gallery h5 { display: none; }

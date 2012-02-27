@@ -1,15 +1,12 @@
 SampleApp::Application.routes.draw do
 
   resources :orders
-
   resources :line_items
-
   resources :carts
 
   get "store/index"
 
   resources :products
-
   resources :users do
     member do     
       get :following, :followers
@@ -23,7 +20,7 @@ SampleApp::Application.routes.draw do
   resources :plants   
   resources :projects do        
     member do
-       get :pfollowing, :pfollowers  
+       get :pfollowing, :pfollowers, :instructions  
     end
   end
   

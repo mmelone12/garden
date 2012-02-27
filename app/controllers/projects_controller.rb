@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])   
-    @plants = @project.pfollowing.paginate(:page => params[:page])    
+    @plants = @project.pfollowing.paginate(:page => params[:page])   
   end
 
   def new
@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
   def instructions
     @project = Project.find(params[:id]) 
     @plants = @project.pfollowing.paginate(:page => params[:page]) 
+    render 'instructions'
   end
 
   def destroy

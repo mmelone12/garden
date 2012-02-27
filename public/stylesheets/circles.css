@@ -1,18 +1,18 @@
 
 
 div.circle {
-	margin: 100px auto;
+	margin: 24px;
 	width: 200px;
 	height: 200px;
 }
 
 div.outer-circle {
 	background:transparent;
-	width:122px;
+	width:220px;
 	height:122px;
-	-webkit-border-radius: 61px;
-	-moz-border-radius:61px;
-	border-radius: 61px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius:80px;
+	border-radius: 100px;
 	border:1px solid #aaaaaa;
 	position:absolute;
 	z-index:800;
@@ -38,16 +38,16 @@ div.middle-circle {
  
     /* Set the width and height */
  
-    width:122px;
+    width:220px;
     height:122px;
  
     /* Set the border radius to half
     the width and height to make it
     look like a circle */
  
-    -webkit-border-radius: 61px;
-    -moz-border-radius: 61px;
-    border-radius: 61px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 70px;
  
     /* Set the background gradient */
  
@@ -94,14 +94,14 @@ div.inner-circle {
     /* This margin is used to position
     the circle in the center */
  
-    margin:14px;
+    margin:22px;
  
     /* Specify the background and
     width and height */
  
-    background:#3f96d1;
-    width:96px;
-    height:96px;
+    background:#FFF000;
+    width:174px;
+    height:80px;
  
     /* Since we have text in it,
     we need to specify the text

@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
 
   geocoded_by :address do |project,results|
     if geo = results.first
-      project.state   = geo.state
+      project.state = geo.state
     end
   end  
 
@@ -32,10 +32,55 @@ class Project < ActiveRecord::Base
   end  
   
   def sowing_lines
-    @project = Project.find(params[:id])
-    @plants = @project.pfollowing.paginate(:page => params[:page])     
-    @first_sower = @project.pfollowing(:order => "sow_days_after_last_frost").last
-    "Begin by " 
-    @second_sower =
-  end     
+    #@project = Project.find(params[:id])
+    #@plants = @project.pfollowing.paginate(:page => params[:page])     
+    #@first_sower = @project.pfollowing(:order => "sow_days_after_last_frost").last
+    #"Begin by " 
+    #@second_sower =  
+  end
+  
+  def first_lines_sowing_inside 
+    if self.pfollowing.count < 9
+      plant1 = self.pfollowing(:order => "sow_inside_outside").first 
+    "First take care of #{plant1.name}"   
+  else
+    "Uh-oh"
+  end
+    #@plants = @project.pfollowing.where(:inside_outside => "Inside", 
+    #:order => "sow_days_after_last_frost")
+
+    #@project.state(frost_date) + @plants.first(:sow_min) 
+
+    #if @plants.count(:inside_outside) >= 2
+
+    #First, find yourself some seedling trays. You can buy cheap plastic ones
+    #from wherever garden materials are sold, but consider a more sustainable
+    #option like using old paper coffee cups, paper rolls or even an egg carton.
+    #(<link_to(a href="trayguide", "Click here for more info.">))
+
+   #end
+
+    #if @plants.count(:inside_outside) = 1
+
+    #First, find yourself some seedling trays for your @plants seeds. You can buy 
+    #plastic ones from wherever garden materials are sold, but consider a 
+    #more sustainable (and cheaper) option like using old paper coffee cups, 
+    #paper rolls or even an egg carton.
+    #(<link_to(a href="trayguide", "Click here for more info.">))
+    #end
+
+    #if @plants.count(:inside_outside) >= 2
+
+    #{}"You'll want to begin your garden by sowing the <%= @plants.first(:name) %> seeds <%= @plants.first
+    #(:inside_outside) %> about <%= @plants.first(:sow_min)> to <%= @plants.first
+    #(:sow_max) days before the last frost (historically, in your state of
+    #<%= @project.state %>, that's <%= @project.state(:state_frost_date) %> but
+    #definitely check your local weather forecast.)"    
+    #end
+
+     #if <%= @plants.first(:inside_outside) = "inside")
+     #First, find yourself some seedling trays for
+     #if <%= @plants.count(:inside_outside) > or = 2>
+     #end 
+   end    
 end

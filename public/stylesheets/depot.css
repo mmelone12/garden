@@ -140,7 +140,7 @@
 #cart table {
 	border-top:    1px dotted #595;
 	border-bottom: 1px dotted #595;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
 
 #columns {
@@ -152,7 +152,7 @@
 	padding-top: 1em;
 	padding-left: 1em;
 	padding-bottom: 1em;
-	width: 16em;
+	width: 12em;
 	background: #141;
 }
 
@@ -184,11 +184,11 @@
 }
 
 .depot_form select, .depot_form textarea, .depot_form input {
-	margin-left: 0.5em;
+	margin-left: 0.1em;
 }
 
 .depot_form .submit {
-	margin-left: 4em;
+	margin-left: .1em;
 }
 
 .depot_form div {

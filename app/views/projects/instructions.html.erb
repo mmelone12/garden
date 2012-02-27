@@ -1,0 +1,11 @@
+<ul>
+<% @plants.each do |plant| %>  
+  <li>                          
+     <%= plant.name %>   
+     <%= image_tag(plant.image_path, :class => "draggable")%>          
+<% end %>          
+  </li>   
+</br>
+<ul class = "users">
+<%= @project.first_lines_sowing_inside %>
+</ul>
