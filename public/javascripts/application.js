@@ -278,3 +278,11 @@ $(function() {
 			return false;
 		});
 	});
+	
+$(function(){
+  $("h").click(function(){
+    $(this).hide()
+	       .find('input:checkbox').prop("checked", true)
+    });
+});  
+	 

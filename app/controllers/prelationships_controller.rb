@@ -1,7 +1,7 @@
 class PrelationshipsController < ApplicationController
    
   def create          
-    @project = Project.find(params[:project_id])                                  
+    @project = Project.find(params[:project_id])                                 
     params[:prelationship][:pfollower_id].each do |p|
       @project.pfollow!( Plant.find(p) )   
     end

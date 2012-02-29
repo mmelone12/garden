@@ -202,7 +202,7 @@ list-style: none;
 
 ul.plants {
 margin-top: 1em; 
-list-style: none;
+list-style: none; 
 }
 
 ul.plants li {
@@ -320,4 +320,4 @@ font-size: .5em;
 height: 140px;
 width: 240px;
 float: right
-}
+}   
