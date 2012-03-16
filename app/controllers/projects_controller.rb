@@ -59,5 +59,5 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @plants = @plant.pfollowers.paginate(:page => params[:page])
     render 'show_pfollow'
-  end  
+  end
 end

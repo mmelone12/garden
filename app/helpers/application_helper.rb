@@ -21,4 +21,3 @@ module ApplicationHelper
     content_tag("div", attributes, &block)
   end
 end
-  

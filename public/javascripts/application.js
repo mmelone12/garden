@@ -140,7 +140,7 @@ $(function() {
 		}); 					
 	
 $(function() {
-	$( ".draggable" ).draggable({ snap: true, grid: [ 20,20]});
+	$( "drag" ).draggable({ snap: true, grid: [ 20,20]});
 	$( ".droppable" ).droppable({
 		drop: function( event, ui ) {
 			$( this )
@@ -280,8 +280,8 @@ $(function() {
 	});
 	
 $(function(){
-  $("h").click(function(){
-    $(this).hide()
+  $(".gardenselect").click(function(){
+    $(this).hide( "highlight" )
 	       .find('input:checkbox').prop("checked", true)
     });
 });  

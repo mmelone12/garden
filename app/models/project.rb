@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base                    
+class Project < ActiveRecord::Base                     
   attr_accessible :title, :address, :latitude, :longitude, :state      
   
   belongs_to :user        
@@ -82,5 +82,26 @@ class Project < ActiveRecord::Base
      #First, find yourself some seedling trays for
      #if <%= @plants.count(:inside_outside) > or = 2>
      #end 
-   end    
+   end 
+    
+  def determined1a 
+    self.pfollowing(:order => "height").first    
+  end          
+  
+  def determined2a
+    self.pfollowing(:order => "height").second
+  end
+  
+  def determined3a
+    self.pfollowing(:order => "height").third
+  end
+  
+  def determined4a
+    self.pfollowing(:order => "height").fourth
+  end 
+   
+  def four_plantse 
+    plant1 = self.pfollowing(:order => "sow_inside_outside").first  
+    image_tag plant1.image_path, :class => "draggable"  
+  end
 end

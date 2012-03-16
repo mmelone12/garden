@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221201148) do
+ActiveRecord::Schema.define(:version => 20120314175413) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -149,6 +149,9 @@ ActiveRecord::Schema.define(:version => 20120221201148) do
     t.string   "fungal_pest_resistant_kinds"
     t.string   "drought_resistant"
     t.string   "viney_shade"
+    t.string   "icon_image"
+    t.string   "icontitle_image"
+    t.string   "twobyfourimagepath"
   end
 
   create_table "prelationships", :force => true do |t|

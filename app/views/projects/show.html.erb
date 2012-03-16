@@ -8,15 +8,20 @@
 </p> 
 <%= render 'plants_form' %>                                    
 <p>
-  <strong>Your Garden's Plants:</strong>
-<%= render 'show_pfollow' %>   
-</p>  
+  <strong>Your Garden Recommendation:</strong>
+<%= render 'plant_on_dirt' %>   
+</p>
+<div style= "margin-top: 50em"> 
 <p>
-  <strong>Plants:</strong>
-  <%= @plants %> 
-</p>         
-<p>
+<strong>Your Garden's Plant Names:</strong>   
+<% @plants.each do |plant| %>
+  <%= plant.name %> 
+  <%= plant.group %>
+<% end %> 
+</p>	 
+<p> 
   <%= link_to "Edit", edit_project_path(@project) %> |
   <%= link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", projects_path %>
 </p>
+</div>

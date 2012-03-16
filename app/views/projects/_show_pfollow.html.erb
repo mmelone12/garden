@@ -1,4 +1,7 @@
-   <ul class ="plants">
+<%= render '2x4with4' if @plants.count == 4 %>
+<% end %>
+
+  <ul class ="plants">
 	<% if @plants.count < 4 then %> "Not enough"  
 	<% end %>
     <% @plants.each do |plant| %>                           
@@ -19,5 +22,5 @@
 		<% end %> 
 		<% end %>
 	</div>  
-   </div>
+  </div>
 

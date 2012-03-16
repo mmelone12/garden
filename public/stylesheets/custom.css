@@ -269,30 +269,29 @@ margin-bottom: 0;
 #container {
 width: 600px;
 height: 420px;
-}
+} 
+
 #container h3 {
 text-align: left;
 margin: 0;
 margin-bottom: 1px;
-}
+} 
+
 #resizable {
 background-position: top left;
 width: 580px;
 height: 400px;
 position: absolute;
 overflow: hidden;
-}
+}  
+
 #resizable, #container {
 padding: .5em;
-}
+}  
 
-.draggable {
-padding: 0.2em;
-float: left;
-margin: 0;
-z-index: 100;
-position: relative;
-}    
+drag {
+} 
+   
 .draggablea {
 width: 20px;
 height: 20px;
@@ -302,13 +301,17 @@ background-color: #FFFFFF;
 margin: 0;
 z-index: 100;
 position: relative;
-}
+}   
+
 .droppable {
-width: 200px;
-height: 200px;
 padding: 0em;
 float: left;
-margin: 0;
+margin: 0;  
+position: absolute;
+overflow: hidden;  
+margin-left: 6em;  
+margin-top: 20em;
+border: 15px solid #000000;
 }  
 
 .droppablec {
@@ -320,4 +323,65 @@ font-size: .5em;
 height: 140px;
 width: 240px;
 float: right
+}  
+ 
+.gardenselect {
+display: inline; 
+width: 10%;
+height: 10%;
+} 
+
+.twobyfour1a {
+padding: -5em;
+float: left;  
+left: 15em;
+top: 0;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: relative;
+}
+
+.twobyfour2a1 {
+padding: -5em;
+float: left;  
+left: 8em;
+top: 0;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: relative;
 }   
+
+.twobyfour2a2 {
+padding: -5em;
+float: left;  
+left: 24em;
+top: 0;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: relative;
+}   
+
+.twobyfour3a {
+padding: -5em;
+float: left;  
+left: 8em;
+top: 5em;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: relative;
+}   
+
+.twobyfour4a {
+padding: -5em;
+float: left;  
+left: 24em;
+top: 5em;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: relative;
+}

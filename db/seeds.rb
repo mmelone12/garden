@@ -10,7 +10,7 @@ require 'csv'
 
 directory = "db/init_data/"
 
-file_name = "gardenhelpme.csv"
+file_name = "gardenzingreadymarch.csv"
 path_to_file = directory + file_name
 puts 'Loading Plant records'
 # Pre-load all Plant records
@@ -102,7 +102,10 @@ CSV.foreach(path_to_file, { :skip_blanks => true }) do |row|
   :slow_growing_green => row[83],
   :fungal_pest_resistant => row[84],
   :fungal_pest_resistant_kinds => row[85],
-  :drought_resistant => row[86]
+  :drought_resistant => row[86],
+  :icon_image => row[87],
+  :icontitle_image => row[88], 
+  :twobyfourimagepath => row[89]
   
 n=n+1
 end   

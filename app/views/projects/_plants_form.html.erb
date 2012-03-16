@@ -1,28 +1,11 @@
-<%= form_for @project.prelationships.build(:pfollowed_id =>
-                                           @project_id) do |f| %>
-  <%  Plant.all.each do |plant| %>  
-    <h><%= image_tag plant.image_path %>
-    <%= check_box_tag "prelationship[pfollower_id][]", plant.id, false, :style => "display: none;"  %></h>
-  <% end %>  
-<%= hidden_field_tag :project_id, @project.id %>
-<%= f.submit "Pfollow" %>
-<% end %>      
-
-<div class="circle">
-    <div class="outer-circle"></div>
-    <div class="middle-circle">
-	<ol id="selectable">
-    <li class="ui-widget-contentb"><%= image_tag("beet.png", :mouseover => "onion.png" )%></li>
-    <li class="ui-widget-contentb"><%= image_tag("onion.png")%></li>
-    </ol>
-      </div>
-    <div class="inner-circle">Start With Veggies Here</div>
-</div>
-
-<div id="droppable1" class="droppablec">
-	<p>Leftover Plants</p>
-	<% @plants.each do |plant| 4.times do %>   
-	<%= image_tag(plant.image_path, :class => "draggablea")%>     
-	<% end %> 
-	<% end %>                    
-	</div>  
+   <%= form_for @project.prelationships.build(:pfollowed_id =>
+		                                      @project_id) do |f| %>
+   <% Plant.all.each do |plant| %>  
+   <div class ="gardenselect">
+   <%= image_tag plant.icon_image %>
+   <%= check_box_tag "prelationship[pfollower_id][]", plant.id, false, :style => "display: none;" %> 
+   </div>
+   <% end %>  
+   <%= hidden_field_tag :project_id, @project.id %> 
+<%= f.submit "Start Your Garden" %>
+<% end %> 
