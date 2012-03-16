@@ -345,9 +345,8 @@ position: relative;
 .twobyfour2a1 {
 padding: -5em;
 float: left;  
-left: 8em;
-top: 0;
-right: 0;
+left: -15em;
+top: 12em;
 margin: -5em;
 z-index: 100;
 position: relative;
@@ -355,10 +354,9 @@ position: relative;
 
 .twobyfour2a2 {
 padding: -5em;
-float: left;  
-left: 24em;
-top: 0;
-right: 0;
+float: right;  
+left: -10em;
+top: 12em;
 margin: -5em;
 z-index: 100;
 position: relative;
@@ -367,9 +365,8 @@ position: relative;
 .twobyfour3a {
 padding: -5em;
 float: left;  
-left: 8em;
-top: 5em;
-right: 0;
+left: -19em;
+top: 24em;
 margin: -5em;
 z-index: 100;
 position: relative;
@@ -377,10 +374,9 @@ position: relative;
 
 .twobyfour4a {
 padding: -5em;
-float: left;  
-left: 24em;
-top: 5em;
-right: 0;
+float: right;  
+left: -12em;
+top: 16em;
 margin: -5em;
 z-index: 100;
 position: relative;

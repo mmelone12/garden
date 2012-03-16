@@ -85,19 +85,19 @@ class Project < ActiveRecord::Base
    end 
     
   def determined1a 
-    self.pfollowing(:order => "height").first    
+    self.pfollowing.order("height").last  
   end          
   
   def determined2a
-    self.pfollowing(:order => "height").second
+    self.pfollowing.order("height").third
   end
   
   def determined3a
-    self.pfollowing(:order => "height").third
+    self.pfollowing.order("height").second
   end
   
   def determined4a
-    self.pfollowing(:order => "height").fourth
+    self.pfollowing.order("height").first
   end 
    
   def four_plantse 
