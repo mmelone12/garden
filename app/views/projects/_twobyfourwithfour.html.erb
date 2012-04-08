@@ -1,32 +1,51 @@
 <div>
-<%= image_tag("dirt2by4.png", :class => "droppable")%>   
+<%= image_tag("dirt2by4.png", :class => "dirtdroppable")%>   
 <% if @project.determined1a.sprawls == "Yes" %>
-<drag>
+<drag>  
 <%= image_tag(@project.determined1a.twobyfourimagepath, :class => "twobyfour1a") %>  
 </drag> 
 <% end %>
 <% if @project.determined1a.sprawls == "No" %>
-<% 3.times do %>
 <drag>
 <%= image_tag(@project.determined1a.twobyfourimagepath, :class => "twobyfour1a") %>  
+</drag> 
+<drag>
+<%= image_tag(@project.determined1a.twobyfourimagepath, :class => "twobyfour1b") %>  
+</drag>
+<drag>
+<%= image_tag(@project.determined1a.twobyfourimagepath, :class => "twobyfour1c") %>  
 </drag>
 <% end %>
-<% end %>
-<drag>
+<drag> 
 <%= image_tag(@project.determined2a.twobyfourimagepath, :class => "twobyfour2a1")%> 
 </drag>
-<drag>
+<drag> 
 <%= image_tag(@project.determined2a.twobyfourimagepath, :class => "twobyfour2a2")%>
 </drag>
+<% if @project.determined3a.sprawls == "No" %> 
+<drag> 
+<%= image_tag(@project.determined3a.twobyfourimagepath, :class => "twobyfour3a")%>
+</drag>
+<drag> 
+<%= image_tag(@project.determined3a.twobyfourimagepath, :class => "twobyfour3b")%>
+</drag>
+<% end %> 
+<% if @project.determined3a.sprawls == "Yes" %> 
 <drag>
 <%= image_tag(@project.determined3a.twobyfourimagepath, :class => "twobyfour3a")%>
 </drag>
-<drag>
-<%= image_tag(@project.determined3a.twobyfourimagepath, :class => "twobyfour3a")%> 
-</drag>
+<% end %>
+<% if @project.determined4a.sprawls == "No" %> 
 <drag> 
 <%= image_tag(@project.determined4a.twobyfourimagepath, :class => "twobyfour4a")%>
+</drag>  
+<drag> 
+<%= image_tag(@project.determined4a.twobyfourimagepath, :class => "twobyfour4b")%>
 </drag>
-<drag>
-<%= image_tag(@project.determined4a.twobyfourimagepath, :class => "twobyfour4a")%>    
-</div>     
+<% end %> 
+<% if @project.determined4a.sprawls == "Yes" %> 
+<drag>  
+<%= image_tag(@project.determined4a.twobyfourimagepath, :class => "twobyfour4a")%>
+</drag> 
+<% end %> 
+</div>       

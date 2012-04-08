@@ -289,7 +289,7 @@ overflow: hidden;
 padding: .5em;
 }  
 
-drag {
+drag {  
 } 
    
 .draggablea {
@@ -331,53 +331,114 @@ width: 10%;
 height: 10%;
 } 
 
+#wrapper {
+margin: 1px auto;
+padding: 0;
+border: 2px solid black;
+width: 580px;
+height: 300px;
+} 
+
+.dirtdroppable {
+padding: 0em;
+float: left;
+margin: 0;  
+position: absolute;
+overflow: hidden;  
+margin-left: 6em;  
+margin-top: 20em;
+border: 15px solid #000000;
+}
+
 .twobyfour1a {
 padding: -5em;
 float: left;  
-left: 15em;
+left: 18em;
 top: 0;
 right: 0;
 margin: -5em;
 z-index: 100;
-position: relative;
+position: absolute;
+}   
+
+.twobyfour1b {
+padding: -5em;
+float: left;  
+left: 23em;
+top: 0;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: absolute;
+} 
+
+.twobyfour1c {
+padding: -5em;
+float: left;  
+left: 28em;
+top: 0;
+right: 0;
+margin: -5em;
+z-index: 100;
+position: absolute;
 }
 
 .twobyfour2a1 {
 padding: -5em;
 float: left;  
-left: -15em;
-top: 12em;
+left: 37em;
+top: 4em;
 margin: -5em;
 z-index: 100;
-position: relative;
+position: absolute;
 }   
 
 .twobyfour2a2 {
 padding: -5em;
 float: right;  
-left: -10em;
-top: 12em;
+left: 10em;
+top: 4em;
 margin: -5em;
 z-index: 100;
-position: relative;
+position: absolute;
 }   
 
 .twobyfour3a {
 padding: -5em;
 float: left;  
-left: -19em;
-top: 24em;
+left: 34em;
+top: 31em;
 margin: -5em;
 z-index: 100;
-position: relative;
-}   
+position: absolute;
+}  
+
+.twobyfour3b {
+padding: -5em;
+float: left;  
+left: 27em;
+top: 31em;
+margin: -5em;
+z-index: 100;
+position: absolute;
+} 
 
 .twobyfour4a {
 padding: -5em;
 float: right;  
-left: -12em;
-top: 16em;
+left: 9em;
+top: 30em;
 margin: -5em;
 z-index: 100;
-position: relative;
+position: absolute;
+}    
+
+.twobyfour4b {
+padding: -5em;
+float: right;  
+left: 19em;
+top: 30em;
+margin: -5em;
+z-index: 100;
+position: absolute;
 }
